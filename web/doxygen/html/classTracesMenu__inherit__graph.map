@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$classMenu.html" title="Menu definition." alt="" coords="25,237,79,267"/>
+<area shape="rect" id="node4" href="$classSyntaxNode.html" title="Syntax node elements." alt="" coords="5,160,99,189"/>
+<area shape="rect" id="node6" href="$classElement.html" title="Generic CLI element." alt="" coords="17,83,87,112"/>
+<area shape="rect" id="node8" href="$classObject.html" title="Generic object." alt="" coords="23,5,81,35"/>
+</map>

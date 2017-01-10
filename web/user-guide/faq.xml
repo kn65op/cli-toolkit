@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!--
+    Copyright (c) 2006-2013, Alexis Royer, http://alexis.royer.free.fr/CLI
+
+    All rights reserved.
+
+    Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+        * Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+        * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation
+          and/or other materials provided with the distribution.
+        * Neither the name of the CLI library project nor the names of its contributors may be used to endorse or promote products derived from this software
+          without specific prior written permission.
+
+    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+    "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+    LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+    A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+    CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+    EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+    PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+    PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+    LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+    NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+
+<section id="faq"><title id="faq.title">Frequently Asked Questions</title>
+
+    <!--<section id="faq.features"><title id="faq.features.title">Features</title>-->
+
+        <section id="faq.Q020"><title>I need to repeat a same set of commands. How can I do?</title>
+
+            <para>
+            <link linkend="xmlres.tag"><sgmltag class="element">tag</sgmltag> elements</link> allow you to reuse command line patterns within in a same command line,
+            but they do not work across different menus.
+            </para>
+
+            <para>
+            By the way, repeating a same set of commands in different menus is a regular expectation.
+            You can use XML inclusions for that.
+            </para>
+
+            <example id="eg.include.entity"><title id="eg.include.entity.title">XML inclusions: external entities</title>
+                <para>
+                This example shows how to implement XML inclusions with external entities.
+                </para>
+
+                <para>
+                Define a <filename>top.xml</filename> cli XML file like this:
+<programlisting>
+&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+&lt;!DOCTYPE cli [
+ &lt;!ENTITY child SYSTEM "child.xml"&gt;
+]&gt;
+&lt;cli xmlns="http://alexis.royer.free.fr/CLI" name="top"&gt;
+ &lt;keyword string="menu1"&gt;
+  &lt;endl&gt;
+   &lt;menu name="menu1"&gt;
+    &amp;child;
+   &lt;/menu&gt;
+  &lt;/endl&gt;
+ &lt;/keyword&gt;
+ &lt;keyword string="menu2"&gt;
+  &lt;endl&gt;
+   &lt;menu name="menu2"&gt;
+    &amp;child;
+   &lt;/menu&gt;
+  &lt;/endl&gt;
+ &lt;/keyword&gt;
+&lt;/cli&gt;
+</programlisting>
+                </para>
+
+                <para>
+                Define a <filename>child.xml</filename> cli XML file like this:
+<programlisting>
+&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+&lt;keyword string="k1"&gt;
+ &lt;endl&gt;&lt;/endl&gt;
+&lt;/keyword&gt;
+</programlisting>
+                </para>
+
+                <para>
+                Then build the full XML file with the following command:
+                <programlisting>xmllint --dropdtd --noent top.xml > full.xml</programlisting>
+                </para>
+            </example>
+
+            <example id="eg.include.xinclude"><title id="eg.include.xinclude.title">XML inclusions: <ulink url="http://www.w3.org/TR/xinclude/">XInclude</ulink></title>
+                <para>
+                This example shows how to implement XML inclusions with <ulink url="http://www.w3.org/TR/xinclude/">XInclude</ulink>.
+                </para>
+
+                <para>
+                Define a <filename>top2.xml</filename> cli XML file like this:
+<programlisting>
+&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+&lt;cli xmlns="http://alexis.royer.free.fr/CLI" name="top"&gt;
+ &lt;keyword string="menu1"&gt;
+  &lt;endl&gt;
+   &lt;menu name="menu1"&gt;
+    &lt;xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="child.xml" parse="xml"/&gt;
+   &lt;/menu&gt;
+  &lt;/endl&gt;
+ &lt;/keyword&gt;
+ &lt;keyword string="menu2"&gt;
+  &lt;endl&gt;
+   &lt;menu name="menu2"&gt;
+    &lt;xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="child.xml" parse="xml"/&gt;
+   &lt;/menu&gt;
+  &lt;/endl&gt;
+ &lt;/keyword&gt;
+&lt;/cli&gt;
+</programlisting>
+                </para>
+
+                <para>
+                Keep the same <filename>child.xml</filename> as for the <link linkend="eg.include.entity">previous example</link>.
+                Then build the full XML file with the following command:
+                <programlisting>xmllint --xinclude top2.xml > full2.xml</programlisting>
+                </para>
+            </example>
+        </section>
+
+        <section id="faq.Q050"><title>Why the <classname>Shell</classname> doesn't come with a timeout for automatic log off?</title>
+
+            <para>
+            The aim of this software is to ease the development of command line interfaces,
+            not to provided a high-security shell implementation.
+            That's the reason why the <classname>Shell</classname> class
+            does not provide a password authentication
+            nor a timeout feature.
+            </para>
+
+            <para>
+            It is up to you to implement such kind of functions, depending on your security requirements.
+            By the way, I advise you to read through the <link linkend="adv.exec-ctx" endterm="adv.exec-ctx.title"/> section,
+            and its <link linkend="eg.exec-ctx.pwd-shell" endterm="eg.exec-ctx.pwd-shell.title"/> example.
+            Also have a look at non blocking devices,
+            in the <link linkend="adv.non-blocking" endterm="adv.non-blocking.title"/> section,
+            which are more suitable to implement timeout aspects.
+            </para>
+
+        </section>
+
+        <section id="faq.Q100"><title>Why ain't there a possibility to set a context reference with <classname>Cli</classname> objects?</title>
+
+            <para>
+            If I had provided a general member for a context reference in <classname>Cli</classname> objects,
+            it would have been an opaque pointer of type <type>void*</type>, which I definitely dislike.
+            I prefer when objects are accessed through full type accessors, such as singletons, or register databases.
+            Or even better, you could make use of member code generation as described in the <link linkend="xmlres.native" endterm="xmlres.native.title"/> section
+            in order to declare your own context reference, with getters and setters.
+            </para>
+
+        </section>
+
+    <!--</section>-->
+
+    <!--<section id="faq.compile"><title id="faq.compile.title">Compile time troubles</title>-->
+
+        <section id="faq.Q200"><title>I can't compile for a 64 bit architecture!</title>
+
+            <para>
+	    Please note at first that a bug around formatting pointer values has been fixed in version 2.8 in <filename>io_device.cpp</filename>.
+	    </para>
+
+            <para>
+            Then, it seems there may be troubles around Java.
+	    Here is what Pete Geremia emailed to me after he managed to make it work on a 64 bit architecture (thank you Pete):
+                <blockquote>I basically added -m32 to c++ compile lines.
+                            There is also a requirement to point JAVA_HOME to a 32bit version of Java that is installed on a 64bit box.  (in file cli/java/build/make/_vars.mak)<sbr/>
+                            I also fixed some bugs where "jar" was called w/o $JAVA_HOME/bin/ in front of it.
+                            This actually caused me a problem because OpenJDK was installed on the box and jar was being used from that distribution.</blockquote>
+            </para>
+
+            <para>
+            Now, if you, guys, have some more info, please let me know.
+            </para>
+
+        </section>
+
+        <section id="faq.Q300"><title>I can't compile due to the <varname>DELETE</varname> symbol with VC++!</title>
+
+            <para>
+            Has far as CLI symbols are all scoped in a <package>cli</package> namespace, I have not specified them with redundant prefixes.
+            To my point of view, this is a smart way of organizing C++ code.
+            Therefore, the <varname>DELETE</varname> symbol is defined as an enum value in the scope of the <package>cli</package> namespace.
+            </para>
+
+            <para>
+            The compilation error with Visual C++ comes with an abusive VC++ <varname>DELETE</varname> define directive in Windows headers.
+            This define is useless in CLI sources, therefore I advise to use a <filename>cli/pch.h</filename> file
+            as described in the <link linkend="adv.pch" endterm="adv.pch.title"/> section,
+            and undefine the <varname>DELETE</varname> symbol in it, after Windows inclusions:
+                <programlisting>#undef DELETE</programlisting>
+            </para>
+
+        </section>
+
+        <section id="faq.Q350"><title>I get a 'curses.h : No such file or directory' while compiling <filename>ncurses_console.cpp</filename>!</title>
+
+            <para>
+            First check you have installed the ncurses devel tools as described in section <link linkend="prerequisite" endterm="prerequisite.title"/>.
+            </para>
+
+            <para>
+            If you have already installed the ncurses devel tools, and still have the error,
+            check whether your <filename>curses.h</filename> header is located in your regular system include path (<filename class="directory">/usr/include</filename> in general).
+            You may notice that it is not exactly in this directory but maybe in a subdirectory.
+            I recently faced this problem with my latest Cygwin install.
+            You'd then set (or extend) your <varname>CPLUS_INCLUDE_PATH</varname> environment variable to the required directory,
+            as below for example:
+            <programlisting>export CPLUS_INCLUDE_PATH=/usr/include/ncurses</programlisting>
+            Then try to rebuild.
+            </para>
+
+        </section>
+
+        <section id="faq.Q400"><title>CLI auto-generated source files cause thousands of compilation warnings!</title>
+
+            <para>
+            Indeed, C++ CLI auto-generated source files contain lots of labels and gotos.
+            Not all of the labels defined are used with goto statements, which causes all those warnings with most of compilers.
+            </para>
+
+            <para>
+            You may have noticed the use of the <command>g++</command> <option>-Wno-unused-label</option> option in the <link linkend="integ.cpp" endterm="integ.cpp.title"/> section.
+            This option can be set specifically for the compilation of CLI generated source file, in order to avoid all those warnings.
+            </para>
+
+            <para>
+            With VC++, you shall use the following pragma instruction:
+                <programlisting>#pragma warning(disable:4102)</programlisting>
+            either by putting it in a <filename>cli/pch.h</filename> as described in the <link linkend="adv.pch" endterm="adv.pch.title"/> section,
+            or by using generated code sections as described in the <link linkend="xmlres.native" endterm="xmlres.native.title"/> section.
+            </para>
+
+        </section>
+
+    <!--</section>-->
+
+    <!--<section id="faq.run"><title id="faq.run.title">Run time troubles</title>-->
+
+        <section id="faq.Q600"><title>I am coming across problems while trying to print onto the CLI console: unwanted indenting, interleaved text...</title>
+
+            <para>
+            The problem must be because you are using standard outputs (<function>printf</function>, <varname>std::cout</varname>...),
+            while the cli is ran with a <classname>cli::Console</classname> device which relies on the ncurses library on Linux platforms.
+            Mixing standard and ncurses outputs does not behave correctly.
+            </para>
+
+            <para>
+            Indeed, you should always use the output and error devices used by your <classname>Cli</classname> (and <classname>Shell</classname>),
+            even in your user code.
+            Here is a way of doing it:
+<programlisting>
+&lt;keyword string="bye"&gt;&lt;help lang="en"&gt;Say goodbye.&lt;/help&gt;
+ &lt;endl&gt;&lt;cpp&gt;sayBye(&lt;out/&gt;);&lt;/cpp&gt;&lt;/endl&gt;
+&lt;/keyword&gt;
+</programlisting>
+            Notice the use of <sgmltag class="element">out</sgmltag> that references the cli/shell output device.
+            Could also be <sgmltag class="element">err</sgmltag> for the error device.
+            See <link linkend="eg.output" endterm="eg.output.title"/> example.
+            </para>
+
+            <para>
+            Then:
+<programlisting>
+void sayBye(const cli::OutputDevice&amp; CLI_Out)
+{
+    CLI_Out &lt;&lt; "Bye" &lt;&lt; cli::endl;
+    CLI_Out &lt;&lt; "Bye Again" &lt;&lt; cli::endl;
+}
+</programlisting>
+            Notice the use of <varname>CLI_Out</varname> instead of <varname>std::cout</varname>, and the use of <varname>cli::endl</varname> instead of <varname>std::endl</varname>.
+            </para>
+
+            <para>
+            By the way, if you ever wish to change that device later on (for telnet input/output for instance, or a serial port...),
+            you would just have to change the kind of device given to the <classname>Shell</classname> instance for running.
+            Here is a sample with file devices:
+<programlisting>
+void runShellWithFiles()
+{
+    MyCli cli_MyCli;
+    cli::Shell cli_Shell(cli_MyCli);
+    cli::OutputFileDevice cli_OutFile("output.log", false);
+    cli::InputFileDevice cli_InFile("input.cli", cli_OutFile, false);
+    cli_Shell.Run(cli_InFile);
+}
+</programlisting>
+            </para>
+
+        </section>
+
+        <section id="faq.Q650"><title>The <link linkend="eg.java.init" endterm="eg.java.init.title"/> sample gets stuck when executed under cygwin!</title>
+
+            <para>
+            The Java implementation relies on a native dynamic library
+            which device console is based on <filename>win_console.cpp</filename> under cygwin.
+            This choice makes your Java programs work without a dependency on <filename>cygwin1.dll</filename>,
+            which is convenient for applications running in a <application>Windows</application> environment.
+            </para>
+
+            <para>
+            Latest Cygwin distributions propose the <application>mintty</application> console,
+            which works correctly with <filename>ncurses_console.cpp</filename>
+            but unfortunatley not with <filename>win_console.cpp</filename> implementation.
+            By the way, if you run the given <command>java</command> command line in a regular <application>cmd.exe</application> console,
+            it works as expected.
+                <tip>
+                Make sure you execute the Java program with a <command>java</command> version compatible with the one of the <command>javac</command> you used to compile,
+                otherwise you may get "Unsupported major.minor version" errors.
+                </tip>
+            </para>
+
+            <para>
+            If you want to compile Java programs under cygwin and execute them in the same console as well (devel configuration for example),
+            you may launch a <application>cmd.exe</application> console and run the <filename>Cygwin.bat</filename> script provided in your cygwin install directory.
+            </para>
+
+        </section>
+
+        <section id="faq.Q700"><title>My Console device does not behave nicely!</title>
+
+            <para>
+            I had once noticed strange behaviours with my WinConsole device, through Java execution under cygwin:
+            <itemizedlist>
+            <listitem>could not ensure the visibility of the cursor when moving it left or right,</listitem>
+            <listitem>could not get the Windows optimized clean screen feature running, but had many blank lines printed out instead,</listitem>
+            <listitem>...</listitem>
+            </itemizedlist>
+            I then figured out that it was because I was executing the CLI within the context of a Makefile, launched through <command>colormake</command>,
+            which uses output redirection.
+            When using <command>make</command> directly, no problem anymore.
+            </para>
+
+            <para>
+            As a matter of fact, if you face non optimal behaviours with <classname>Console</classname> devices, please make sure no output redirection is used,
+            otherwise console primitives will operate on the pipe and not the console anymore.
+            </para>
+
+        </section>
+
+    <!--</section>-->
+
+    <!--<section id="faq.devel"><title id="faq.devel.title">Developpers</title>-->
+
+        <section id="faq.Q500"><title>Why ain't there regular VC++ memory leak macros in CLI source files?</title>
+
+            <para>
+            The CLI library does not intend to be VC++ specific code, nor Eclipse specific, nor CodeWarrior...
+            I do not intend neither to "pollute" the CLI sources with various compiler specific macros.
+            That's the reason why regular VC++ memory leak macros are not set in the CLI sources, even guarded by pre-compilation switches.
+            </para>
+
+            <para>
+            Nevertheless, I've tried to deal with memory leaks so far.
+            A special thank to Oleg Smolsky's contribution at this point, for another one detected and fixed.
+            Now if you figure out that leaks still remain, up to you to set your macros in the CLI sources for investigations,
+            depending on the tool you use: VC++, valgrind...
+            I'll be glad to integrate your fixes if you have any.
+            </para>
+
+        </section>
+
+    <!--</section>-->
+
+</section>

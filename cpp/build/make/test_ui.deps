@@ -1,0 +1,153 @@
+$(INT_DIR)/ui_test.o: ../../../cpp/tests/ui/ui_test.cpp \
+  ../../../cpp/include/cli/pch.h ../../../cpp/include/cli/traces.h \
+  ../../../cpp/include/cli/namespace.h ../../../cpp/include/cli/object.h \
+  ../../../cpp/include/cli/help.h \
+  ../../../cpp/include/cli/resource_string.h \
+  ../../../cpp/include/cli/tk.h ../../../cpp/include/cli/tk_stl.h \
+  ../../../cpp/include/cli/io_device.h ../../../cpp/include/cli/debug.h
+$(INT_DIR)/ui_test_choice.o: ../../../cpp/tests/ui/ui_test_choice.cpp \
+  ../../../cpp/include/cli/pch.h ../../../cpp/include/cli/ui_choice.h \
+  ../../../cpp/include/cli/ui_line.h ../../../cpp/include/cli/ui.h \
+  ../../../cpp/include/cli/namespace.h ../../../cpp/include/cli/tk.h \
+  ../../../cpp/include/cli/tk_stl.h ../../../cpp/include/cli/object.h \
+  ../../../cpp/include/cli/exec_context.h \
+  ../../../cpp/include/cli/io_device.h ../../../cpp/include/cli/debug.h \
+  ../../../cpp/include/cli/resource_string.h \
+  ../../../cpp/tests/include/test_error.h \
+  ../../../cpp/include/cli/debug.h ../../../cpp/include/cli/io_device.h \
+  ../../../cpp/tests/include/test_no_warning.h \
+  ../../../cpp/tests/include/test_device.h \
+  ../../../cpp/include/cli/assert.h \
+  ../../../cpp/include/cli/non_blocking_io_device.h \
+  ../../../cpp/tests/include/test_error.h \
+  ../../../cpp/tests/include/test_exec.h \
+  ../../../cpp/include/cli/ui_more.h \
+  ../../../cpp/tests/include/test_device.h
+$(INT_DIR)/ui_test_float.o: ../../../cpp/tests/ui/ui_test_float.cpp \
+  ../../../cpp/include/cli/pch.h ../../../cpp/include/cli/ui_float.h \
+  ../../../cpp/include/cli/ui_line.h ../../../cpp/include/cli/ui.h \
+  ../../../cpp/include/cli/namespace.h ../../../cpp/include/cli/tk.h \
+  ../../../cpp/include/cli/tk_stl.h ../../../cpp/include/cli/object.h \
+  ../../../cpp/include/cli/exec_context.h \
+  ../../../cpp/include/cli/io_device.h ../../../cpp/include/cli/debug.h \
+  ../../../cpp/include/cli/resource_string.h \
+  ../../../cpp/tests/include/test_error.h \
+  ../../../cpp/include/cli/debug.h ../../../cpp/include/cli/io_device.h \
+  ../../../cpp/tests/include/test_no_warning.h \
+  ../../../cpp/tests/include/test_device.h \
+  ../../../cpp/include/cli/assert.h \
+  ../../../cpp/include/cli/non_blocking_io_device.h \
+  ../../../cpp/tests/include/test_error.h \
+  ../../../cpp/tests/include/test_exec.h \
+  ../../../cpp/include/cli/ui_more.h \
+  ../../../cpp/tests/include/test_device.h
+$(INT_DIR)/ui_test_int.o: ../../../cpp/tests/ui/ui_test_int.cpp \
+  ../../../cpp/include/cli/pch.h ../../../cpp/include/cli/ui_int.h \
+  ../../../cpp/include/cli/ui_line.h ../../../cpp/include/cli/ui.h \
+  ../../../cpp/include/cli/namespace.h ../../../cpp/include/cli/tk.h \
+  ../../../cpp/include/cli/tk_stl.h ../../../cpp/include/cli/object.h \
+  ../../../cpp/include/cli/exec_context.h \
+  ../../../cpp/include/cli/io_device.h ../../../cpp/include/cli/debug.h \
+  ../../../cpp/include/cli/resource_string.h \
+  ../../../cpp/tests/include/test_error.h \
+  ../../../cpp/include/cli/debug.h ../../../cpp/include/cli/io_device.h \
+  ../../../cpp/tests/include/test_no_warning.h \
+  ../../../cpp/tests/include/test_device.h \
+  ../../../cpp/include/cli/assert.h \
+  ../../../cpp/include/cli/non_blocking_io_device.h \
+  ../../../cpp/tests/include/test_error.h \
+  ../../../cpp/tests/include/test_exec.h \
+  ../../../cpp/include/cli/ui_more.h \
+  ../../../cpp/tests/include/test_device.h
+$(INT_DIR)/ui_test_less.o: ../../../cpp/tests/ui/ui_test_less.cpp \
+  ../../../cpp/include/cli/pch.h ../../../cpp/include/cli/string_device.h \
+  ../../../cpp/include/cli/tk.h ../../../cpp/include/cli/namespace.h \
+  ../../../cpp/include/cli/tk_stl.h ../../../cpp/include/cli/object.h \
+  ../../../cpp/include/cli/io_device.h ../../../cpp/include/cli/debug.h \
+  ../../../cpp/include/cli/resource_string.h \
+  ../../../cpp/include/cli/ui_less.h ../../../cpp/include/cli/ui.h \
+  ../../../cpp/include/cli/exec_context.h \
+  ../../../cpp/tests/include/test_error.h \
+  ../../../cpp/include/cli/debug.h ../../../cpp/include/cli/io_device.h \
+  ../../../cpp/tests/include/test_no_warning.h \
+  ../../../cpp/tests/include/test_device.h \
+  ../../../cpp/include/cli/assert.h \
+  ../../../cpp/include/cli/non_blocking_io_device.h \
+  ../../../cpp/tests/include/test_error.h \
+  ../../../cpp/tests/include/test_exec.h \
+  ../../../cpp/include/cli/ui_more.h \
+  ../../../cpp/tests/include/test_device.h
+$(INT_DIR)/ui_test_line.o: ../../../cpp/tests/ui/ui_test_line.cpp \
+  ../../../cpp/include/cli/pch.h ../../../cpp/include/cli/ui_line.h \
+  ../../../cpp/include/cli/ui.h ../../../cpp/include/cli/namespace.h \
+  ../../../cpp/include/cli/tk.h ../../../cpp/include/cli/tk_stl.h \
+  ../../../cpp/include/cli/object.h \
+  ../../../cpp/include/cli/exec_context.h \
+  ../../../cpp/include/cli/io_device.h ../../../cpp/include/cli/debug.h \
+  ../../../cpp/include/cli/resource_string.h \
+  ../../../cpp/tests/include/test_error.h \
+  ../../../cpp/include/cli/debug.h ../../../cpp/include/cli/io_device.h \
+  ../../../cpp/tests/include/test_no_warning.h \
+  ../../../cpp/tests/include/test_device.h \
+  ../../../cpp/include/cli/assert.h \
+  ../../../cpp/include/cli/non_blocking_io_device.h \
+  ../../../cpp/tests/include/test_error.h \
+  ../../../cpp/tests/include/test_exec.h \
+  ../../../cpp/include/cli/ui_more.h \
+  ../../../cpp/tests/include/test_device.h
+$(INT_DIR)/ui_test_more.o: ../../../cpp/tests/ui/ui_test_more.cpp \
+  ../../../cpp/include/cli/pch.h ../../../cpp/include/cli/string_device.h \
+  ../../../cpp/include/cli/tk.h ../../../cpp/include/cli/namespace.h \
+  ../../../cpp/include/cli/tk_stl.h ../../../cpp/include/cli/object.h \
+  ../../../cpp/include/cli/io_device.h ../../../cpp/include/cli/debug.h \
+  ../../../cpp/include/cli/resource_string.h \
+  ../../../cpp/include/cli/ui_more.h ../../../cpp/include/cli/ui.h \
+  ../../../cpp/include/cli/exec_context.h \
+  ../../../cpp/tests/include/test_error.h \
+  ../../../cpp/include/cli/debug.h ../../../cpp/include/cli/io_device.h \
+  ../../../cpp/tests/include/test_no_warning.h \
+  ../../../cpp/tests/include/test_device.h \
+  ../../../cpp/include/cli/assert.h \
+  ../../../cpp/include/cli/non_blocking_io_device.h \
+  ../../../cpp/tests/include/test_error.h \
+  ../../../cpp/tests/include/test_exec.h \
+  ../../../cpp/include/cli/ui_more.h \
+  ../../../cpp/tests/include/test_device.h
+$(INT_DIR)/ui_test_password.o:  \
+ ../../../cpp/tests/ui/ui_test_password.cpp \
+  ../../../cpp/include/cli/pch.h ../../../cpp/include/cli/ui_password.h \
+  ../../../cpp/include/cli/ui.h ../../../cpp/include/cli/namespace.h \
+  ../../../cpp/include/cli/tk.h ../../../cpp/include/cli/tk_stl.h \
+  ../../../cpp/include/cli/object.h \
+  ../../../cpp/include/cli/exec_context.h \
+  ../../../cpp/include/cli/io_device.h ../../../cpp/include/cli/debug.h \
+  ../../../cpp/include/cli/resource_string.h \
+  ../../../cpp/tests/include/test_error.h \
+  ../../../cpp/include/cli/debug.h ../../../cpp/include/cli/io_device.h \
+  ../../../cpp/tests/include/test_no_warning.h \
+  ../../../cpp/tests/include/test_device.h \
+  ../../../cpp/include/cli/assert.h \
+  ../../../cpp/include/cli/non_blocking_io_device.h \
+  ../../../cpp/tests/include/test_error.h \
+  ../../../cpp/tests/include/test_exec.h \
+  ../../../cpp/include/cli/ui_more.h \
+  ../../../cpp/tests/include/test_device.h
+$(INT_DIR)/ui_test_yesno.o: ../../../cpp/tests/ui/ui_test_yesno.cpp \
+  ../../../cpp/include/cli/pch.h ../../../cpp/include/cli/ui_yesno.h \
+  ../../../cpp/include/cli/ui_choice.h ../../../cpp/include/cli/ui_line.h \
+  ../../../cpp/include/cli/ui.h ../../../cpp/include/cli/namespace.h \
+  ../../../cpp/include/cli/tk.h ../../../cpp/include/cli/tk_stl.h \
+  ../../../cpp/include/cli/object.h \
+  ../../../cpp/include/cli/exec_context.h \
+  ../../../cpp/include/cli/io_device.h ../../../cpp/include/cli/debug.h \
+  ../../../cpp/include/cli/resource_string.h \
+  ../../../cpp/tests/include/test_error.h \
+  ../../../cpp/include/cli/debug.h ../../../cpp/include/cli/io_device.h \
+  ../../../cpp/tests/include/test_no_warning.h \
+  ../../../cpp/tests/include/test_device.h \
+  ../../../cpp/include/cli/assert.h \
+  ../../../cpp/include/cli/non_blocking_io_device.h \
+  ../../../cpp/tests/include/test_error.h \
+  ../../../cpp/tests/include/test_exec.h \
+  ../../../cpp/include/cli/ui_more.h \
+  ../../../cpp/tests/include/test_device.h

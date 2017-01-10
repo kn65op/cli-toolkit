@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!--
+    Copyright (c) 2006-2013, Alexis Royer, http://alexis.royer.free.fr/CLI
+
+    All rights reserved.
+
+    Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+        * Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+        * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation
+          and/or other materials provided with the distribution.
+        * Neither the name of the CLI library project nor the names of its contributors may be used to endorse or promote products derived from this software
+          without specific prior written permission.
+
+    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+    "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+    LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+    A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+    CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+    EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+    PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+    PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+    LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+    NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+
+<!DOCTYPE article [
+    <!ENTITY history    SYSTEM "history.xml">
+    <!ENTITY intro      SYSTEM "intro.xml">
+    <!ENTITY install    SYSTEM "install.xml">
+    <!ENTITY quickuse   SYSTEM "quickuse.xml">
+    <!ENTITY xmlres     SYSTEM "xmlres.xml">
+    <!ENTITY ui         SYSTEM "ui.xml">
+    <!ENTITY advanced   SYSTEM "advanced.xml">
+    <!ENTITY faq        SYSTEM "faq.xml">
+    <!ENTITY conclusion SYSTEM "conclusion.xml">
+
+    <!ENTITY sample-empty               SYSTEM "samples/empty.db">
+    <!ENTITY sample-empty-cpp           SYSTEM "samples/empty-cpp.db">
+    <!ENTITY sample-hello               SYSTEM "samples/hello.db">
+    <!ENTITY sample-hello-shout         SYSTEM "samples/hello-shout.db">
+    <!ENTITY sample-hello-bye-shout     SYSTEM "samples/hello-bye-shout.db">
+    <!ENTITY sample-help                SYSTEM "samples/help.db">
+    <!ENTITY sample-cpp                 SYSTEM "samples/cpp.db">
+    <!ENTITY sample-cpp-full            SYSTEM "samples/cpp-full.db">
+    <!ENTITY sample-output              SYSTEM "samples/output.db">
+    <!ENTITY sample-param               SYSTEM "samples/param.db">
+    <!ENTITY sample-tag-a-star          SYSTEM "samples/tag-a-star.db">
+    <!ENTITY sample-tag-a-plus          SYSTEM "samples/tag-a-plus.db">
+    <!ENTITY sample-tag-ab-star         SYSTEM "samples/tag-ab-star.db">
+    <!ENTITY sample-tag-ab-plus         SYSTEM "samples/tag-ab-plus.db">
+    <!ENTITY sample-tag-a-b-star        SYSTEM "samples/tag-a-b-star.db">
+    <!ENTITY sample-tag-a-b-plus        SYSTEM "samples/tag-a-b-plus.db">
+    <!ENTITY sample-tag-a-b1-b2-c       SYSTEM "samples/tag-a-b1-b2-c.db">
+    <!ENTITY sample-tag-a-b1-b2-nil-c   SYSTEM "samples/tag-a-b1-b2-nil-c.db">
+    <!ENTITY sample-circle-cpp          SYSTEM "samples/circle-cpp.db">
+    <!ENTITY sample-circle-java         SYSTEM "samples/circle-java.db">
+    <!ENTITY sample-circle-pos-cli      SYSTEM "samples/circle-pos.db">
+    <!ENTITY sample-circle-color-cli    SYSTEM "samples/circle-color.db">
+    <!ENTITY sample-menu-config         SYSTEM "samples/menu-config.db">
+    <!ENTITY sample-menu-handler        SYSTEM "samples/menu-handler.db">
+    <!ENTITY sample-menu-cpp            SYSTEM "samples/menu-cpp.db">
+    <!ENTITY sample-ui-line             SYSTEM "samples/ui-line.db">
+    <!ENTITY sample-ui-password         SYSTEM "samples/ui-password.db">
+    <!ENTITY sample-ui-int              SYSTEM "samples/ui-int.db">
+    <!ENTITY sample-ui-float            SYSTEM "samples/ui-float.db">
+    <!ENTITY sample-ui-yesno            SYSTEM "samples/ui-yesno.db">
+    <!ENTITY sample-ui-choice           SYSTEM "samples/ui-choice.db">
+    <!ENTITY sample-ui-text-cpp         SYSTEM "samples/ui-text-cpp.db">
+    <!ENTITY sample-ui-text-java        SYSTEM "samples/ui-text-java.db">
+    <!ENTITY sample-ui-more             SYSTEM "samples/ui-more.db">
+    <!ENTITY sample-ui-less             SYSTEM "samples/ui-less.db">
+    <!ENTITY misc-pwd-shell-cpp         SYSTEM "misc/pwd_shell.h">
+    <!ENTITY misc-pwd-shell-java        SYSTEM "misc/PwdShellContext.java">
+]>
+
+<article xmlns="http://docbook.org/docbook-ng">
+<title>CLI toolkit user guide</title>
+
+<artheader>
+    <author><firstname>Royer</firstname><surname>Alexis</surname></author>
+    <issuenum>2.7</issuenum>
+    <pubdate>Jul, 15th 2013</pubdate>
+    <title>CLI library user guide</title>
+    <!--<titleabbrev></titleabbrev>-->
+    &history;
+</artheader>
+
+    &intro;
+    &install;
+    &quickuse;
+    &xmlres;
+    &ui;
+    &advanced;
+    &faq;
+    &conclusion;
+
+</article>

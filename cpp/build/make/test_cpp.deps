@@ -1,0 +1,23 @@
+$(INT_DIR)/cli_test.o: ../../../cpp/tests/cpp/cli_test.cpp \
+  ../../../cpp/include/cli/pch.h ../../../cpp/include/cli/cli.h \
+  ../../../cpp/include/cli/namespace.h ../../../cpp/include/cli/menu.h \
+  ../../../cpp/include/cli/syntax_node.h \
+  ../../../cpp/include/cli/element.h ../../../cpp/include/cli/object.h \
+  ../../../cpp/include/cli/help.h \
+  ../../../cpp/include/cli/resource_string.h \
+  ../../../cpp/include/cli/tk.h ../../../cpp/include/cli/tk_stl.h \
+  ../../../cpp/include/cli/menu.h ../../../cpp/include/cli/keyword.h \
+  ../../../cpp/include/cli/param_int.h ../../../cpp/include/cli/param.h \
+  ../../../cpp/include/cli/endl.h ../../../cpp/include/cli/syntax_tag.h \
+  ../../../cpp/include/cli/shell.h \
+  ../../../cpp/include/cli/exec_context.h \
+  ../../../cpp/include/cli/io_device.h ../../../cpp/include/cli/debug.h \
+  ../../../cpp/tests/include/test_args.h \
+  ../../../cpp/include/cli/io_device.h ../../../cpp/include/cli/console.h \
+  ../../../cpp/include/cli/telnet.h \
+  ../../../cpp/include/cli/non_blocking_io_device.h \
+  ../../../cpp/include/cli/file_device.h ../../../cpp/include/cli/shell.h \
+  ../../../cpp/tests/include/test_cli.h ../../../cpp/include/cli/assert.h \
+  ../../../cpp/include/cli/cli.h ../../../cpp/tests/include/test_error.h \
+  ../../../cpp/include/cli/debug.h \
+  ../../../cpp/tests/include/test_no_warning.h

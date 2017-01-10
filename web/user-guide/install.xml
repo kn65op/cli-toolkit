@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!--
+    Copyright (c) 2006-2013, Alexis Royer, http://alexis.royer.free.fr/CLI
+
+    All rights reserved.
+
+    Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+        * Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+        * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation
+          and/or other materials provided with the distribution.
+        * Neither the name of the CLI library project nor the names of its contributors may be used to endorse or promote products derived from this software
+          without specific prior written permission.
+
+    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+    "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+    LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+    A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+    CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+    EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+    PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+    PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+    LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+    NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+
+<section id="install"><title id="install.title">Installation</title>
+
+    <section id="download"><title id="download.title">Download</title>
+
+        <para>
+        The CLI library can be downloaded from
+        <ulink url="http://alexis.royer.free.fr/CLI/index.html#download">here</ulink>
+        in the form of gzipped archives.
+        </para>
+
+    </section>
+
+    <section id="prerequisite"><title id="prerequisite.title">Prerequisite</title>
+
+        <para>
+        Regular Linux installs usually have everything needed to have the CLI library compile.
+        If you compile on Windows, you may install cygwin.
+        </para>
+
+        <para>
+        Here is a list of required utilities:
+        <itemizedlist>
+        <listitem>make</listitem>
+        <listitem>xsltproc</listitem>
+        <listitem>dos2unix and unix2dos</listitem>
+        <listitem>g++</listitem>
+        <listitem>ncurses devel (Linux only)</listitem>
+        </itemizedlist>
+        Plus, for Java users:
+        <itemizedlist>
+        <listitem>JDK (optional)</listitem>
+        </itemizedlist>
+        </para>
+
+        <para>
+        Plus, optionally, for unit tests (<command>make check</command>):
+        <itemizedlist>
+        <listitem>xmllint (optional)</listitem>
+        <listitem>gawk (optional)</listitem>
+        <listitem>python and pylint (optional)</listitem>
+        </itemizedlist>
+        or documentation generation (<command>make doc</command>):
+        <itemizedlist>
+        <listitem>doxygen (optional)</listitem>
+        <listitem>docbook_xsl (optional)</listitem>
+        </itemizedlist>
+        </para>
+
+    </section>
+
+    <section id="build"><title id="build.title">Build</title>
+
+        <para>
+        Once you have downloaded the archive, unpack it on your disk:
+        <programlisting>tar xvfz cli-X.Y.tgz</programlisting>
+        and declare a <varname>CLI_DIR</varname> environment variable that points to directory just extracted:
+        <programlisting>export CLI_DIR=$(pwd)/cli-X.Y</programlisting>
+        </para>
+
+        <para>
+        Optionally, set the <varname>JAVA_HOME</varname> environment variable:
+            <programlisting>export JAVA_HOME="$(dirname "$(dirname "$(which javac)")")"</programlisting>
+        </para>
+
+        <para>
+        Go to <filename class="directory">build/make</filename>:
+            <programlisting>cd ${CLI_DIR}/build/make</programlisting>
+        and build:
+            <programlisting>make</programlisting>
+        or (debug version):
+            <programlisting>make _DEBUG=</programlisting>
+        This compilation will run over C++ and Java (depending on <varname>JAVA_HOME</varname> value) library compilations.
+        </para>
+            <note>
+            You may also execute the library unit tests with the following command:
+                <programlisting>make check</programlisting>
+            or:
+                <programlisting>make _DEBUG= check</programlisting>
+            </note>
+
+        <para>
+        Output libraries go in the following directories:
+        <itemizedlist>
+        <listitem>C++:<itemizedlist>
+            <listitem>directory: <filename class="directory">${CLI_DIR}/cpp/build/make/${TARGET}${CXX}/${RDX}</filename>,</listitem>
+            <listitem>file: <filename>${STATIC_LIB_PREFIX}clicpp${STATIC_LIB_SUFFIX}</filename>,</listitem>
+            </itemizedlist></listitem>
+        <listitem>Java:<itemizedlist>
+            <listitem>directory: <filename class="directory">${CLI_DIR}/java/build/make/${RDX}</filename>,</listitem>
+            <listitem>files: <filename>cli.jar</filename> and <filename>${DYN_LIB_PREFIX}cli${DYN_LIB_SUFFIX}</filename>,</listitem>
+            </itemizedlist></listitem>
+        </itemizedlist>
+        with:
+        <variablelist>
+        <varlistentry><term><varname>RDX</varname></term><listitem>'Release' or 'Debug',</listitem></varlistentry>
+        <varlistentry><term><varname>TARGET</varname></term><listitem>OS the library has been compiled for (eg. 'Linux', 'Cygwin'),</listitem></varlistentry>
+        <varlistentry><term><varname>CXX</varname></term><listitem>Name of the compiler (eg. 'g++').</listitem></varlistentry>
+        <varlistentry><term><varname>STATIC_LIB_PREFIX</varname></term><listitem>Dynamic library prefix for the given OS (eg. 'lib' or nothing).</listitem></varlistentry>
+        <varlistentry><term><varname>STATIC_LIB_SUFFIX</varname></term><listitem>Dynamic library extension (eg. '.lib', '.a').</listitem></varlistentry>
+        <varlistentry><term><varname>DYN_LIB_PREFIX</varname></term><listitem>Dynamic library prefix (eg. 'lib' or nothing).</listitem></varlistentry>
+        <varlistentry><term><varname>DYN_LIB_SUFFIX</varname></term><listitem>Dynamic library extension (eg. '.dll', '.so').</listitem></varlistentry>
+        </variablelist>
+        </para>
+
+    </section>
+
+</section>
+

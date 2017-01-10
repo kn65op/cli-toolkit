@@ -1,0 +1,12 @@
+<map id="G" name="G">
+<area shape="rect" id="node7" href="$classLess.html" title="Simple line user interface object." alt="" coords="19,237,69,267"/>
+<area shape="rect" id="node9" href="$classLine.html" title="Simple line user interface object." alt="" coords="93,237,139,267"/>
+<area shape="rect" id="node19" href="$classMore.html" title="Simple line user interface object." alt="" coords="163,237,213,267"/>
+<area shape="rect" id="node21" href="$classPassword.html" title="Password user interface object." alt="" coords="237,237,315,267"/>
+<area shape="rect" id="node2" href="$classExecutionContext.html" title="Execution context." alt="" coords="89,83,215,112"/>
+<area shape="rect" id="node4" href="$classObject.html" title="Generic object." alt="" coords="123,5,181,35"/>
+<area shape="rect" id="node11" href="$classChoice.html" title="Choice user interface class." alt="" coords="5,315,67,344"/>
+<area shape="rect" id="node15" href="$classFloat.html" title="Float user interface class." alt="" coords="91,315,141,344"/>
+<area shape="rect" id="node17" href="$classInt.html" title="Integer user interface object." alt="" coords="165,315,203,344"/>
+<area shape="rect" id="node13" href="$classYesNo.html" title="Yes/No question user interface object." alt="" coords="5,392,67,421"/>
+</map>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!--
+    Copyright (c) 2006-2013, Alexis Royer, http://alexis.royer.free.fr/CLI
+
+    All rights reserved.
+
+    Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+        * Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+        * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation
+          and/or other materials provided with the distribution.
+        * Neither the name of the CLI library project nor the names of its contributors may be used to endorse or promote products derived from this software
+          without specific prior written permission.
+
+    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+    "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+    LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+    A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+    CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+    EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+    PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+    PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+    LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+    NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+
+<!-- This sample aims to check:
+        - systematic cli2xxx identifiers generations -->
+
+<cli name="xsl" xmlns="http://alexis.royer.free.fr/CLI">
+    <keyword string="a">
+        <keyword string="aa">
+            <endl>
+            </endl>
+        </keyword>
+        <keyword string="ab">
+            <endl>
+            </endl>
+        </keyword>
+    </keyword>
+    <keyword string="b">
+        <keyword string="ba">
+            <endl>
+            </endl>
+        </keyword>
+        <keyword string="bb">
+            <endl>
+            </endl>
+        </keyword>
+    </keyword>
+    <keyword string="c">
+        <keyword string="ca"><endl/></keyword>
+        <keyword string="cb"><endl/></keyword>
+        <keyword string="cc"><endl/></keyword>
+        <keyword string="cd"><endl/></keyword>
+        <keyword string="ce"><endl/></keyword>
+        <keyword string="cf"><endl/></keyword>
+        <keyword string="cg"><endl/></keyword>
+        <keyword string="ch"><endl/></keyword>
+        <keyword string="ci"><endl/></keyword>
+        <keyword string="cj"><endl/></keyword>
+        <keyword string="ck"><endl/></keyword>
+        <keyword string="cl"><endl/></keyword>
+        <keyword string="cm"><endl/></keyword>
+        <keyword string="cn"><endl/></keyword>
+        <keyword string="co"><endl/></keyword>
+        <keyword string="cp"><endl/></keyword>
+        <keyword string="cq"><endl/></keyword>
+        <keyword string="cr"><endl/></keyword>
+        <keyword string="cs"><endl/></keyword>
+        <keyword string="ct"><endl/></keyword>
+        <keyword string="cu"><endl/></keyword>
+        <keyword string="cv"><endl/></keyword>
+        <keyword string="cw"><endl/></keyword>
+        <keyword string="cx"><endl/></keyword>
+        <keyword string="cy"><endl/></keyword>
+        <keyword string="cz"><endl/></keyword>
+        <keyword string="cA"><endl/></keyword>
+        <keyword string="cB"><endl/></keyword>
+        <keyword string="cC"><endl/></keyword>
+        <keyword string="cD"><endl/></keyword>
+        <keyword string="cE"><endl/></keyword>
+        <keyword string="cF"><endl/></keyword>
+        <keyword string="cG"><endl/></keyword>
+        <keyword string="cH"><endl/></keyword>
+        <keyword string="cI"><endl/></keyword>
+        <keyword string="cJ"><endl/></keyword>
+        <keyword string="cK"><endl/></keyword>
+        <keyword string="cL"><endl/></keyword>
+        <keyword string="cM"><endl/></keyword>
+        <keyword string="cN"><endl/></keyword>
+        <keyword string="cO"><endl/></keyword>
+        <keyword string="cP"><endl/></keyword>
+        <keyword string="cQ"><endl/></keyword>
+        <keyword string="cR"><endl/></keyword>
+        <keyword string="cS"><endl/></keyword>
+        <keyword string="cT"><endl/></keyword>
+        <keyword string="cU"><endl/></keyword>
+        <keyword string="cV"><endl/></keyword>
+        <keyword string="cW"><endl/></keyword>
+        <keyword string="cX"><endl/></keyword>
+        <keyword string="cY"><endl/></keyword>
+        <keyword string="cZ"><endl/></keyword>
+        <keyword string="c0"><endl/></keyword>
+        <keyword string="c1">
+            <keyword string="c1a"><endl/></keyword>
+            <keyword string="c1b"><endl/></keyword>
+            <keyword string="c1c"><endl/></keyword>
+            <keyword string="c1d"><endl/></keyword>
+            <keyword string="c1e"><endl/></keyword>
+            <keyword string="c1f"><endl/></keyword>
+            <keyword string="c1g"><endl/></keyword>
+            <keyword string="c1h"><endl/></keyword>
+            <keyword string="c1i"><endl/></keyword>
+            <keyword string="c1j"><endl/></keyword>
+            <keyword string="c1k"><endl/></keyword>
+            <keyword string="c1l"><endl/></keyword>
+            <keyword string="c1m"><endl/></keyword>
+            <keyword string="c1n"><endl/></keyword>
+            <keyword string="c1o"><endl/></keyword>
+            <keyword string="c1p"><endl/></keyword>
+            <keyword string="c1q"><endl/></keyword>
+            <keyword string="c1r"><endl/></keyword>
+            <keyword string="c1s"><endl/></keyword>
+            <keyword string="c1t"><endl/></keyword>
+            <keyword string="c1u"><endl/></keyword>
+            <keyword string="c1v"><endl/></keyword>
+            <keyword string="c1w"><endl/></keyword>
+            <keyword string="c1x"><endl/></keyword>
+            <keyword string="c1y"><endl/></keyword>
+            <keyword string="c1z"><endl/></keyword>
+            <keyword string="c1A"><endl/></keyword>
+            <keyword string="c1B"><endl/></keyword>
+            <keyword string="c1C"><endl/></keyword>
+            <keyword string="c1D"><endl/></keyword>
+            <keyword string="c1E"><endl/></keyword>
+            <keyword string="c1F"><endl/></keyword>
+            <keyword string="c1G"><endl/></keyword>
+            <keyword string="c1H"><endl/></keyword>
+            <keyword string="c1I"><endl/></keyword>
+            <keyword string="c1J"><endl/></keyword>
+            <keyword string="c1K"><endl/></keyword>
+            <keyword string="c1L"><endl/></keyword>
+            <keyword string="c1M"><endl/></keyword>
+            <keyword string="c1N"><endl/></keyword>
+            <keyword string="c1O"><endl/></keyword>
+            <keyword string="c1P"><endl/></keyword>
+            <keyword string="c1Q"><endl/></keyword>
+            <keyword string="c1R"><endl/></keyword>
+            <keyword string="c1S"><endl/></keyword>
+            <keyword string="c1T"><endl/></keyword>
+            <keyword string="c1U"><endl/></keyword>
+            <keyword string="c1V"><endl/></keyword>
+            <keyword string="c1W"><endl/></keyword>
+            <keyword string="c1X"><endl/></keyword>
+            <keyword string="c1Y"><endl/></keyword>
+            <keyword string="c1Z"><endl/></keyword>
+            <keyword string="c1_0"><endl/></keyword>
+            <keyword string="c1_1"><endl/></keyword>
+        </keyword>
+        <keyword string="c2"><endl/></keyword>
+    </keyword>
+</cli>

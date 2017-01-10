@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" id="node9" href="$classChoice.html" title="Choice user interface class." alt="" coords="5,315,67,344"/>
+<area shape="rect" id="node13" href="$classFloat.html" title="Float user interface class." alt="" coords="91,315,141,344"/>
+<area shape="rect" id="node15" href="$classInt.html" title="Integer user interface object." alt="" coords="165,315,203,344"/>
+<area shape="rect" id="node2" href="$classUI.html" title="Generic user interface class." alt="" coords="97,160,135,189"/>
+<area shape="rect" id="node4" href="$classExecutionContext.html" title="Execution context." alt="" coords="53,83,179,112"/>
+<area shape="rect" id="node6" href="$classObject.html" title="Generic object." alt="" coords="87,5,145,35"/>
+<area shape="rect" id="node11" href="$classYesNo.html" title="Yes/No question user interface object." alt="" coords="5,392,67,421"/>
+</map>

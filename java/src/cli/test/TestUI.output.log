@@ -1,0 +1,44 @@
+Please enter a line: Hello
+User entered: Hello
+
+Please enter a password: ******
+User entered: abcdef
+
+Please enter an integer number: 3
+User entered: 3
+
+Please enter a float number: 0.3
+User entered: 0.3
+
+Answer [YES/no]: No
+User entered: false/No
+Répondez [OUI/non] : Oui
+User entered: true/Oui
+
+Please make a choice: choice#2
+User entered: 1/choice#2
+Merci de faire un choix : choix 1
+User entered: 0/choix 1
+
+1: *
+2: **
+3: ***
+4: ****
+5: *****
+6: ******
+7: *******
+8: *******
+*
+
+%cls%1: *
+2: **
+3: ***
+4: ****
+5: *****
+6: ******
+7: *******
+8: *******
+*
+
+Enter line: hello
+End of execution: hello

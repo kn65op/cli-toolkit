@@ -1,0 +1,24 @@
+190c190
+<             <span class="option-name">x_position &lt;X&gt;</span>
+---
+>             <span class="option-name">radius &lt;R&gt;</span>
+198c198
+<             <span class="option-name">y_position &lt;Y&gt;</span>
+---
+>             <span class="option-name">x_position &lt;X&gt;</span>
+206c206
+<             <span class="option-name">radius &lt;R&gt;</span>
+---
+>             <span class="option-name">y_position &lt;Y&gt;</span>
+219c219
+<             <span class="param-name">X</span>
+---
+>             <span class="param-name">R</span>
+230c230
+<             <span class="param-name">Y</span>
+---
+>             <span class="param-name">X</span>
+241c241
+<             <span class="param-name">R</span>
+---
+>             <span class="param-name">Y</span>

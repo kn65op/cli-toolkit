@@ -1,0 +1,10 @@
+<map id="G" name="G">
+<area shape="rect" id="node7" href="$classConsole.html" title="Console intput/output device class." alt="" coords="5,237,75,267"/>
+<area shape="rect" id="node9" href="$classInputFileDevice.html" title="Input file device class." alt="" coords="99,237,208,267"/>
+<area shape="rect" id="node11" href="$classIOMux.html" title="Input / output device multiplexer." alt="" coords="232,237,291,267"/>
+<area shape="rect" id="node13" href="$classNonBlockingIODevice.html" title="Non&#45;blocking input device." alt="" coords="315,237,461,267"/>
+<area shape="rect" id="node17" href="$classSingleCommand.html" title="Single command device." alt="" coords="485,237,603,267"/>
+<area shape="rect" id="node2" href="$classOutputDevice.html" title="Generic output device." alt="" coords="212,83,311,112"/>
+<area shape="rect" id="node4" href="$classObject.html" title="Generic object." alt="" coords="232,5,291,35"/>
+<area shape="rect" id="node15" href="$classTelnetConnection.html" title="Telnet connection input/output device." alt="" coords="327,315,449,344"/>
+</map>

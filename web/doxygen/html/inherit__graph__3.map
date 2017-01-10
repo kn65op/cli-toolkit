@@ -1,0 +1,57 @@
+<map id="G" name="G">
+<area shape="rect" id="node1" href="$classObject.html" title="Generic object." alt="" coords="7,432,65,461"/>
+<area shape="rect" id="node3" href="$classCallInfo.html" title="Call information object." alt="" coords="167,59,231,88"/>
+<area shape="rect" id="node5" href="$classCmdLineEdition.html" title="Command line edition objet." alt="" coords="143,112,255,141"/>
+<area shape="rect" id="node7" href="$classCmdLineHistory.html" title="Command line history objet." alt="" coords="141,165,256,195"/>
+<area shape="rect" id="node9" href="$classCommandLine.html" title="Command line parsing." alt="" coords="147,219,251,248"/>
+<area shape="rect" id="node11" href="$classCommandLineIterator.html" title="Command line iteration." alt="" coords="127,272,271,301"/>
+<area shape="rect" id="node13" href="$classElement.html" title="Generic CLI element." alt="" coords="164,325,233,355"/>
+<area shape="rect" id="node51" href="$classExecutionContext.html" title="Execution context." alt="" coords="136,379,261,408"/>
+<area shape="rect" id="node73" href="$classExecutionResult.html" title="Result interface for execution contexts." alt="" coords="140,432,257,461"/>
+<area shape="rect" id="node75" href="$classIOEndl.html" title="End of line for input/output devices." alt="" coords="168,485,229,515"/>
+<area shape="rect" id="node77" href="$classOutputDevice.html" title="Generic output device." alt="" coords="149,539,248,568"/>
+<area shape="rect" id="node99" href="$classOutputDevice_1_1ScreenInfo.html" title="Screen information." alt="" coords="115,592,283,621"/>
+<area shape="rect" id="node101" href="$classResourceString.html" title="ResourceString class." alt="" coords="144,645,253,675"/>
+<area shape="rect" id="node105" href="$classTelnetServer.html" title="Telnet server class." alt="" coords="152,699,245,728"/>
+<area shape="rect" id="node107" href="$classTraceClass.html" title="Trace class object." alt="" coords="156,752,241,781"/>
+<area shape="rect" id="node109" href="$classTraces.html" title="Traces service." alt="" coords="168,805,229,835"/>
+<area shape="rect" id="node15" href="$classEndl.html" title="End of command line element." alt="" coords="367,165,415,195"/>
+<area shape="rect" id="node17" href="$classMenuRef.html" title="Menu reference element." alt="" coords="355,219,427,248"/>
+<area shape="rect" id="node19" href="$classSyntaxNode.html" title="Syntax node elements." alt="" coords="344,272,437,301"/>
+<area shape="rect" id="node49" href="$classSyntaxRef.html" title="Syntax tag reference element." alt="" coords="349,325,432,355"/>
+<area shape="rect" id="node21" href="$classKeyword.html" title="Keyword element class." alt="" coords="536,59,608,88"/>
+<area shape="rect" id="node23" href="$classMenu.html" title="Menu definition." alt="" coords="545,112,599,141"/>
+<area shape="rect" id="node31" href="$classParam.html" title="Base parameter class." alt="" coords="543,219,601,248"/>
+<area shape="rect" id="node47" href="$classSyntaxTag.html" title="Syntax tag element class." alt="" coords="531,272,613,301"/>
+<area shape="rect" id="node25" href="$classCli.html" title="CLI definition class." alt="" coords="740,5,777,35"/>
+<area shape="rect" id="node27" href="$classConfigMenu.html" title="CLI configuration menu definition." alt="" coords="713,59,804,88"/>
+<area shape="rect" id="node29" href="$classTracesMenu.html" title="Traces menu definition." alt="" coords="712,112,805,141"/>
+<area shape="rect" id="node33" href="$classParamString.html" title="String parameter element class." alt="" coords="712,165,805,195"/>
+<area shape="rect" id="node37" href="$classParamT.html" title="Template parameter class." alt="" coords="709,219,808,248"/>
+<area shape="rect" id="node39" href="$classParamT.html" title="ParamT\&lt; double \&gt;" alt="" coords="695,272,823,301"/>
+<area shape="rect" id="node43" href="$classParamT.html" title="ParamT\&lt; int \&gt;" alt="" coords="707,325,811,355"/>
+<area shape="rect" id="node35" href="$classParamHost.html" title="Host names, IP adresses parameter element class." alt="" coords="875,165,960,195"/>
+<area shape="rect" id="node41" href="$classParamFloat.html" title="Float parameter element class." alt="" coords="873,272,961,301"/>
+<area shape="rect" id="node45" href="$classParamInt.html" title="Integer parameter element class." alt="" coords="880,325,955,355"/>
+<area shape="rect" id="node53" href="$classShell.html" title="Shell management." alt="" coords="365,379,416,408"/>
+<area shape="rect" id="node55" href="$classUI.html" title="Generic user interface class." alt="" coords="372,432,409,461"/>
+<area shape="rect" id="node57" href="$classLess.html" title="Simple line user interface object." alt="" coords="547,325,597,355"/>
+<area shape="rect" id="node59" href="$classLine.html" title="Simple line user interface object." alt="" coords="549,379,595,408"/>
+<area shape="rect" id="node69" href="$classMore.html" title="Simple line user interface object." alt="" coords="547,432,597,461"/>
+<area shape="rect" id="node71" href="$classPassword.html" title="Password user interface object." alt="" coords="533,485,611,515"/>
+<area shape="rect" id="node61" href="$classChoice.html" title="Choice user interface class." alt="" coords="728,379,789,408"/>
+<area shape="rect" id="node65" href="$classFloat.html" title="Float user interface class." alt="" coords="733,432,784,461"/>
+<area shape="rect" id="node67" href="$classInt.html" title="Integer user interface object." alt="" coords="740,485,777,515"/>
+<area shape="rect" id="node63" href="$classYesNo.html" title="Yes/No question user interface object." alt="" coords="887,379,948,408"/>
+<area shape="rect" id="node79" href="$classIODevice.html" title="Generic input/output device." alt="" coords="355,539,427,568"/>
+<area shape="rect" id="node93" href="$classOutputFileDevice.html" title="Output file device." alt="" coords="331,592,451,621"/>
+<area shape="rect" id="node95" href="$classStringDevice.html" title="String device." alt="" coords="344,645,437,675"/>
+<area shape="rect" id="node97" href="$classText.html" title="Simple line user interface object." alt="" coords="368,699,413,728"/>
+<area shape="rect" id="node81" href="$classConsole.html" title="Console intput/output device class." alt="" coords="537,539,607,568"/>
+<area shape="rect" id="node83" href="$classInputFileDevice.html" title="Input file device class." alt="" coords="517,592,627,621"/>
+<area shape="rect" id="node85" href="$classIOMux.html" title="Input / output device multiplexer." alt="" coords="543,645,601,675"/>
+<area shape="rect" id="node87" href="$classNonBlockingIODevice.html" title="Non&#45;blocking input device." alt="" coords="499,699,645,728"/>
+<area shape="rect" id="node91" href="$classSingleCommand.html" title="Single command device." alt="" coords="513,752,631,781"/>
+<area shape="rect" id="node89" href="$classTelnetConnection.html" title="Telnet connection input/output device." alt="" coords="697,699,820,728"/>
+<area shape="rect" id="node103" href="$classHelp.html" title="Help container class." alt="" coords="367,752,415,781"/>
+</map>

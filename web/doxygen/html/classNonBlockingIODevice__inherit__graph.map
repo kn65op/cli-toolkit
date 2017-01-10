@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node9" href="$classTelnetConnection.html" title="Telnet connection input/output device." alt="" coords="17,315,140,344"/>
+<area shape="rect" id="node2" href="$classIODevice.html" title="Generic input/output device." alt="" coords="43,160,115,189"/>
+<area shape="rect" id="node4" href="$classOutputDevice.html" title="Generic output device." alt="" coords="29,83,128,112"/>
+<area shape="rect" id="node6" href="$classObject.html" title="Generic object." alt="" coords="49,5,108,35"/>
+</map>

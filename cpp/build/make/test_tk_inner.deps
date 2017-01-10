@@ -1,0 +1,75 @@
+$(INT_DIR)/test_tk_main.o: ../../../cpp/tests/tk/test_tk_main.cpp \
+  ../../../cpp/include/cli/pch.h ../../../cpp/tests/tk/test_tk_string.h \
+  ../../../cpp/include/cli/tk.h ../../../cpp/include/cli/namespace.h \
+  ../../../cpp/include/cli/tk_inner.h ../../../cpp/include/cli/object.h \
+  ../../../cpp/tests/include/test_error.h \
+  ../../../cpp/include/cli/debug.h ../../../cpp/include/cli/tk.h \
+  ../../../cpp/include/cli/io_device.h ../../../cpp/include/cli/debug.h \
+  ../../../cpp/include/cli/resource_string.h \
+  ../../../cpp/tests/include/test_no_warning.h \
+  ../../../cpp/tests/tk/test_tk_queue.h \
+  ../../../cpp/tests/tk/test_tk_map.h
+$(INT_DIR)/object.o: ../../../cpp/src/object.cpp \
+  ../../../cpp/include/cli/pch.h ../../../cpp/include/cli/object.h \
+  ../../../cpp/include/cli/namespace.h
+$(INT_DIR)/tk.o: ../../../cpp/src/tk.cpp ../../../cpp/include/cli/pch.h \
+  ../../../cpp/include/cli/tk.h ../../../cpp/include/cli/namespace.h \
+  ../../../cpp/include/cli/tk_inner.h ../../../cpp/include/cli/object.h
+$(INT_DIR)/debug.o: ../../../cpp/src/debug.cpp \
+  ../../../cpp/include/cli/pch.h ../../../cpp/include/cli/debug.h \
+  ../../../cpp/include/cli/namespace.h ../../../cpp/include/cli/object.h \
+  ../../../cpp/include/cli/tk.h ../../../cpp/include/cli/tk_inner.h \
+  ../../../cpp/src/constraints.h ../../../cpp/include/cli/namespace.h
+$(INT_DIR)/traces.o: ../../../cpp/src/traces.cpp \
+  ../../../cpp/include/cli/pch.h ../../../cpp/include/cli/element.h \
+  ../../../cpp/include/cli/namespace.h ../../../cpp/include/cli/object.h \
+  ../../../cpp/include/cli/help.h \
+  ../../../cpp/include/cli/resource_string.h \
+  ../../../cpp/include/cli/tk.h ../../../cpp/include/cli/tk_inner.h \
+  ../../../cpp/include/cli/io_device.h ../../../cpp/include/cli/debug.h \
+  ../../../cpp/include/cli/traces.h ../../../cpp/include/cli/assert.h \
+  ../../../cpp/src/consistency.h ../../../cpp/include/cli/namespace.h \
+  ../../../cpp/src/constraints.h
+$(INT_DIR)/io_device.o: ../../../cpp/src/io_device.cpp \
+  ../../../cpp/include/cli/pch.h ../../../cpp/include/cli/io_device.h \
+  ../../../cpp/include/cli/namespace.h ../../../cpp/include/cli/object.h \
+  ../../../cpp/include/cli/debug.h ../../../cpp/include/cli/tk.h \
+  ../../../cpp/include/cli/tk_inner.h \
+  ../../../cpp/include/cli/resource_string.h \
+  ../../../cpp/include/cli/cli.h ../../../cpp/include/cli/menu.h \
+  ../../../cpp/include/cli/syntax_node.h \
+  ../../../cpp/include/cli/element.h ../../../cpp/include/cli/help.h \
+  ../../../cpp/include/cli/string_device.h \
+  ../../../cpp/include/cli/io_device.h ../../../cpp/include/cli/traces.h \
+  ../../../cpp/include/cli/assert.h ../../../cpp/src/constraints.h \
+  ../../../cpp/include/cli/namespace.h
+$(INT_DIR)/string_device.o: ../../../cpp/src/string_device.cpp \
+  ../../../cpp/include/cli/pch.h ../../../cpp/include/cli/string_device.h \
+  ../../../cpp/include/cli/tk.h ../../../cpp/include/cli/namespace.h \
+  ../../../cpp/include/cli/tk_inner.h ../../../cpp/include/cli/object.h \
+  ../../../cpp/include/cli/io_device.h ../../../cpp/include/cli/debug.h \
+  ../../../cpp/include/cli/resource_string.h \
+  ../../../cpp/src/constraints.h ../../../cpp/include/cli/namespace.h
+$(INT_DIR)/help.o: ../../../cpp/src/help.cpp \
+  ../../../cpp/include/cli/pch.h ../../../cpp/include/cli/help.h \
+  ../../../cpp/include/cli/namespace.h \
+  ../../../cpp/include/cli/resource_string.h \
+  ../../../cpp/include/cli/object.h ../../../cpp/include/cli/tk.h \
+  ../../../cpp/include/cli/tk_inner.h
+$(INT_DIR)/resource_string.o: ../../../cpp/src/resource_string.cpp \
+  ../../../cpp/include/cli/pch.h \
+  ../../../cpp/include/cli/resource_string.h \
+  ../../../cpp/include/cli/namespace.h ../../../cpp/include/cli/object.h \
+  ../../../cpp/include/cli/tk.h ../../../cpp/include/cli/tk_inner.h \
+  ../../../cpp/include/cli/traces.h ../../../cpp/include/cli/help.h \
+  ../../../cpp/include/cli/resource_string.h \
+  ../../../cpp/include/cli/io_device.h ../../../cpp/include/cli/debug.h \
+  ../../../cpp/src/constraints.h ../../../cpp/include/cli/namespace.h
+$(INT_DIR)/consistency.o: ../../../cpp/src/consistency.cpp \
+  ../../../cpp/include/cli/pch.h ../../../cpp/include/cli/io_device.h \
+  ../../../cpp/include/cli/namespace.h ../../../cpp/include/cli/object.h \
+  ../../../cpp/include/cli/debug.h ../../../cpp/include/cli/tk.h \
+  ../../../cpp/include/cli/tk_inner.h \
+  ../../../cpp/include/cli/resource_string.h \
+  ../../../cpp/include/cli/traces.h ../../../cpp/include/cli/help.h \
+  ../../../cpp/src/consistency.h ../../../cpp/include/cli/namespace.h

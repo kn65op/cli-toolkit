@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node9" href="$classCli.html" title="CLI definition class." alt="" coords="5,315,43,344"/>
+<area shape="rect" id="node11" href="$classConfigMenu.html" title="CLI configuration menu definition." alt="" coords="67,315,157,344"/>
+<area shape="rect" id="node13" href="$classTracesMenu.html" title="Traces menu definition." alt="" coords="181,315,275,344"/>
+<area shape="rect" id="node2" href="$classSyntaxNode.html" title="Syntax node elements." alt="" coords="65,160,159,189"/>
+<area shape="rect" id="node4" href="$classElement.html" title="Generic CLI element." alt="" coords="77,83,147,112"/>
+<area shape="rect" id="node6" href="$classObject.html" title="Generic object." alt="" coords="83,5,141,35"/>
+</map>

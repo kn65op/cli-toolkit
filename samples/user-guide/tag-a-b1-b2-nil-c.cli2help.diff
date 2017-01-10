@@ -1,0 +1,4 @@
+178c178
+<       <span class="command-synopsis">a (b1 | b2 | ) c</span>
+---
+>       <span class="command-synopsis">a ( | b1 | b2) c</span>

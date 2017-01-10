@@ -1,0 +1,12 @@
+176c176
+<             <a href="#5">b (...)</a>
+---
+>             <a href="#5">(...)</a>
+186c186
+<     <h3>b (...)</h3>
+---
+>     <h3>(...)</h3>
+190c190
+<       <span class="command-synopsis">b (a | b)</span>
+---
+>       <span class="command-synopsis">(b | a)</span>

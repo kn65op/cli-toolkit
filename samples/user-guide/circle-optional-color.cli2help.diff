@@ -1,0 +1,12 @@
+178c178
+<       <span class="command-synopsis">add circle (black | blue | red | green | )</span>
+---
+>       <span class="command-synopsis">add circle ( | black | blue | red | green)</span>
+206c206
+<             <span class="option-name">red</span>
+---
+>             <span class="option-name">green</span>
+214c214
+<             <span class="option-name">green</span>
+---
+>             <span class="option-name">red</span>

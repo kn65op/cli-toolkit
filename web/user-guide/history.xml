@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!--
+    Copyright (c) 2006-2013, Alexis Royer, http://alexis.royer.free.fr/CLI
+
+    All rights reserved.
+
+    Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+        * Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+        * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation
+          and/or other materials provided with the distribution.
+        * Neither the name of the CLI library project nor the names of its contributors may be used to endorse or promote products derived from this software
+          without specific prior written permission.
+
+    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+    "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+    LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+    A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+    CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+    EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+    PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+    PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+    LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+    NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+
+<revhistory>
+    <revision><revnumber>2.8</revnumber><date>July, 15th 2013</date>
+        <revremark>
+            <variablelist>
+                <varlistentry><term>New features:</term>
+                    <listitem>
+                        <itemizedlist>
+                            <listitem><link linkend="adv.exec-ctx" endterm="adv.exec-ctx.title"/>,
+                                        (<link linkend="adv.telnet" endterm="adv.telnet.title"/> section revision consequently),</listitem>
+                            <listitem>python tools for <link linkend="xslt" endterm="xslt.title"/>
+                                        and <link linkend="xmlres.cli2help" endterm="xmlres.cli2help.title"/>.</listitem>
+                        </itemizedlist>
+                    </listitem>
+                </varlistentry>
+                <varlistentry><term>New examples, figures &amp; FAQ:</term>
+                    <listitem>
+                        <itemizedlist>
+                            <listitem>Examples:
+                                        <link linkend="eg.non-blocking-ui" endterm="eg.non-blocking-ui.title"/>,
+                                        <link linkend="eg.exec-ctx.pwd-shell" endterm="eg.exec-ctx.pwd-shell.title"/>,</listitem>
+                            <listitem>Figures:
+                                        <link linkend="fig.ui.classes" endterm="fig.ui.classes.title"/>,
+                                        <link linkend="fig.exec-ctx.blocking-call" endterm="fig.exec-ctx.blocking-call.title"/>,
+                                        <link linkend="fig.exec-ctx.non-blocking-call" endterm="fig.exec-ctx.non-blocking-call.title"/>,</listitem>
+                            <listitem>FAQ:
+                                        <link linkend="faq.Q020">Q020</link>,
+                                        <link linkend="faq.Q050">Q050</link>,
+                                        <link linkend="faq.Q350">Q350</link>,
+                                        <link linkend="faq.Q650">Q650</link>.</listitem>
+                        </itemizedlist>
+                    </listitem>
+                </varlistentry>
+                <varlistentry><term>Improvements:</term>
+                    <listitem>
+                        <itemizedlist>
+                            <listitem><link linkend="build" endterm="build.title"/> and <link linkend="howto" endterm="howto.title"/> details,
+                                        plus <command>make check</command> addition,</listitem>
+                            <listitem>list of required utilities addition in <link linkend="prerequisite" endterm="prerequisite.title"/> section,</listitem>
+                            <listitem>pragma code correction in FAQ <link linkend="faq.Q400">Q400</link>,</listitem>
+                            <listitem>"UI package" renamed into <link linkend="ui" endterm="ui.title"/>,</listitem>
+                            <listitem><link linkend="adv.non-blocking" endterm="adv.non-blocking.title"/>
+                                        motivation and UI controls management addition,</listitem>
+                            <listitem>numbers and named anchor for all figures and tables,</listitem>
+                            <listitem>dynamic menus and mobile device compatibility.</listitem>
+                        </itemizedlist>
+                    </listitem>
+                </varlistentry>
+                <varlistentry><term>Deprecations:</term>
+                    <listitem>
+                        <itemizedlist>
+                            <listitem><link linkend="adv.quit"><classname>Shell</classname> thread-safe termination</link>,</listitem>
+                            <listitem><function>NonBlockingIODevice::WaitForKeys</function> due to <link linkend="adv.exec-ctx">execution contexts</link> improvements.</listitem>
+                        </itemizedlist>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+        </revremark>
+    </revision>
+    <revision><revnumber>2.7</revnumber><date>Dec, 7th 2011</date>
+        <revremark>
+            <variablelist>
+                <varlistentry><term>New sections:</term>
+                    <listitem>
+                        <itemizedlist>
+                            <listitem><link linkend="ui">UI package</link>,</listitem>
+                            <listitem><link linkend="adv.telnet" endterm="adv.telnet.title"/>,</listitem>
+                            <listitem>"Mono-thread execution" renamed into <link linkend="adv.non-blocking" endterm="adv.non-blocking.title"/>,</listitem>
+                            <listitem><link linkend="adv.iodevices" endterm="adv.iodevices.title"/> split in two sub-sections,</listitem>
+                            <listitem><link linkend="adv.pch" endterm="adv.pch.title"/>,</listitem>
+                            <listitem><link linkend="faq" endterm="faq.title"/>.</listitem>
+                        </itemizedlist>
+                    </listitem>
+                </varlistentry>
+                <varlistentry><term>New examples:</term>
+                    <listitem>
+                        <itemizedlist>
+                            <listitem><link linkend="eg.non-blocking" endterm="eg.non-blocking.title"/>,</listitem>
+                            <listitem><link linkend="ui">UI Package</link> section examples.</listitem>
+                        </itemizedlist>
+                    </listitem>
+                </varlistentry>
+                <varlistentry><term>New tables:</term>
+                    <listitem>
+                        <itemizedlist>
+                            <listitem><link linkend="table.OutputDevice" endterm="table.OutputDevice.title"/>,</listitem>
+                            <listitem><link linkend="table.IODevice" endterm="table.IODevice.title"/>,</listitem>
+                            <listitem><link linkend="table.NonBlockingIODevice" endterm="table.NonBlockingIODevice.title"/>.</listitem>
+                        </itemizedlist>
+                    </listitem>
+                </varlistentry>
+                <varlistentry><term>Other additions:</term>
+                    <listitem>
+                        <itemizedlist>
+                            <listitem><function>Shell::CleanScreen</function>.</listitem>
+                        </itemizedlist>
+                    </listitem>
+                </varlistentry>
+                <varlistentry><term>Improvements:</term>
+                    <listitem>
+                        <itemizedlist>
+                            <listitem>Dynamic menus implementation (including table of content, example list, figure list, table list, change list),</listitem>
+                            <listitem>dynamic notes and tips,</listitem>
+                            <listitem>example titles improvement,</listitem>
+                            <listitem>numbers and named anchor for all titles and examples.</listitem>
+                        </itemizedlist>
+                    </listitem>
+                </varlistentry>
+                <varlistentry><term>Deprecations:</term>
+                    <listitem>
+                        <itemizedlist>
+                            <listitem>"C++ integration - static instantiation + @cpp attribute" example.</listitem>
+                        </itemizedlist>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+        </revremark>
+    </revision>
+    <revision><revnumber>2.6</revnumber><date>Dec, 15th 2010</date>
+        <revremark>
+            <variablelist>
+                <varlistentry><term>Deprecations:</term>
+                    <listitem>
+                        <itemizedlist>
+                            <listitem><function>Shell::SetErrorFormatting</function> / <function>Shell.setErrorFormatting</function>.</listitem>
+                        </itemizedlist>
+                    </listitem>
+                </varlistentry>
+                <varlistentry><term>Additions:</term>
+                    <listitem>
+                        <itemizedlist>
+                            <listitem><function>Shell::GetCurrentMenu</function> / <function>Shell.getCurrentMenu</function>.</listitem>
+                        </itemizedlist>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+        </revremark>
+    </revision>
+    <revision><revnumber>2.5</revnumber><date>Sep, 8th 2010</date>
+        <revremark>
+            <variablelist>
+                <varlistentry><term>New features:</term>
+                    <listitem>
+                        <itemizedlist>
+                            <listitem><link linkend="xmlres.schema">schemas</link>,</listitem>
+                            <listitem><link linkend="xmlres.native">"member" and "constructor" sections</link>,</listitem>
+                            <listitem><link linkend="adv.menus.handlers">"prompt" handler</link>,</listitem>
+                            <listitem><link linkend="xmlres.cli2help">automatic help document generation</link>.</listitem>
+                        </itemizedlist>
+                    </listitem>
+                </varlistentry>
+                <varlistentry><term>New sections:</term>
+                    <listitem>
+                        <itemizedlist>
+                            <listitem><link linkend="adv.menus" endterm="adv.menus.title"/>,</listitem>
+                            <listitem><link linkend="adv.shellfeatures" endterm="adv.shellfeatures.title"/>.</listitem>
+                        </itemizedlist>
+                    </listitem>
+                </varlistentry>
+                <varlistentry><term>Improvements:</term>
+                    <listitem>
+                        <itemizedlist>
+                            <listitem><link linkend="eg.tag.a-b-plus">(a|b)+</link> and <link linkend="eg.tag.a-b-star">(a|b)*</link> samples.</listitem>
+                        </itemizedlist>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+        </revremark>
+    </revision>
+    <revision><revnumber>2.4</revnumber><date>Oct, 1st 2009</date>
+        <revremark>Minor corrections according to miscellaneous changes.</revremark>
+    </revision>
+    <revision><revnumber>2.3</revnumber><date>May, 14th 2009</date>
+        <revremark>
+            <variablelist>
+                <varlistentry><term>New features:</term>
+                    <listitem>
+                        <itemizedlist>
+                            <listitem><link linkend="adv.quit">Thread-safe termination</link>,</listitem>
+                            <listitem><link linkend="adv.non-blocking">Mono-Thread execution</link>.</listitem>
+                        </itemizedlist>
+                    </listitem>
+                </varlistentry>
+                <varlistentry><term>New sections:</term>
+                    <listitem>
+                        <itemizedlist>
+                            <listitem><link linkend="adv.dimension" endterm="adv.dimension.title"/>,</listitem>
+                            <listitem><link linkend="adv.compilers" endterm="adv.compilers.title"/>.</listitem>
+                        </itemizedlist>
+                    </listitem>
+                </varlistentry>
+                <varlistentry><term>Improvements:</term>
+                    <listitem>
+                        <itemizedlist>
+                            <listitem><link linkend="adv.iodevices" endterm="adv.iodevices.title"/>,</listitem>
+                            <listitem><link linkend="xslt">XSL generation</link> note addition.</listitem>
+                        </itemizedlist>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+        </revremark>
+    </revision>
+    <revision><revnumber>2.2</revnumber><date>Sep, 21st 2008</date>
+        <revremark>Minor corrections according bug fixes and miscellaneous changes.</revremark>
+    </revision>
+    <revision><revnumber>2.1</revnumber><date>Oct, 31st 2007</date>
+        <revremark>
+            <variablelist>
+                <varlistentry><term>New features:</term>
+                    <listitem>
+                        <itemizedlist>
+                            <listitem>Java addition,</listitem>
+                            <listitem>French language support.</listitem>
+                        </itemizedlist>
+                    </listitem>
+                </varlistentry>
+                <varlistentry><term>Improvements:</term>
+                    <listitem>Minor corrections.</listitem>
+                </varlistentry>
+            </variablelist>
+        </revremark>
+    </revision>
+    <revision><revnumber>2.0</revnumber><date>Sep, 27th 2007</date>
+        <revremark>License modification: minor changes.</revremark>
+    </revision>
+    <revision><revnumber>1.0</revnumber><date>June, 1st 2006</date>
+        <revremark>First release of the user guide.</revremark>
+    </revision>
+</revhistory>
