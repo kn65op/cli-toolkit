@@ -45,12 +45,12 @@ CLI_NS_BEGIN(cli)
         {
         }
 
-        const bool Text::OpenDevice(void)
+        bool Text::OpenDevice(void)
         {
             return true;
         }
 
-        const bool Text::CloseDevice(void)
+        bool Text::CloseDevice(void)
         {
             return true;
         }
@@ -92,7 +92,7 @@ CLI_NS_BEGIN(cli)
             m_tkLines.Reset();
         }
 
-        const bool Text::WouldOutput(const OutputDevice& CLI_Device) const
+        bool Text::WouldOutput(const OutputDevice& CLI_Device) const
         {
             if (OutputDevice::WouldOutput(CLI_Device))
             {

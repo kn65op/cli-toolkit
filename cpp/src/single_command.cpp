@@ -51,12 +51,12 @@ SingleCommand::~SingleCommand(void)
     m_cliOutput.FreeInstance(__CALL_INFO__);
 }
 
-const tk::String SingleCommand::GetCommand(void) const
+tk::String SingleCommand::GetCommand(void) const
 {
     return m_strCommand;
 }
 
-const bool SingleCommand::OpenDevice(void)
+bool SingleCommand::OpenDevice(void)
 {
     if (! m_cliOutput.OpenUp(__CALL_INFO__))
     {
@@ -68,7 +68,7 @@ const bool SingleCommand::OpenDevice(void)
     return true;
 }
 
-const bool SingleCommand::CloseDevice(void)
+bool SingleCommand::CloseDevice(void)
 {
     bool b_Res = true;
 
@@ -83,7 +83,7 @@ const bool SingleCommand::CloseDevice(void)
     return b_Res;
 }
 
-const KEY SingleCommand::GetKey(void) const
+KEY SingleCommand::GetKey(void) const
 {
     if ((m_iPosition >= 0) && (m_iPosition < (signed) m_strCommand.GetLength()))
     {
@@ -129,7 +129,7 @@ void SingleCommand::CleanScreen(void) const
     }
 }
 
-const bool SingleCommand::WouldOutput(const OutputDevice& CLI_Device) const
+bool SingleCommand::WouldOutput(const OutputDevice& CLI_Device) const
 {
     return (IODevice::WouldOutput(CLI_Device) || m_cliOutput.WouldOutput(CLI_Device));
 }

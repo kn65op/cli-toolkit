@@ -68,7 +68,7 @@ IOMux::~IOMux(void)
     ResetDeviceList();
 }
 
-const bool IOMux::OpenDevice(void)
+bool IOMux::OpenDevice(void)
 {
     GetTraces().SafeTrace(TRACE_IOMUX, *this) << "Opening " << GetDebugName() << endl;
 
@@ -96,7 +96,7 @@ const bool IOMux::OpenDevice(void)
     return b_Res;
 }
 
-const bool IOMux::CloseDevice(void)
+bool IOMux::CloseDevice(void)
 {
     GetTraces().SafeTrace(TRACE_IOMUX, *this) << "Closing " << GetDebugName() << endl;
 
@@ -147,7 +147,7 @@ void IOMux::CleanScreen(void) const
     }
 }
 
-const bool IOMux::WouldOutput(const OutputDevice& CLI_Device) const
+bool IOMux::WouldOutput(const OutputDevice& CLI_Device) const
 {
     // Check self instance first.
     if (IODevice::WouldOutput(CLI_Device))
@@ -167,7 +167,7 @@ const bool IOMux::WouldOutput(const OutputDevice& CLI_Device) const
     return false;
 }
 
-const KEY IOMux::GetKey(void) const
+KEY IOMux::GetKey(void) const
 {
     for (   const IODevice* pcli_Input = CheckCurrentDevice();
             pcli_Input != NULL;
@@ -194,7 +194,7 @@ const KEY IOMux::GetKey(void) const
     return cli::NULL_KEY;
 }
 
-const ResourceString IOMux::GetLocation(void) const
+ResourceString IOMux::GetLocation(void) const
 {
     if (const IODevice* const pcli_Input = GetCurrentDevice())
     {
@@ -207,7 +207,7 @@ const ResourceString IOMux::GetLocation(void) const
     return ResourceString();
 }
 
-const bool IOMux::WouldInput(const IODevice& CLI_Device) const
+bool IOMux::WouldInput(const IODevice& CLI_Device) const
 {
     // Check self instance first.
     if (IODevice::WouldInput(CLI_Device))
@@ -229,7 +229,7 @@ const bool IOMux::WouldInput(const IODevice& CLI_Device) const
     return false;
 }
 
-const bool IOMux::AddDevice(IODevice* const PCLI_Device)
+bool IOMux::AddDevice(IODevice* const PCLI_Device)
 {
     if (PCLI_Device != NULL)
     {
@@ -257,7 +257,7 @@ const bool IOMux::AddDevice(IODevice* const PCLI_Device)
     return false;
 }
 
-const IODevice* const IOMux::GetCurrentDevice(void) const
+const IODevice* IOMux::GetCurrentDevice(void) const
 {
     if (! m_qDevices.IsEmpty())
     {
@@ -267,7 +267,7 @@ const IODevice* const IOMux::GetCurrentDevice(void) const
     return NULL;
 }
 
-const IODevice* const IOMux::SwitchNextDevice(void)
+const IODevice* IOMux::SwitchNextDevice(void)
 {
     // Terminate head device.
     if (! m_qDevices.IsEmpty())
@@ -312,7 +312,7 @@ const IODevice* const IOMux::SwitchNextDevice(void)
     return NULL;
 }
 
-const bool IOMux::ResetDeviceList(void)
+bool IOMux::ResetDeviceList(void)
 {
     bool b_Res = true;
 
@@ -385,7 +385,7 @@ IODevice* const IOMux::CheckCurrentDevice(void) const
     return NULL;
 }
 
-const bool IOMux::ReleaseFirstDevice(void)
+bool IOMux::ReleaseFirstDevice(void)
 {
     if (! m_qDevices.IsEmpty())
     {

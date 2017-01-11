@@ -69,7 +69,7 @@ CLI_NS_BEGIN(cli)
 
     public:
         // Inherit doxygen comments from cli::IODevice interface documentation.
-        virtual const KEY GetKey(void) const;
+        virtual KEY GetKey(void) const;
 
     private:
         //! @brief Sets an execution context manager reference.
@@ -80,7 +80,7 @@ CLI_NS_BEGIN(cli)
     protected:
         //! @brief Returns the current execution context.
         //! @return Current execution context if any, NULL otherwise.
-        const ExecutionContext* const GetExecutionContext(void) const;
+        const ExecutionContext* GetExecutionContext(void) const;
 
     public:
         // Note: use of @param doxygen tag in order to avoid doxygen warnings for reimplementations in sub-classes.

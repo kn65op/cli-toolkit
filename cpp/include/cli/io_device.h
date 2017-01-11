@@ -88,12 +88,12 @@ CLI_NS_BEGIN(cli)
     public:
         //! @brief Debug name accessor.
         //! @return Debug name.
-        const tk::String GetDebugName(void) const;
+        tk::String GetDebugName(void) const;
 
     public:
         //! @brief Ensures instance validity.
         //! @return Total number of instance users after this call.
-        const int UseInstance(
+        int UseInstance(
             const CallInfo& CLI_CallInfo    //!< Call information.
             );
 
@@ -102,13 +102,13 @@ CLI_NS_BEGIN(cli)
         //!
         //! If the auto-deletion flag has been set during construction,
         //! the object is auto-deleted when the number of users reaches 0 on this call.
-        const int FreeInstance(
+        int FreeInstance(
             const CallInfo& CLI_CallInfo    //!< Call information.
             );
 
         //! @brief Instance user count accessor.
         //! @return Number of instance users.
-        const int GetInstanceUsers(void) const;
+        int GetInstanceUsers(void) const;
 
     public:
         //! @brief Checks the device is opened.
@@ -116,7 +116,7 @@ CLI_NS_BEGIN(cli)
         //!
         //! Opens the device if not already opened.
         //! Acquire a lock on the open state in any case.
-        const bool OpenUp(
+        bool OpenUp(
             const CallInfo& CLI_CallInfo    //!< Call information.
             );
 
@@ -125,13 +125,13 @@ CLI_NS_BEGIN(cli)
         //!
         //! Releases the lock on the open state.
         //! When no more user need the device to be opened, it is closed straight forward.
-        const bool CloseDown(
+        bool CloseDown(
             const CallInfo& CLI_CallInfo    //!< Call information.
             );
 
         //! @brief Open state user count accessor.
         //! @return Number of users that have opened the device.
-        const int GetOpenUsers(void) const;
+        int GetOpenUsers(void) const;
 
     protected:
         //! @brief Device opening handler.
@@ -140,7 +140,7 @@ CLI_NS_BEGIN(cli)
         //!       They should do the opening once only
         //!       (unless they have been closed between OpendDevice() calls),
         //!       and indicate no failure thereafter.
-        virtual const bool OpenDevice(void) = 0;
+        virtual bool OpenDevice(void) = 0;
 
         //! @brief Device closure handler.
         //! @return true for success, false otherwise.
@@ -148,7 +148,7 @@ CLI_NS_BEGIN(cli)
         //!       They should do the closure once only
         //!       (unless they have been opened between CloseDevice() calls),
         //!       and indicate no failure thereafter.
-        virtual const bool CloseDevice(void) = 0;
+        virtual bool CloseDevice(void) = 0;
 
     public:
         #ifndef CLI_NO_STL
@@ -247,7 +247,7 @@ CLI_NS_BEGIN(cli)
     public:
         //! @brief Last error accessor.
         //! @return Last error resource string.
-        const ResourceString GetLastError(void) const;
+        ResourceString GetLastError(void) const;
 
     public:
         //! @brief Null device singleton.
@@ -315,22 +315,22 @@ CLI_NS_BEGIN(cli)
         public:
             //! @brief Screen width accessor.
             //! @return Screen width if known, UNKNOWN otherwise.
-            const int GetWidth(void) const { return ((m_iWidth > 0) ? m_iWidth : UNKNOWN); }
+            int GetWidth(void) const { return ((m_iWidth > 0) ? m_iWidth : UNKNOWN); }
             //! @brief Safe screen width accessor.
             //! @return Screen width if known, default value otherwise.
-            const unsigned int GetSafeWidth(void) const { return ((m_iWidth > 0) ? m_iWidth : DEFAULT_WIDTH); }
+            unsigned int GetSafeWidth(void) const { return ((m_iWidth > 0) ? m_iWidth : DEFAULT_WIDTH); }
             //! @brief Screen height accessor.
             //! @return Screen height if known, UNKNOWN otherwise.
-            const int GetHeight(void) const { return ((m_iHeight > 0) ? m_iHeight : UNKNOWN); }
+            int GetHeight(void) const { return ((m_iHeight > 0) ? m_iHeight : UNKNOWN); }
             //! @brief Safe screen height accessor.
             //! @return Screen height if known, default value otherwise.
-            const unsigned int GetSafeHeight(void) const { return ((m_iHeight > 0) ? m_iHeight : DEFAULT_HEIGHT); }
+            unsigned int GetSafeHeight(void) const { return ((m_iHeight > 0) ? m_iHeight : DEFAULT_HEIGHT); }
             //! @brief True CleanScreen() characteristic accessor.
             //! @return True CleanScreen() characteristic.
-            const bool GetbTrueCls(void) const { return m_bTrueCls; }
+            bool GetbTrueCls(void) const { return m_bTrueCls; }
             //! @brief Line wrapping characteristic accessor.
             //! @return Line wrapping characteristic.
-            const bool GetbWrapLines(void) const { return m_bWrapLines; }
+            bool GetbWrapLines(void) const { return m_bWrapLines; }
         private:
             int m_iWidth;       //!< Page width.
             int m_iHeight;      //!< Page height.
@@ -352,7 +352,7 @@ CLI_NS_BEGIN(cli)
 
         //! @brief Screen info accessor.
         //! @return Screen info with possible ScreenInfo::UNKNOWN values.
-        virtual const ScreenInfo GetScreenInfo(void) const;
+        virtual ScreenInfo GetScreenInfo(void) const;
 
         // Note: use of @param doxygen tag in order to avoid doxygen warnings for reimplementations in sub-classes.
         //! @brief Stack overflow protection.
@@ -361,7 +361,7 @@ CLI_NS_BEGIN(cli)
         //!
         //! Determines whether the current device would output the given device in any way.
         //! Default implementation checks whether CLI_Device is the self device.
-        virtual const bool WouldOutput(const OutputDevice& CLI_Device) const;
+        virtual bool WouldOutput(const OutputDevice& CLI_Device) const;
 
     private:
         //! Debug name. Useful for traces only.
@@ -520,11 +520,11 @@ CLI_NS_BEGIN(cli)
         //! @brief Input key capture handler.
         //! @warning Blocking call.
         //! @return KEY code captured.
-        virtual const KEY GetKey(void) const = 0;
+        virtual KEY GetKey(void) const = 0;
 
         //! @brief Input location accessor.
         //! @return Input location resource string.
-        virtual const ResourceString GetLocation(void) const;
+        virtual ResourceString GetLocation(void) const;
 
         // Note: use of @param doxygen tag in order to avoid doxygen warnings for reimplementations in sub-classes.
         //! @brief Stack overflow protection.
@@ -533,7 +533,7 @@ CLI_NS_BEGIN(cli)
         //!
         //! Determines whether the current device would input the given device in any ways.
         //! Default implementation checks whether CLI_Device is the self device.
-        virtual const bool WouldInput(const IODevice& CLI_Device) const;
+        virtual bool WouldInput(const IODevice& CLI_Device) const;
 
     public:
         //! @brief Null device singleton.
@@ -547,7 +547,7 @@ CLI_NS_BEGIN(cli)
     public:
         //! @brief Common char translation.
         //! @return KEY code corresponding to the given common char.
-        static const KEY GetKey(
+        static KEY GetKey(
             const int I_Char    //!< Common char to translate.
             );
     };

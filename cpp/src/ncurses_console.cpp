@@ -100,7 +100,7 @@ Console::~Console(void)
     Console::CloseDevice();
 }
 
-const bool Console::OpenDevice(void)
+bool Console::OpenDevice(void)
 {
     if (m_pData == NULL)
     {
@@ -134,7 +134,7 @@ const bool Console::OpenDevice(void)
     }
 }
 
-const bool Console::CloseDevice(void)
+bool Console::CloseDevice(void)
 {
     if (NCursesConsole* const pcli_Data = (NCursesConsole*) m_pData)
     {
@@ -154,7 +154,7 @@ const bool Console::CloseDevice(void)
     return true;
 }
 
-const KEY Console::GetKey(void) const
+KEY Console::GetKey(void) const
 {
     // ncurses constants.
     static const int NC_KEY_UP = KEY_UP;
@@ -332,7 +332,7 @@ void Console::CleanScreen(void) const
     refresh();
 }
 
-const OutputDevice::ScreenInfo Console::GetScreenInfo(void) const
+OutputDevice::ScreenInfo Console::GetScreenInfo(void) const
 {
     return ScreenInfo(
         COLS, LINES,

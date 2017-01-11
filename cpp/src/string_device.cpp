@@ -45,13 +45,13 @@ StringDevice::~StringDevice(void)
 {
 }
 
-const bool StringDevice::OpenDevice(void)
+bool StringDevice::OpenDevice(void)
 {
     // Nothing to do.
     return true;
 }
 
-const bool StringDevice::CloseDevice(void)
+bool StringDevice::CloseDevice(void)
 {
     // Nothing to do.
     return true;

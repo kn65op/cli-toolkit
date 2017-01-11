@@ -64,16 +64,16 @@ CLI_NS_BEGIN(cli)
     public:
         //! @brief Command accessor.
         //! @return Command string.
-        const tk::String GetCommand(void) const;
+        tk::String GetCommand(void) const;
 
     protected:
         // Inherit doxygen comments from cli::OutputDevice interface documentation.
-        virtual const bool OpenDevice(void);
+        virtual bool OpenDevice(void);
         // Inherit doxygen comments from cli::OutputDevice interface documentation.
-        virtual const bool CloseDevice(void);
+        virtual bool CloseDevice(void);
     public:
         // Inherit doxygen comments from cli::IODevice interface documentation.
-        virtual const KEY GetKey(void) const;
+        virtual KEY GetKey(void) const;
         // Inherit doxygen comments from cli::OutputDevice interface documentation.
         virtual void PutString(const char* const STR_Out) const;
         // Inherit doxygen comments from cli::OutputDevice interface documentation.
@@ -81,7 +81,7 @@ CLI_NS_BEGIN(cli)
         // Inherit doxygen comments from cli::OutputDevice interface documentation.
         virtual void CleanScreen(void) const;
         // Inherit doxygen comments from cli::OutputDevice interface documentation.
-        virtual const bool WouldOutput(const OutputDevice& CLI_Device) const;
+        virtual bool WouldOutput(const OutputDevice& CLI_Device) const;
 
     private:
         //! Output device.

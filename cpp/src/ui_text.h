@@ -66,8 +66,8 @@ CLI_NS_BEGIN(cli)
 
         // cli::OutputDevice interface implementation.
         protected:
-            virtual const bool OpenDevice(void);
-            virtual const bool CloseDevice(void);
+            virtual bool OpenDevice(void);
+            virtual bool CloseDevice(void);
         public:
             // Inherit doxygen comments from cli::OutputDevice interface documentation.
             virtual void PutString(const char* const STR_Out) const;
@@ -76,7 +76,7 @@ CLI_NS_BEGIN(cli)
             // Inherit doxygen comments from cli::OutputDevice interface documentation.
             virtual void CleanScreen(void) const;
             // Inherit doxygen comments from cli::OutputDevice interface documentation.
-            virtual const bool WouldOutput(const OutputDevice& CLI_Device) const;
+            virtual bool WouldOutput(const OutputDevice& CLI_Device) const;
 
         public:
             //! @brief Retrieves a text head iterator.

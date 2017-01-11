@@ -74,14 +74,14 @@ CLI_NS_BEGIN(cli)
 
     protected:
         // Inherit doxygen comments from cli::OutputDevice interface documentation.
-        virtual const bool OpenDevice(void);
+        virtual bool OpenDevice(void);
         // Inherit doxygen comments from cli::OutputDevice interface documentation.
-        virtual const bool CloseDevice(void);
+        virtual bool CloseDevice(void);
     public:
         // Inherit doxygen comments from cli::IODevice interface documentation.
-        virtual const KEY GetKey(void) const;
+        virtual KEY GetKey(void) const;
         // Inherit doxygen comments from cli::IODevice interface documentation.
-        virtual const ResourceString GetLocation(void) const;
+        virtual ResourceString GetLocation(void) const;
         // Inherit doxygen comments from cli::OutputDevice interface documentation.
         virtual void PutString(const char* const STR_Out) const;
         // Inherit doxygen comments from cli::OutputDevice interface documentation.
@@ -89,20 +89,20 @@ CLI_NS_BEGIN(cli)
         // Inherit doxygen comments from cli::OutputDevice interface documentation.
         virtual void CleanScreen(void) const;
         // Inherit doxygen comments from cli::OutputDevice interface documentation.
-        virtual const bool WouldOutput(const OutputDevice& CLI_Device) const;
+        virtual bool WouldOutput(const OutputDevice& CLI_Device) const;
 
     public:
         //! @brief File name accessor.
         //! @return File name.
-        const tk::String GetFileName(void) const;
+        tk::String GetFileName(void) const;
 
         //! @brief Current line accessor.
         //! @return Current line, starting from 0.
-        const int GetCurrentLine(void) const;
+        int GetCurrentLine(void) const;
 
         //! @brief Current column accessor.
         //! @return Current column, starting from 0.
-        const int GetCurrentColumn(void) const;
+        int GetCurrentColumn(void) const;
 
     private:
         //! Input file name.
@@ -156,9 +156,9 @@ CLI_NS_BEGIN(cli)
 
     protected:
         // Inherit doxygen comments from cli::OutputDevice interface documentation.
-        virtual const bool OpenDevice(void);
+        virtual bool OpenDevice(void);
         // Inherit doxygen comments from cli::OutputDevice interface documentation.
-        virtual const bool CloseDevice(void);
+        virtual bool CloseDevice(void);
     public:
         // Inherit doxygen comments from cli::OutputDevice interface documentation.
         virtual void PutString(const char* const STR_Out) const;
@@ -168,7 +168,7 @@ CLI_NS_BEGIN(cli)
     public:
         //! @brief File name accessor.
         //! @return File name.
-        const tk::String GetFileName(void) const;
+        tk::String GetFileName(void) const;
 
     private:
         //! Output file name.

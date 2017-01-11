@@ -82,14 +82,14 @@ OutputDevice::~OutputDevice(void)
 {
 }
 
-const tk::String OutputDevice::GetDebugName(void) const
+tk::String OutputDevice::GetDebugName(void) const
 {
     StringDevice cli_DebugName(MAX_DEVICE_NAME_LENGTH, false);
     cli_DebugName << m_strDebugName << "/" << (const void*) this;
     return cli_DebugName.GetString();
 }
 
-const int OutputDevice::UseInstance(const CallInfo& CLI_CallInfo)
+int OutputDevice::UseInstance(const CallInfo& CLI_CallInfo)
 {
     GetTraces().SafeTrace(TRACE_IO_DEVICE_INSTANCES, *this)
         << "One more user for instance " << GetDebugName() << ", "
@@ -100,7 +100,7 @@ const int OutputDevice::UseInstance(const CallInfo& CLI_CallInfo)
     return m_iInstanceLock;
 }
 
-const int OutputDevice::FreeInstance(const CallInfo& CLI_CallInfo)
+int OutputDevice::FreeInstance(const CallInfo& CLI_CallInfo)
 {
     GetTraces().SafeTrace(TRACE_IO_DEVICE_INSTANCES, *this)
         << "One less user for instance " << GetDebugName() << ", "
@@ -122,12 +122,12 @@ const int OutputDevice::FreeInstance(const CallInfo& CLI_CallInfo)
     }
 }
 
-const int OutputDevice::GetInstanceUsers(void) const
+int OutputDevice::GetInstanceUsers(void) const
 {
     return m_iInstanceLock;
 }
 
-const bool OutputDevice::OpenUp(const CallInfo& CLI_CallInfo)
+bool OutputDevice::OpenUp(const CallInfo& CLI_CallInfo)
 {
     GetTraces().SafeTrace(TRACE_IO_DEVICE_OPENING, *this)
         << "One more user for instance " << GetDebugName() << ", "
@@ -150,7 +150,7 @@ const bool OutputDevice::OpenUp(const CallInfo& CLI_CallInfo)
     return true;
 }
 
-const bool OutputDevice::CloseDown(const CallInfo& CLI_CallInfo)
+bool OutputDevice::CloseDown(const CallInfo& CLI_CallInfo)
 {
     bool b_Res = true;
 
@@ -183,7 +183,7 @@ const bool OutputDevice::CloseDown(const CallInfo& CLI_CallInfo)
     return b_Res;
 }
 
-const int OutputDevice::GetOpenUsers(void) const
+int OutputDevice::GetOpenUsers(void) const
 {
     return m_iOpenLock;
 }
@@ -314,7 +314,7 @@ const OutputDevice& OutputDevice::operator <<(const IOEndl& CLI_IOEndl) const
     return *this;
 }
 
-const ResourceString OutputDevice::GetLastError(void) const
+ResourceString OutputDevice::GetLastError(void) const
 {
     return m_cliLastError;
 }
@@ -328,8 +328,8 @@ OutputDevice& OutputDevice::GetNullDevice(void)
         virtual ~NullDevice(void) {}
 
     protected:
-        virtual const bool OpenDevice(void) { return true; }
-        virtual const bool CloseDevice(void) { return true; }
+        virtual bool OpenDevice(void) { return true; }
+        virtual bool CloseDevice(void) { return true; }
     public:
         virtual void PutString(const char* const STR_Out) const { cli::tk::UnusedParameter(STR_Out); } // [contrib: Oleg Smolsky, 2010, based on CLI 2.5]
     };
@@ -347,8 +347,8 @@ OutputDevice& OutputDevice::GetStdOut(void)
         virtual ~StdOutDevice(void) {}
 
     protected:
-        virtual const bool OpenDevice(void) { return true; }
-        virtual const bool CloseDevice(void) { return true; }
+        virtual bool OpenDevice(void) { return true; }
+        virtual bool CloseDevice(void) { return true; }
     public:
         virtual void PutString(const char* const STR_Out) const {
             fprintf(stdout, "%s", STR_Out);
@@ -369,8 +369,8 @@ OutputDevice& OutputDevice::GetStdErr(void)
         virtual ~StdErrDevice(void) {}
 
     protected:
-        virtual const bool OpenDevice(void) { return true; }
-        virtual const bool CloseDevice(void) { return true; }
+        virtual bool OpenDevice(void) { return true; }
+        virtual bool CloseDevice(void) { return true; }
     public:
         virtual void PutString(const char* const STR_Out) const {
             fprintf(stderr, "%s", STR_Out);
@@ -395,7 +395,7 @@ void OutputDevice::CleanScreen(void) const
     }
 }
 
-const OutputDevice::ScreenInfo OutputDevice::GetScreenInfo(void) const
+OutputDevice::ScreenInfo OutputDevice::GetScreenInfo(void) const
 {
     return ScreenInfo(
         ScreenInfo::UNKNOWN, ScreenInfo::UNKNOWN, // Width and height
@@ -404,7 +404,7 @@ const OutputDevice::ScreenInfo OutputDevice::GetScreenInfo(void) const
     );
 }
 
-const bool OutputDevice::WouldOutput(const OutputDevice& CLI_Device) const
+bool OutputDevice::WouldOutput(const OutputDevice& CLI_Device) const
 {
     return (& CLI_Device == this);
 }
@@ -430,11 +430,11 @@ IODevice& IODevice::GetNullDevice(void)
         virtual ~NullDevice(void) {}
 
     protected:
-        virtual const bool OpenDevice(void) { return true; }
-        virtual const bool CloseDevice(void) { return true; }
+        virtual bool OpenDevice(void) { return true; }
+        virtual bool CloseDevice(void) { return true; }
     public:
         virtual void PutString(const char* const STR_Out) const { cli::tk::UnusedParameter(STR_Out); } // [contrib: Oleg Smolsky, 2010, based on CLI 2.5]
-        virtual const KEY GetKey(void) const { return NULL_KEY; }
+        virtual KEY GetKey(void) const { return NULL_KEY; }
     };
 
     static NullDevice cli_Null;
@@ -450,11 +450,11 @@ IODevice& IODevice::GetStdIn(void)
         virtual ~StdInDevice(void) {}
 
     protected:
-        virtual const bool OpenDevice(void) {
+        virtual bool OpenDevice(void) {
             OutputDevice::GetStdOut().UseInstance(__CALL_INFO__);
             return OutputDevice::GetStdOut().OpenUp(__CALL_INFO__);
         }
-        virtual const bool CloseDevice(void) {
+        virtual bool CloseDevice(void) {
             bool b_Res = OutputDevice::GetStdOut().CloseDown(__CALL_INFO__);
             OutputDevice::GetStdOut().FreeInstance(__CALL_INFO__);
             return b_Res;
@@ -466,7 +466,7 @@ IODevice& IODevice::GetStdIn(void)
         virtual void Beep(void) const {
             OutputDevice::GetStdOut().Beep();
         }
-        virtual const KEY GetKey(void) const {
+        virtual KEY GetKey(void) const {
             const char c_Char = (char) getchar();
             return IODevice::GetKey(c_Char);
         }
@@ -476,7 +476,7 @@ IODevice& IODevice::GetStdIn(void)
     return cli_StdIn;
 }
 
-const KEY IODevice::GetKey(const int I_Char)
+KEY IODevice::GetKey(const int I_Char)
 {
     switch (I_Char)
     {
@@ -618,12 +618,12 @@ const KEY IODevice::GetKey(const int I_Char)
     }
 }
 
-const ResourceString IODevice::GetLocation(void) const
+ResourceString IODevice::GetLocation(void) const
 {
     return ResourceString();
 }
 
-const bool IODevice::WouldInput(const IODevice& CLI_Device) const
+bool IODevice::WouldInput(const IODevice& CLI_Device) const
 {
     return (& CLI_Device == this);
 }

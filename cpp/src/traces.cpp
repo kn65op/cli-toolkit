@@ -95,7 +95,7 @@ TraceClass& TraceClass::operator=(const TraceClass& CLI_Class)
     return *this;
 }
 
-const bool cli::operator==(const TraceClass& CLI_Class1, const TraceClass& CLI_Class2)
+bool cli::operator==(const TraceClass& CLI_Class1, const TraceClass& CLI_Class2)
 {
     return (CLI_Class1.GetName() == CLI_Class2.GetName());
 }
@@ -147,7 +147,7 @@ const OutputDevice& Traces::GetStream(void) const
     return OutputDevice::GetStdErr();
 }
 
-const bool Traces::SetStream(OutputDevice& CLI_Stream)
+bool Traces::SetStream(OutputDevice& CLI_Stream)
 {
     // Store next reference.
     {
@@ -167,7 +167,7 @@ const bool Traces::SetStream(OutputDevice& CLI_Stream)
     return true;
 }
 
-const bool Traces::UnsetStream(OutputDevice& CLI_Stream)
+bool Traces::UnsetStream(OutputDevice& CLI_Stream)
 {
     for (   tk::Queue<OutputDevice*>::Iterator it = m_qStreams.GetIterator();
             m_qStreams.IsValid(it);
@@ -201,7 +201,7 @@ const bool Traces::UnsetStream(OutputDevice& CLI_Stream)
     return false;
 }
 
-const bool Traces::Declare(const TraceClass& CLI_Class)
+bool Traces::Declare(const TraceClass& CLI_Class)
 {
     if (m_mapClasses.GetAt(CLI_Class.GetName()) != NULL)
     {
@@ -227,7 +227,7 @@ const bool Traces::Declare(const TraceClass& CLI_Class)
     }
 }
 
-const TraceClass::List Traces::GetAllClasses(void) const
+TraceClass::List Traces::GetAllClasses(void) const
 {
     // Retrieve current filter.
     TraceClass::List q_Classes(MAX_TRACE_CLASS_COUNT);
@@ -247,7 +247,7 @@ const TraceClass::List Traces::GetAllClasses(void) const
     return q_Classes;
 }
 
-const TraceClass::List Traces::GetCurrentFilter(void) const
+TraceClass::List Traces::GetCurrentFilter(void) const
 {
     // Retrieve current filter.
     TraceClass::List q_CurrentFilter(MAX_TRACE_CLASS_COUNT);
@@ -270,7 +270,7 @@ const TraceClass::List Traces::GetCurrentFilter(void) const
     return q_CurrentFilter;
 }
 
-const bool Traces::SetFilter(const TraceClass& CLI_Class, const bool B_ShowTraces)
+bool Traces::SetFilter(const TraceClass& CLI_Class, const bool B_ShowTraces)
 {
     // Check the class exists.
     if (const TraceClassFlag* const pcli_Flags = m_mapClasses.GetAt(CLI_Class.GetName()))
@@ -287,7 +287,7 @@ const bool Traces::SetFilter(const TraceClass& CLI_Class, const bool B_ShowTrace
     return false;
 }
 
-const bool Traces::SetAllFilter(const bool B_ShowTraces)
+bool Traces::SetAllFilter(const bool B_ShowTraces)
 {
     // Remember 'all filter configuration'.
     m_bTraceAll = B_ShowTraces;
@@ -316,7 +316,7 @@ const bool Traces::SetAllFilter(const bool B_ShowTraces)
     return true;
 }
 
-const bool Traces::IsTraceOn(const TraceClass& CLI_Class) const
+bool Traces::IsTraceOn(const TraceClass& CLI_Class) const
 {
     bool b_ShowTrace = false;
 
@@ -359,7 +359,7 @@ const OutputDevice& Traces::BeginTrace(const TraceClass& CLI_Class)
     return (GetStream() << "<" << CLI_Class.GetName() << "> ");
 }
 
-const bool Traces::TraceFilterState(const TraceClass& CLI_Class, const bool B_ShowTraces)
+bool Traces::TraceFilterState(const TraceClass& CLI_Class, const bool B_ShowTraces)
 {
     // Trace this new class state.
     (   (CLI_Class == TRACE_TRACES) ? BeginTrace(TRACE_TRACES) : Trace(TRACE_TRACES))
@@ -396,7 +396,7 @@ Traces::TraceClassFlag& Traces::TraceClassFlag::operator=(const Traces::TraceCla
     return *this;
 }
 
-const bool Traces::TraceClassFlag::IsVisible(void) const
+bool Traces::TraceClassFlag::IsVisible(void) const
 {
     return m_bShow;
 }

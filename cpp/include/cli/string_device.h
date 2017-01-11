@@ -65,9 +65,9 @@ CLI_NS_BEGIN(cli)
 
     public:
         // Inherit doxygen comments from cli::OutputDevice interface documentation.
-        virtual const bool OpenDevice(void);
+        virtual bool OpenDevice(void);
         // Inherit doxygen comments from cli::OutputDevice interface documentation.
-        virtual const bool CloseDevice(void);
+        virtual bool CloseDevice(void);
         // Inherit doxygen comments from cli::OutputDevice interface documentation.
         virtual void PutString(const char* const STR_Out) const;
         // Inherit doxygen comments from cli::OutputDevice interface documentation.

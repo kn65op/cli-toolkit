@@ -86,7 +86,7 @@ CLI_NS_BEGIN(cli)
     protected:
         //! @brief Execution context creation handler.
         //! @return Execution context created for the given connection.
-        virtual ExecutionContext* const OnNewConnection(
+        virtual ExecutionContext* OnNewConnection(
             const TelnetConnection& CLI_NewConnection       //!< New telnet connection to create a context for.
             ) = 0;
 
@@ -99,22 +99,22 @@ CLI_NS_BEGIN(cli)
     private:
         //! @brief Makes one run of the main loop.
         //! @return false when an error occured, true otherwise (even for a timeout).
-        const bool RunLoop(
+        bool RunLoop(
             const int I_Milli       //!< Maximum number of milliseconds to wait for.
                                     //!< -1 for infinite waiting.
             );
 
         //! @brief Accepts a connection.
-        const bool AcceptConnection(void);
+        bool AcceptConnection(void);
 
         //! @brief Closes a connection.
-        const bool CloseConnection(
+        bool CloseConnection(
             const int I_ConnectionSocket    //!< Connection socket handler.
             );
 
         //! @brief Terminates the server execution.
         //! @return true for success, false otherwise.
-        const bool TerminateServer(void);
+        bool TerminateServer(void);
 
     private:
         //! Server socket.
@@ -163,22 +163,22 @@ CLI_NS_BEGIN(cli)
 
     protected:
         // Inherit doxygen comments from cli::OutputDevice interface documentation.
-        virtual const bool OpenDevice(void);
+        virtual bool OpenDevice(void);
         // Inherit doxygen comments from cli::OutputDevice interface documentation.
-        virtual const bool CloseDevice(void);
+        virtual bool CloseDevice(void);
     protected:
         //! @brief Characters received from the socket.
         //! @return true for success, false otherwise.
-        const bool ReceiveChars(void) const;
+        bool ReceiveChars(void) const;
         //! @brief Processes input chars and converts them into keys one by one.
         //! @return true if the connection is still up, false otherwise.
-        const bool ProcessKeys(void) const;
+        bool ProcessKeys(void) const;
         //! @brief Checks whether the connection should still be up.
         //! @return true if the connection is still up, false otherwise.
-        const bool CheckUp(void) const;
+        bool CheckUp(void) const;
     public:
         // Inherit doxygen comments from cli::IODevice interface documentation.
-        virtual const KEY GetKey(void) const;
+        virtual KEY GetKey(void) const;
         // Inherit doxygen comments from cli::NonBlockingIODevice interface documentation.
         virtual void OnKey(const KEY E_Key) const;
         // Inherit doxygen comments from cli::OutputDevice interface documentation.

@@ -98,7 +98,7 @@ CLI_NS_BEGIN(cli)
 
     //! @brief Classes equivalence operator.
     //! @return true if trace classes are equivalent, false otherwise.
-    const bool operator==(
+    bool operator==(
         const TraceClass& CLI_Class1,   //!< First member.
         const TraceClass& CLI_Class2    //!< Second member.
         );
@@ -143,7 +143,7 @@ CLI_NS_BEGIN(cli)
         //!
         //! When SetStream() has not been called previously, then it takes CLI_Stream in account immediately for tracing.
         //! Otherwise it stacks the stream (for consistency concerns) and waits for the previous ones to be released possibly.
-        const bool SetStream(
+        bool SetStream(
             OutputDevice& CLI_Stream                //!< Stream reference.
             );
 
@@ -151,7 +151,7 @@ CLI_NS_BEGIN(cli)
         //! @return true: success, false: failure.
         //!
         //! This method should be called if you have previously called SetStream().
-        const bool UnsetStream(
+        bool UnsetStream(
             OutputDevice& CLI_Stream                //!< Stream reference.
             );
 
@@ -159,21 +159,21 @@ CLI_NS_BEGIN(cli)
         //! @brief Trace class declaration.
         //! @return true if the class has been declared successfully or the class was already declared.
         //! @return false if an error as occured.
-        const bool Declare(
+        bool Declare(
             const TraceClass& CLI_Class     //!< Trace class to declare.
             );
 
         //! @brief All classes accessor.
         //! @return List of all trace classes that have been registered.
-        const TraceClass::List GetAllClasses(void) const;
+        TraceClass::List GetAllClasses(void) const;
 
         //! @brief Current filter retrieval.
         //! @return List of trace classes that constitutes the current trace filter.
-        const TraceClass::List GetCurrentFilter(void) const;
+        TraceClass::List GetCurrentFilter(void) const;
 
         //! @brief Current filter modification.
         //! @return true if the filter has been set (or was set previously), false otherwise.
-        const bool SetFilter(
+        bool SetFilter(
             const TraceClass& CLI_Class,    //!< Trace class.
             const bool B_ShowTraces         //!< Show traces flag.
             );
@@ -182,14 +182,14 @@ CLI_NS_BEGIN(cli)
         //! @return true for success, false otherwise.
         //!
         //! Same as above but for all filters in one operation.
-        const bool SetAllFilter(
+        bool SetAllFilter(
             const bool B_ShowTraces         //!< Show traces flag.
             );
 
     public:
         //! @brief Trace status.
         //! @return true if the trace is active, false otherwise.
-        const bool IsTraceOn(
+        bool IsTraceOn(
             const TraceClass& CLI_Class     //!< Trace class.
             ) const;
 
@@ -218,7 +218,7 @@ CLI_NS_BEGIN(cli)
             );
 
         //! @brief Trace filter state display.
-        const bool TraceFilterState(
+        bool TraceFilterState(
             const TraceClass& CLI_Class,    //!< Trace class.
             const bool B_ShowTraces         //!< Show traces flag.
             );
@@ -235,7 +235,7 @@ CLI_NS_BEGIN(cli)
         public:
             TraceClassFlag& operator=(const TraceClassFlag& CLI_Class);
         public:
-            const bool IsVisible(void) const;
+            bool IsVisible(void) const;
         private:
             bool m_bShow;
         };

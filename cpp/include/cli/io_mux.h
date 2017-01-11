@@ -71,9 +71,9 @@ CLI_NS_BEGIN(cli)
     // Outputdevice and IODevice interfaces.
     protected:
         // Inherit doxygen comments from cli::OutputDevice interface documentation.
-        virtual const bool OpenDevice(void);
+        virtual bool OpenDevice(void);
         // Inherit doxygen comments from cli::OutputDevice interface documentation.
-        virtual const bool CloseDevice(void);
+        virtual bool CloseDevice(void);
     public:
         // Inherit doxygen comments from cli::OutputDevice interface documentation.
         virtual void PutString(const char* const STR_Out) const;
@@ -82,32 +82,32 @@ CLI_NS_BEGIN(cli)
         // Inherit doxygen comments from cli::OutputDevice interface documentation.
         virtual void CleanScreen(void) const;
         // Inherit doxygen comments from cli::OutputDevice interface documentation.
-        virtual const bool WouldOutput(const OutputDevice& CLI_Device) const;
+        virtual bool WouldOutput(const OutputDevice& CLI_Device) const;
         // Inherit doxygen comments from cli::IODevice interface documentation.
-        virtual const KEY GetKey(void) const;
+        virtual KEY GetKey(void) const;
         // Inherit doxygen comments from cli::IODevice interface documentation.
-        virtual const ResourceString GetLocation(void) const;
+        virtual ResourceString GetLocation(void) const;
         // Inherit doxygen comments from cli::IODevice interface documentation.
-        virtual const bool WouldInput(const IODevice& CLI_Device) const;
+        virtual bool WouldInput(const IODevice& CLI_Device) const;
 
     public:
         //! @brief Device addition in the list.
         //! @return true if the device has been added, false otherwise.
-        const bool AddDevice(
+        bool AddDevice(
             IODevice* const PCLI_Device          //!< Input / output device.
             );
 
         //! @brief Current device accessor.
         //! @return Current device.
-        const IODevice* const GetCurrentDevice(void) const;
+        const IODevice* GetCurrentDevice(void) const;
 
         //! @brief Switch to next device.
         //! @return Next device if success, NULL otherwise.
-        const IODevice* const SwitchNextDevice(void);
+        const IODevice* SwitchNextDevice(void);
 
         //! @brief Reset device list.
         //! @return true for success, false otherwise.
-        const bool ResetDeviceList(void);
+        bool ResetDeviceList(void);
 
     protected:
         //! @brief Method called when an input / output device is needed.
@@ -125,7 +125,7 @@ CLI_NS_BEGIN(cli)
 
         //! @brief Releases first device.
         //! @return true for success, false otherwise.
-        const bool ReleaseFirstDevice(void);
+        bool ReleaseFirstDevice(void);
 
     private:
         //! Input / output device list.

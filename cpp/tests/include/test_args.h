@@ -92,9 +92,9 @@ public:
 
         return true;
     }
-    const bool IsNoExec(void) const { return m_bNoExec; }
-    const bool IsConsole(void) const { return ((m_iTelnetPort < 0) && (m_pcliIn != NULL)); }
-    const bool IsTelnet(void) const { return (m_iTelnetPort > 0); }
+    bool IsNoExec(void) const { return m_bNoExec; }
+    bool IsConsole(void) const { return ((m_iTelnetPort < 0) && (m_pcliIn != NULL)); }
+    bool IsTelnet(void) const { return (m_iTelnetPort > 0); }
     cli::IODevice* const GetInput(void) { return m_pcliIn; }
     cli::OutputDevice* const GetOutput(void) { return m_pcliOut; }
 
@@ -106,8 +106,8 @@ public:
                 cli::Shell& m_cliShell;
             public:
                 TestTelnetServer(cli::Shell& CLI_Shell, const unsigned long UL_TcpPort) : TelnetServer(1, UL_TcpPort, cli::ResourceString::LANG_EN), m_cliShell(CLI_Shell){} // because the CLI is allocated once only, allow only one client.
-                virtual cli::ExecutionContext* const OnNewConnection(const cli::TelnetConnection& CLI_NewConnection) { return & m_cliShell; }
-                virtual void OnCloseConnection(const cli::TelnetConnection& CLI_ClosedConnection, cli::ExecutionContext* const PCLI_Context) {}
+                virtual cli::ExecutionContext* OnNewConnection(const cli::TelnetConnection& ) { return & m_cliShell; }
+                virtual void OnCloseConnection(const cli::TelnetConnection& , cli::ExecutionContext* const ) {}
             };
 
             //cli::OutputDevice::GetStdOut() << "Running telnet server on port " << m_iTelnetPort << cli::endl;

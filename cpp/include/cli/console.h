@@ -61,12 +61,12 @@ CLI_NS_BEGIN(cli)
 
     protected:
         // Inherit doxygen comments from cli::OutputDevice interface documentation.
-        virtual const bool OpenDevice(void);
+        virtual bool OpenDevice(void);
         // Inherit doxygen comments from cli::OutputDevice interface documentation.
-        virtual const bool CloseDevice(void);
+        virtual bool CloseDevice(void);
     public:
         // Inherit doxygen comments from cli::IODevice interface documentation.
-        virtual const KEY GetKey(void) const;
+        virtual KEY GetKey(void) const;
 
     public:
         // Inherit doxygen comments from cli::OutputDevice interface documentation.
@@ -76,7 +76,7 @@ CLI_NS_BEGIN(cli)
         // Inherit doxygen comments from cli::OutputDevice interface documentation.
         virtual void CleanScreen(void) const;
         // Inherit doxygen comments from cli::OutputDevice interface documentation.
-        virtual const ScreenInfo GetScreenInfo(void) const;
+        virtual ScreenInfo GetScreenInfo(void) const;
 
     private:
         //! Internal data.

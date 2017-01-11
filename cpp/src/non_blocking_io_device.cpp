@@ -47,7 +47,7 @@ NonBlockingIODevice::~NonBlockingIODevice(void)
 {
 }
 
-const KEY NonBlockingIODevice::GetKey(void) const
+KEY NonBlockingIODevice::GetKey(void) const
 {
     // As this device is non-blocking, this method should not be called.
     CLI_ASSERT(false);
@@ -59,7 +59,7 @@ void NonBlockingIODevice::SetExecutionContextManager(ExecutionContextManager* co
     m_pcliExecutionContextManager = PCLI_ExecutionContextManager;
 }
 
-const ExecutionContext* const NonBlockingIODevice::GetExecutionContext(void) const
+const ExecutionContext* NonBlockingIODevice::GetExecutionContext() const
 {
     if (m_pcliExecutionContextManager != NULL)
     {

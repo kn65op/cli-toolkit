@@ -68,7 +68,7 @@ InputFileDevice& InputFileDevice::EnableSpecialCharacters(const bool B_EnableSpe
     return *this;
 }
 
-const bool InputFileDevice::OpenDevice(void)
+bool InputFileDevice::OpenDevice(void)
 {
     CLI_ASSERT(& m_cliOutput != this);
     if (! m_cliOutput.OpenUp(__CALL_INFO__))
@@ -92,7 +92,7 @@ const bool InputFileDevice::OpenDevice(void)
     return true;
 }
 
-const bool InputFileDevice::CloseDevice(void)
+bool InputFileDevice::CloseDevice(void)
 {
     bool b_Res = true;
 
@@ -117,7 +117,7 @@ const bool InputFileDevice::CloseDevice(void)
     return b_Res;
 }
 
-const KEY InputFileDevice::GetKey(void) const
+KEY InputFileDevice::GetKey(void) const
 {
     if (m_pfFile != NULL)
     {
@@ -217,7 +217,7 @@ const KEY InputFileDevice::GetKey(void) const
     return NULL_KEY;
 }
 
-const ResourceString InputFileDevice::GetLocation(void) const
+ResourceString InputFileDevice::GetLocation(void) const
 {
     char str_Location[1024];
     memset(str_Location, '\0', sizeof(str_Location));
@@ -255,22 +255,22 @@ void InputFileDevice::CleanScreen(void) const
     }
 }
 
-const bool InputFileDevice::WouldOutput(const OutputDevice& CLI_Device) const
+bool InputFileDevice::WouldOutput(const OutputDevice& CLI_Device) const
 {
     return (IODevice::WouldOutput(CLI_Device) || m_cliOutput.WouldOutput(CLI_Device));
 }
 
-const tk::String InputFileDevice::GetFileName(void) const
+tk::String InputFileDevice::GetFileName(void) const
 {
     return m_strFileName;
 }
 
-const int InputFileDevice::GetCurrentLine(void) const
+int InputFileDevice::GetCurrentLine(void) const
 {
     return m_iCurrentLine;
 }
 
-const int InputFileDevice::GetCurrentColumn(void) const
+int InputFileDevice::GetCurrentColumn(void) const
 {
     return m_iCurrentColumn;
 }
@@ -286,7 +286,7 @@ OutputFileDevice::~OutputFileDevice(void)
 {
 }
 
-const bool OutputFileDevice::OpenDevice(void)
+bool OutputFileDevice::OpenDevice(void)
 {
     if (m_pfFile == NULL)
     {
@@ -303,7 +303,7 @@ const bool OutputFileDevice::OpenDevice(void)
     return true;
 }
 
-const bool OutputFileDevice::CloseDevice(void)
+bool OutputFileDevice::CloseDevice(void)
 {
     bool b_Res = true;
 
@@ -334,7 +334,7 @@ void OutputFileDevice::Beep(void) const
 {
 }
 
-const tk::String OutputFileDevice::GetFileName(void) const
+tk::String OutputFileDevice::GetFileName(void) const
 {
     return m_strFileName;
 }

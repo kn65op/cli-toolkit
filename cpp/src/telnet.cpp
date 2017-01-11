@@ -225,7 +225,7 @@ void TelnetServer::StopServer(void)
     }
 }
 
-const bool TelnetServer::RunLoop(const int I_Milli)
+bool TelnetServer::RunLoop(const int I_Milli)
 {
     // Prepare a fd_set structure to call select().
     fd_set fd_Sockets; FD_ZERO(& fd_Sockets);
@@ -310,7 +310,7 @@ const bool TelnetServer::RunLoop(const int I_Milli)
     return true;
 }
 
-const bool TelnetServer::AcceptConnection(void)
+bool TelnetServer::AcceptConnection(void)
 {
     // Accept the client
     const int i_ConnectionSocket = accept(m_iServerSocket, NULL, NULL);
@@ -377,7 +377,7 @@ const bool TelnetServer::AcceptConnection(void)
     return false;
 }
 
-const bool TelnetServer::CloseConnection(const int I_ConnectionSocket)
+bool TelnetServer::CloseConnection(const int I_ConnectionSocket)
 {
     GetTraces().Trace(CLI_TELNET_SERVER) << "Ending connection " << I_ConnectionSocket << "..." << endl;
 
@@ -398,7 +398,7 @@ const bool TelnetServer::CloseConnection(const int I_ConnectionSocket)
     return true;
 }
 
-const bool TelnetServer::TerminateServer(void)
+bool TelnetServer::TerminateServer(void)
 {
     bool b_Res = true;
 
@@ -441,7 +441,7 @@ TelnetConnection::~TelnetConnection(void)
 {
 }
 
-const bool TelnetConnection::OpenDevice(void)
+bool TelnetConnection::OpenDevice(void)
 {
     // Configure LINGER option
     linger t_Linger;
@@ -462,7 +462,7 @@ const bool TelnetConnection::OpenDevice(void)
     return true;
 }
 
-const bool TelnetConnection::CloseDevice(void)
+bool TelnetConnection::CloseDevice(void)
 {
     // Did not manage to correctly end up the connection on the server side,
     // neither on Windows nor Linux systems.
@@ -514,7 +514,7 @@ const bool TelnetConnection::CloseDevice(void)
     return true;
 }
 
-const bool TelnetConnection::ReceiveChars(void) const
+bool TelnetConnection::ReceiveChars(void) const
 {
     // Dequeue characters from the socket
     GetTraces().SafeTrace(CLI_TELNET_IN, *this) << "m_iSocket = " << m_iSocket << ", calling recv()..." << endl;
@@ -550,7 +550,7 @@ const bool TelnetConnection::ReceiveChars(void) const
     return true;
 }
 
-const bool TelnetConnection::ProcessKeys(void) const
+bool TelnetConnection::ProcessKeys(void) const
 {
     while (CheckUp() && (! m_qChars.IsEmpty()))
     {
@@ -568,7 +568,7 @@ const bool TelnetConnection::ProcessKeys(void) const
     return true;
 }
 
-const bool TelnetConnection::CheckUp(void) const
+bool TelnetConnection::CheckUp(void) const
 {
     const ExecutionContext* const pcli_ExecutionContext = NonBlockingIODevice::GetExecutionContext();
     if ((pcli_ExecutionContext == NULL) || (! pcli_ExecutionContext->IsRunning()))
@@ -588,7 +588,7 @@ const bool TelnetConnection::CheckUp(void) const
     return true;
 }
 
-const KEY TelnetConnection::GetKey(void) const
+KEY TelnetConnection::GetKey(void) const
 {
     // Wait for characters if needed
     bool b_ReceiveCharacters = false;

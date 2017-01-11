@@ -151,14 +151,14 @@ CLI_NS_BEGIN(cli)
         public:
             //! @brief String length accessor.
             //! @return String length.
-            const unsigned int GetLength(void) const
+            unsigned int GetLength(void) const
             {
                 return (unsigned int) m_stlString.size();
             }
 
             //! @brief Checks whether the string is empty or not.
             //! @return true for an empty string, false otherwise.
-            const bool IsEmpty(void) const
+            bool IsEmpty(void) const
             {
                 return (GetLength() <= 0);
             }
@@ -171,7 +171,7 @@ CLI_NS_BEGIN(cli)
 
             //! @brief Single character accessor.
             //! @return Character at the given position. Null character when the position is out of bounds.
-            const char GetChar(
+            char GetChar(
                 const unsigned int UI_Pos               //!< Character position from the beginning of the string.
                 ) const
             {
@@ -185,7 +185,7 @@ CLI_NS_BEGIN(cli)
 
             //! @brief Sub-string computation.
             //! @return Computed sub-string.
-            const tk::String SubString(
+            tk::String SubString(
                     const unsigned int UI_FirstCharacter,   //!< First character position.
                     const int I_SubStringLength             //!< Sub-string length.
                                                             //!< negative values mean 0.
@@ -209,7 +209,7 @@ CLI_NS_BEGIN(cli)
 
             //! @brief Upper string transformation.
             //! @return Upper string computed.
-            const String ToUpper(void) const
+            String ToUpper(void) const
             {
                 tk::String str_Upper(0);
 
@@ -232,7 +232,7 @@ CLI_NS_BEGIN(cli)
 
             //! @brief Lower string transformation.
             //! @return Lower string computed.
-            const String ToLower(void) const
+            String ToLower(void) const
             {
                 tk::String str_Lower(0);
 
@@ -257,7 +257,7 @@ CLI_NS_BEGIN(cli)
         public:
             //! @brief String resetting.
             //! @return true when success, false otherwise.
-            const bool Reset(void)
+            bool Reset(void)
             {
                 m_stlString.erase();
                 return true;
@@ -265,7 +265,7 @@ CLI_NS_BEGIN(cli)
 
             //! @brief String setting.
             //! @return true when success, false otherwise.
-            const bool Set(
+            bool Set(
                     const char* const STR_String    //!< String to set.
                     )
             {
@@ -275,7 +275,7 @@ CLI_NS_BEGIN(cli)
 
             //! @brief String appending.
             //! @return true when success, false otherwise.
-            const bool Append(
+            bool Append(
                     const char* const STR_String    //!< String to append.
                     )
             {
@@ -285,7 +285,7 @@ CLI_NS_BEGIN(cli)
 
             //! @brief String appending.
             //! @return true when success, false otherwise.
-            const bool Append(
+            bool Append(
                     const char C_Character          //!< Character to append.
                     )
             {
