@@ -760,7 +760,7 @@ class Cli2Cpp:
                 ctx.Utils.indent(ctx, xml_menu, 1).put("// ----- Menu execution -----").endl()
                 
                 # Execution method
-                ctx.Utils.indent(ctx, xml_menu, 1).put("public: virtual const Execute(const cli::CommandLine& CLI_CmdLine) const {").endl()
+                ctx.Utils.indent(ctx, xml_menu, 1).put("public: virtual bool Execute(const cli::CommandLine& CLI_CmdLine) const {").endl()
                 
                 ctx.Utils.indent(ctx, xml_menu, 2).put("{").endl()
                 
