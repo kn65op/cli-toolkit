@@ -541,7 +541,7 @@ CLI_NS_BEGIN(cli)
             //! @brief Sort the list according to the given comparison function.
             //! @return true when success, false otherwise.
             bool Sort(
-                    const int (*cmp)(const T&, const T&)    //!< Comparison function.
+                    int (*cmp)(const T&, const T&)    //!< Comparison function.
                                                                 //!< Return positive value when then second argument should follow first one.
                     )
             {

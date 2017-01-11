@@ -679,7 +679,7 @@ void Shell::OnHelp(const bool B_PromptMenu, const bool B_Completion)
             {
                 // First of all, sort help elements on keywords.
                 class _ { public:
-                    static const int cmp(const Element* const& PCLI_1, const Element* const& PCLI_2)
+                    static int cmp(const Element* const& PCLI_1, const Element* const& PCLI_2)
                     {
                         if (PCLI_1->GetKeyword() < PCLI_2->GetKeyword())
                             return 1;
