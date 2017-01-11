@@ -84,7 +84,7 @@ ifneq ($(CYGWIN),)
 		CPP_OS_FLAGS = -D_CYGWIN
 endif
 		# All C++ flags
-		CPP_FLAGS ?= -Wall $(CPP_OPT_FLAGS) $(CPP_DEBUG_FLAG) $(CPP_OS_FLAGS) $(PROJ_CPP_FLAGS)
+		CPP_FLAGS ?= -Wall --std=c++1z -Wextra $(CPP_OPT_FLAGS) $(CPP_DEBUG_FLAG) $(CPP_OS_FLAGS) $(PROJ_CPP_FLAGS)
 		# Project includes
 		PROJ_INCLUDES ?=
 		# All includes
