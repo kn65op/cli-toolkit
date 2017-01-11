@@ -36,52 +36,52 @@ CLI_NS_BEGIN(cli)
 
     CLI_NS_BEGIN(tk)
 
-        const bool operator==(const char* const STR_String1, const String& STR_String2)
+        bool operator==(const char* const STR_String1, const String& STR_String2)
         {
             return (strcmp(STR_String1, STR_String2) == 0);
         }
 
-        const bool operator==(const String& STR_String1, const char* const STR_String2)
+        bool operator==(const String& STR_String1, const char* const STR_String2)
         {
             return (strcmp(STR_String1, STR_String2) == 0);
         }
 
-        const bool operator==(const String& STR_String1, const String& STR_String2)
+        bool operator==(const String& STR_String1, const String& STR_String2)
         {
             return (strcmp(STR_String1, STR_String2) == 0);
         }
 
-        const bool operator!=(const char* const STR_String1, const String& STR_String2)
+        bool operator!=(const char* const STR_String1, const String& STR_String2)
         {
             return (strcmp(STR_String1, STR_String2) != 0);
         }
 
-        const bool operator!=(const String& STR_String1, const char* const STR_String2)
+        bool operator!=(const String& STR_String1, const char* const STR_String2)
         {
             return (strcmp(STR_String1, STR_String2) != 0);
         }
 
-        const bool operator!=(const String& STR_String1, const String& STR_String2)
+        bool operator!=(const String& STR_String1, const String& STR_String2)
         {
             return (strcmp(STR_String1, STR_String2) != 0);
         }
 
-        const bool operator<(const String& STR_String1, const String& STR_String2)
+        bool operator<(const String& STR_String1, const String& STR_String2)
         {
             return (strcmp(STR_String1, STR_String2) < 0);
         }
 
-        const bool operator>(const String& STR_String1, const String& STR_String2)
+        bool operator>(const String& STR_String1, const String& STR_String2)
         {
             return (strcmp(STR_String1, STR_String2) > 0);
         }
 
-        const bool operator<=(const String& STR_String1, const String& STR_String2)
+        bool operator<=(const String& STR_String1, const String& STR_String2)
         {
             return (strcmp(STR_String1, STR_String2) <= 0);
         }
 
-        const bool operator>=(const String& STR_String1, const String& STR_String2)
+        bool operator>=(const String& STR_String1, const String& STR_String2)
         {
             return (strcmp(STR_String1, STR_String2) >= 0);
         }

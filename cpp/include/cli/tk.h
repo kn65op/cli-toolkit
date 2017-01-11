@@ -71,70 +71,70 @@ CLI_NS_BEGIN(cli)
 
         //! @brief Comparison operator.
         //! @return true if strings are equal, false otherwise.
-        const bool operator==(
+        bool operator==(
                 const char* const STR_String1,  //!< First string to compare.
                 const tk::String& STR_String2   //!< Second string to compare.
                 );
 
         //! @brief Comparison operator.
         //! @return true if strings are equal, false otherwise.
-        const bool operator==(
+        bool operator==(
                 const tk::String& STR_String1,  //!< First string to compare.
                 const char* const STR_String2   //!< Second string to compare.
                 );
 
         //! @brief Comparison operator.
         //! @return true if strings are equal, false otherwise.
-        const bool operator==(
+        bool operator==(
                 const tk::String& STR_String1,  //!< First string to compare.
                 const tk::String& STR_String2   //!< Second string to compare.
                 );
 
         //! @brief Difference operator.
         //! @return true if strings differ, false otherwise.
-        const bool operator!=(
+        bool operator!=(
                 const char* const STR_String1,  //!< First string to compare.
                 const tk::String& STR_String2   //!< Second string to compare.
                 );
 
         //! @brief Difference operator.
         //! @return true if strings differ, false otherwise.
-        const bool operator!=(
+        bool operator!=(
                 const tk::String& STR_String1,  //!< First string to compare.
                 const char* const STR_String2   //!< Second string to compare.
                 );
 
         //! @brief Difference operator.
         //! @return true if strings differ, false otherwise.
-        const bool operator!=(
+        bool operator!=(
                 const tk::String& STR_String1,  //!< First string to compare.
                 const tk::String& STR_String2   //!< Second string to compare.
                 );
 
         //! @brief Lower operator.
         //! @return true string1 is "lower than" string2, false otherwise.
-        const bool operator<(
+        bool operator<(
                 const tk::String& STR_String1,  //!< Supposed lower string.
                 const tk::String& STR_String2   //!< Supposed upper string.
                 );
 
         //! @brief Greater operator.
         //! @return true string1 is "greater than" string2, false otherwise.
-        const bool operator>(
+        bool operator>(
                 const tk::String& STR_String1,  //!< Supposed upper string.
                 const tk::String& STR_String2   //!< Supposed lower string.
                 );
 
         //! @brief Lower or equal operator.
         //! @return true string1 is "lower than" or equals string2, false otherwise.
-        const bool operator<=(
+        bool operator<=(
                 const tk::String& STR_String1,  //!< Supposed lower string.
                 const tk::String& STR_String2   //!< Supposed upper string.
                 );
 
         //! @brief Greater or equal operator.
         //! @return true string1 is "greater than" or equals string2, false otherwise.
-        const bool operator>=(
+        bool operator>=(
                 const tk::String& STR_String1,  //!< Supposed upper string.
                 const tk::String& STR_String2   //!< Supposed lower string.
                 );

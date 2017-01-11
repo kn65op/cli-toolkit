@@ -704,7 +704,7 @@ CLI_NS_BEGIN(cli)
 
             //! @brief Element accessor.
             //! @return NULL if no element is set for this key.
-            const T* const GetAt(
+            const T* GetAt(
                     const K& K_Key      //!< Key of the element accessed.
                     ) const
             {
