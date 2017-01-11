@@ -332,7 +332,7 @@ void Cli::SetCli(Cli& CLI_Cli)
     #endif
 }
 
-const bool Cli::ExecuteReserved(const CommandLine& CLI_CommandLine) const
+bool Cli::ExecuteReserved(const CommandLine& CLI_CommandLine) const
 {
     CommandLineIterator it(CLI_CommandLine);
 
@@ -361,7 +361,7 @@ const bool Cli::ExecuteReserved(const CommandLine& CLI_CommandLine) const
     return Menu::ExecuteReserved(CLI_CommandLine);
 }
 
-const bool Cli::OnError(const ResourceString& CLI_Location, const ResourceString& CLI_ErrorMessage) const
+bool Cli::OnError(const ResourceString& CLI_Location, const ResourceString& CLI_ErrorMessage) const
 {
     // Default return is true, in order to have the shell display the error.
     return true;

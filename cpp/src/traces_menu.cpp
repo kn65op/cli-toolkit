@@ -100,7 +100,7 @@ void TracesMenu::SetCli(Cli& CLI_Cli)
         m_pcliNoNode->AddElement(new SyntaxRef(*pcli_Tag)); }
 }
 
-const bool TracesMenu::ExecuteReserved(const CommandLine& CLI_CmdLine) const
+bool TracesMenu::ExecuteReserved(const CommandLine& CLI_CmdLine) const
 {
     CommandLineIterator it(CLI_CmdLine);
     bool b_Show = true;
@@ -170,7 +170,7 @@ trace_label:
     return Menu::ExecuteReserved(CLI_CmdLine);
 }
 
-const bool TracesMenu::Execute(const CommandLine& CLI_CmdLine) const
+bool TracesMenu::Execute(const CommandLine& CLI_CmdLine) const
 {
     return false;
 }

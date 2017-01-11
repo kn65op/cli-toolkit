@@ -77,13 +77,13 @@ CLI_NS_BEGIN(cli)
 
         //! @brief Element removal.
         //! @return true if the element has been actually removed, false otherwise.
-        const bool RemoveElement(
+        bool RemoveElement(
             const Element* const PCLI_Element,  //!< Element to remove.
             const bool B_AutoDelete             //!< Auto-deletion flag. true have the given object being automatically deleted when removed.
             );
 
         // Inherit doxygen comments from cli::Element documentation.
-        virtual const bool FindElements(Element::List& CLI_ExactList, Element::List& CLI_NearList, const char* const STR_Keyword) const;
+        virtual bool FindElements(Element::List& CLI_ExactList, Element::List& CLI_NearList, const char* const STR_Keyword) const;
 
     private:
         //! List of possible child elements.

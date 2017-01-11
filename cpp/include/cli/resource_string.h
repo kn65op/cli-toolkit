@@ -92,7 +92,7 @@ CLI_NS_BEGIN(cli)
         //! @brief Determines whether a string exists for a given language.
         //! @return true: The resource string has a string set for the given language.
         //! @return false: The resource string has no string set for the given language.
-        const bool HasString(
+        bool HasString(
             const LANG E_Lang               //!< Language identifier.
             ) const;
 
@@ -100,26 +100,26 @@ CLI_NS_BEGIN(cli)
         //! @return The string defined for the given language.
         //!
         //! If the string does not exist for the given language, the defaultt language is used.
-        const tk::String GetString(
+        tk::String GetString(
             const LANG E_Lang               //!< Language identifier.
             ) const;
 
         //! @brief Determines whether the resource string is empty (ie no string has been set for any language).
         //! @return true: The resource string is empty.
         //! @return false: The resource string is not empty.
-        const bool IsEmpty(void) const;
+        bool IsEmpty(void) const;
 
     public:
         //! @brief String concatenation in the aim of a resource definition.
         //! @return The concatenation of the string arguments.
-        static const tk::String Concat(
+        static tk::String Concat(
             const char* const STR_1,        //!< First string.
             const char* const STR_2         //!< Second string.
             );
 
         //! @brief String concatenation in the aim of a resource definition.
         //! @return The concatenation of the string arguments.
-        static const tk::String Concat(
+        static tk::String Concat(
             const char* const STR_1,        //!< First string.
             const char* const STR_2,        //!< Second string.
             const char* const STR_3         //!< Third string.
@@ -127,7 +127,7 @@ CLI_NS_BEGIN(cli)
 
         //! @brief String concatenation in the aim of a resource definition.
         //! @return The concatenation of the string arguments.
-        static const tk::String Concat(
+        static tk::String Concat(
             const char* const STR_1,        //!< First string.
             const char* const STR_2,        //!< Second string.
             const char* const STR_3,        //!< Third string.
@@ -136,7 +136,7 @@ CLI_NS_BEGIN(cli)
 
         //! @brief String concatenation in the aim of a resource definition.
         //! @return The concatenation of the string arguments.
-        static const tk::String Concat(
+        static tk::String Concat(
             const char* const STR_1,        //!< First string.
             const char* const STR_2,        //!< Second string.
             const char* const STR_3,        //!< Third string.

@@ -47,17 +47,17 @@ CallInfo::~CallInfo(void)
 {
 }
 
-const char* const CallInfo::GetFile(void) const
+const char* CallInfo::GetFile(void) const
 {
     return m_strFile;
 }
 
-const unsigned int CallInfo::GetLine(void) const
+unsigned int CallInfo::GetLine(void) const
 {
     return m_iLine;
 }
 
-const char* const CallInfo::GetFunction(void) const
+const char* CallInfo::GetFunction(void) const
 {
     return m_strFunction;
 }

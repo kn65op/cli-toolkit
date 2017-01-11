@@ -68,15 +68,15 @@ CLI_NS_BEGIN(cli)
     public:
         //! @brief File accessor.
         //! @return The source file name of the call info.
-        const char* const GetFile(void) const;
+        const char* GetFile(void) const;
 
         //! @brief Line accessor
         //! @return The source line of the call info.
-        const unsigned int GetLine(void) const;
+        unsigned int GetLine(void) const;
 
         //! @brief Function accessor.
         //! @return The source function of the call info.
-        const char* const GetFunction(void) const;
+        const char* GetFunction(void) const;
 
     private:
         const tk::String m_strFile;         //!< File of call.

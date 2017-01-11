@@ -86,13 +86,13 @@ ResourceString& ResourceString::SetString(const ResourceString::LANG E_Lang, con
     return *this;
 }
 
-const bool ResourceString::HasString(const ResourceString::LANG E_Lang) const
+bool ResourceString::HasString(const ResourceString::LANG E_Lang) const
 {
     // The string for the given language is set if there is a key for it in the map.
     return m_mapStrings.IsSet(E_Lang);
 }
 
-const tk::String ResourceString::GetString(const ResourceString::LANG E_Lang) const
+tk::String ResourceString::GetString(const ResourceString::LANG E_Lang) const
 {
     if (const tk::String* const pstr_String = m_mapStrings.GetAt(E_Lang))
     {
@@ -104,7 +104,7 @@ const tk::String ResourceString::GetString(const ResourceString::LANG E_Lang) co
     }
 }
 
-const bool ResourceString::IsEmpty(void) const
+bool ResourceString::IsEmpty(void) const
 {
     for (int e_Lang = 0; e_Lang < LANG_COUNT; e_Lang ++)
     {
@@ -119,21 +119,21 @@ const bool ResourceString::IsEmpty(void) const
     return true;
 }
 
-const tk::String ResourceString::Concat(
+tk::String ResourceString::Concat(
         const char* const STR_1, const char* const STR_2)
 {
     // Redirection to tk::String::Concat() with MAX_RESOURCE_LENGTH indication.
     return tk::String::Concat(MAX_RESOURCE_LENGTH, STR_1, STR_2);
 }
 
-const tk::String ResourceString::Concat(
+tk::String ResourceString::Concat(
         const char* const STR_1, const char* const STR_2, const char* const STR_3)
 {
     // Redirection to tk::String::Concat() with MAX_RESOURCE_LENGTH indication.
     return tk::String::Concat(MAX_RESOURCE_LENGTH, STR_1, STR_2, STR_3);
 }
 
-const tk::String ResourceString::Concat(
+tk::String ResourceString::Concat(
         const char* const STR_1, const char* const STR_2, const char* const STR_3,
         const char* const STR_4)
 {
@@ -141,7 +141,7 @@ const tk::String ResourceString::Concat(
     return tk::String::Concat(MAX_RESOURCE_LENGTH, STR_1, STR_2, STR_3, STR_4);
 }
 
-const tk::String ResourceString::Concat(
+tk::String ResourceString::Concat(
         const char* const STR_1, const char* const STR_2, const char* const STR_3,
         const char* const STR_4, const char* const STR_5)
 {

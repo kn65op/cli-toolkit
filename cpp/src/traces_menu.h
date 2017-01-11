@@ -62,9 +62,9 @@ CLI_NS_BEGIN(cli)
         // Inherit doxygen comments from cli::Element documentation.
         virtual void SetCli(Cli& CLI_Cli);
         // Inherit doxygen comments from cli::Menu documentation.
-        virtual const bool ExecuteReserved(const CommandLine& CLI_CmdLine) const;
+        virtual bool ExecuteReserved(const CommandLine& CLI_CmdLine) const;
         // Inherit doxygen comments from cli::Menu documentation.
-        virtual const bool Execute(const CommandLine& CLI_CmdLine) const;
+        virtual bool Execute(const CommandLine& CLI_CmdLine) const;
 
     private:
         //! @brief Show all classes.

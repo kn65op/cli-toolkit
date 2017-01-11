@@ -155,10 +155,10 @@ CLI_NS_BEGIN(cli)
         // Inherit doxygen comments from cli::Element documentation.
         virtual void SetCli(Cli& CLI_Cli);
         // Inherit doxygen comments from cli::Menu documentation.
-        virtual const bool ExecuteReserved(const CommandLine& CLI_CommandLine) const;
+        virtual bool ExecuteReserved(const CommandLine& CLI_CommandLine) const;
         //! @brief Handler on error.
         //! @return true if the error can be displayed by the shell, false if it should not be displayed.
-        virtual const bool OnError(
+        virtual bool OnError(
             const ResourceString& CLI_Location,     //!< Location of the error.
             const ResourceString& CLI_ErrorMessage  //!< Message of the error.
             ) const;

@@ -101,7 +101,7 @@ CLI_NS_BEGIN(cli)
         //!                     NULL means no keyword begun.
         //!                     Put NULL to retrieve all sub-elements.
         //! @return true for success, false otherwise.
-        virtual const bool FindElements(Element::List& CLI_ExactList, Element::List& CLI_NearList, const char* const STR_Keyword) const;
+        virtual bool FindElements(Element::List& CLI_ExactList, Element::List& CLI_NearList, const char* const STR_Keyword) const;
 
         // Note: use of @param doxygen tag in order to avoid doxygen warnings for reimplementations in sub-classes.
         //! @brief Cli reference setting.

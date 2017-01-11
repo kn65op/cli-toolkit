@@ -122,7 +122,7 @@ void Shell::SetPrompt(const ResourceString& CLI_Prompt)
     m_cliNoDefaultPrompt = CLI_Prompt;
 }
 
-const bool Shell::OnStartExecution(void)
+bool Shell::OnStartExecution(void)
 {
     GetTraces().Trace(TRACE_SHELL) << "Shell for CLI '" << GetCli().GetKeyword() << "' starts running." << endl;
 
@@ -139,7 +139,7 @@ const bool Shell::OnStartExecution(void)
     return false;
 }
 
-const bool Shell::OnStopExecution(void)
+bool Shell::OnStopExecution(void)
 {
     bool b_Res = true;
 
@@ -163,12 +163,12 @@ const bool Shell::OnStopExecution(void)
     return b_Res;
 }
 
-const unsigned int Shell::GetHelpMargin(void) const
+unsigned int Shell::GetHelpMargin(void) const
 {
     return HELP_MARGIN;
 }
 
-const unsigned int Shell::GetHelpOffset(void) const
+unsigned int Shell::GetHelpOffset(void) const
 {
     return HELP_OFFSET;
 }
@@ -270,7 +270,7 @@ void Shell::PrintError(const ResourceString& CLI_Location, const ResourceString&
     }
 }
 
-const Menu* const Shell::GetCurrentMenu(const int I_MenuIndex) const
+const Menu* Shell::GetCurrentMenu(const int I_MenuIndex) const
 {
     if (I_MenuIndex < 0)
     {

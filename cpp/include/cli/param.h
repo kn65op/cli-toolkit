@@ -75,7 +75,7 @@ CLI_NS_BEGIN(cli)
         virtual const tk::String GetKeyword(void) const;
 
         // Inherit doxygen comments from cli::Element documentation.
-        virtual const bool FindElements(Element::List& CLI_ExactList, Element::List& CLI_NearList, const char* const STR_Keyword) const;
+        virtual bool FindElements(Element::List& CLI_ExactList, Element::List& CLI_NearList, const char* const STR_Keyword) const;
 
         // Note: use of @param doxygen tag in order to avoid doxygen warnings for reimplementations in sub-classes.
         //! @brief Value setting.
@@ -83,7 +83,7 @@ CLI_NS_BEGIN(cli)
         //! @return true if the value has been set correctly, false otherwise.
         //!
         //! To be overloaded by derived classes.
-        virtual const bool SetstrValue(const char* const STR_Value) const = 0;
+        virtual bool SetstrValue(const char* const STR_Value) const = 0;
 
         //! @brief Value access in its string form.
         //! @return Parameter value in its string form.

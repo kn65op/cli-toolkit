@@ -76,17 +76,17 @@ const OutputDevice& ExecutionContext::GetStream(const STREAM_TYPE E_StreamType) 
     return m_cliManager.GetStream(E_StreamType);
 }
 
-const bool ExecutionContext::SetStream(const STREAM_TYPE E_StreamType, OutputDevice& CLI_Stream)
+bool ExecutionContext::SetStream(const STREAM_TYPE E_StreamType, OutputDevice& CLI_Stream)
 {
     return m_cliManager.SetStream(E_StreamType, CLI_Stream);
 }
 
-const bool ExecutionContext::StreamEnabled(const STREAM_TYPE E_StreamType) const
+bool ExecutionContext::StreamEnabled(const STREAM_TYPE E_StreamType) const
 {
     return m_cliManager.StreamEnabled(E_StreamType);
 }
 
-const bool ExecutionContext::EnableStream(const STREAM_TYPE E_StreamType, const bool B_Enable)
+bool ExecutionContext::EnableStream(const STREAM_TYPE E_StreamType, const bool B_Enable)
 {
     return m_cliManager.EnableStream(E_StreamType, B_Enable);
 }
@@ -96,7 +96,7 @@ void ExecutionContext::SetLang(const ResourceString::LANG E_Lang)
     m_cliManager.SetLang(E_Lang);
 }
 
-const ResourceString::LANG ExecutionContext::GetLang(void) const
+ResourceString::LANG ExecutionContext::GetLang(void) const
 {
     return m_cliManager.GetLang();
 }
@@ -106,7 +106,7 @@ void ExecutionContext::SetBeep(const bool B_Enable)
     m_cliManager.SetBeep(B_Enable);
 }
 
-const bool ExecutionContext::GetBeep(void) const
+bool ExecutionContext::GetBeep(void) const
 {
     return m_cliManager.GetBeep();
 }
@@ -139,7 +139,7 @@ void ExecutionContext::Run(void)
     Run(const_cast<IODevice&>(GetInput()));
 }
 
-const bool ExecutionContext::BeginExecution(IODevice& CLI_IODevice)
+bool ExecutionContext::BeginExecution(IODevice& CLI_IODevice)
 {
     GetTraces().Trace(TRACE_EXEC_CTX) << "Execution context " << this << ": Starting execution." << endl;
 
@@ -200,7 +200,7 @@ void ExecutionContext::ProcessKey(const KEY E_KeyCode)
     }
 }
 
-const bool ExecutionContext::FinishExecution(void)
+bool ExecutionContext::FinishExecution(void)
 {
     GetTraces().Trace(TRACE_EXEC_CTX) << "Execution context " << this << ": Ending execution." << endl;
 
@@ -239,7 +239,7 @@ const bool ExecutionContext::FinishExecution(void)
     return b_Res;
 }
 
-const bool ExecutionContext::IsRunning(void) const
+bool ExecutionContext::IsRunning(void) const
 {
     return m_cliManager.IsRunning(*this);
 }

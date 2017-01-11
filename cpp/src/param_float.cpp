@@ -44,7 +44,7 @@ ParamFloat::~ParamFloat(void)
 {
 }
 
-const bool ParamFloat::SetstrValue(const char* const STR_Value) const
+bool ParamFloat::SetstrValue(const char* const STR_Value) const
 {
     SetValue(STR_Value, atof(STR_Value));
     return true;

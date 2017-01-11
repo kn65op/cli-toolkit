@@ -56,7 +56,7 @@ ParamString::operator const char* const(void) const
     return m_strValue;
 }
 
-const bool ParamString::SetstrValue(const char* const STR_Value) const
+bool ParamString::SetstrValue(const char* const STR_Value) const
 {
     bool b_Result = false;
     if (Param::SetValue(STR_Value))

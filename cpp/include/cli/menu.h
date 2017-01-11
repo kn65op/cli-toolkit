@@ -71,7 +71,7 @@ CLI_NS_BEGIN(cli)
     public:
         //! @brief Menu name access.
         //! @return Name of the menu.
-        const tk::String GetName(void) const;
+        tk::String GetName(void) const;
 
     public:
         // Inherit doxygen comments from cli::Element documentation.
@@ -80,17 +80,17 @@ CLI_NS_BEGIN(cli)
         //! @brief Reserved commands execution.
         //! @param CLI_CommandLine Command line to execute.
         //! @return true if the command has found an execution code, false otherwise.
-        virtual const bool ExecuteReserved(const CommandLine& CLI_CommandLine) const;
+        virtual bool ExecuteReserved(const CommandLine& CLI_CommandLine) const;
         // Note: use of @param doxygen tag in order to avoid doxygen warnings for reimplementations in sub-classes.
         //! @brief User-defined commands execution.
         //! @param CLI_CommandLine Command line to execute.
         //! @return true if the command has found an execution code, false otherwise.
-        virtual const bool Execute(const CommandLine& CLI_CommandLine) const;
+        virtual bool Execute(const CommandLine& CLI_CommandLine) const;
         //! @brief Handler on menu exit.
         virtual void OnExit(void) const;
         //! @brief Handler on prompt display.
         //! @return Prompt to display. Empty string for default.
-        virtual const tk::String OnPrompt(void) const;
+        virtual tk::String OnPrompt(void) const;
 
     private:
         //! Help node.

@@ -96,7 +96,7 @@ Element& SyntaxNode::AddElement(Element* const PCLI_Element)
     return *PCLI_Element;
 }
 
-const bool SyntaxNode::RemoveElement(const Element* const PCLI_Element, const bool B_AutoDelete)
+bool SyntaxNode::RemoveElement(const Element* const PCLI_Element, const bool B_AutoDelete)
 {
     bool b_Res = false;
 
@@ -122,7 +122,7 @@ const bool SyntaxNode::RemoveElement(const Element* const PCLI_Element, const bo
     return b_Res;
 }
 
-const bool SyntaxNode::FindElements(
+bool SyntaxNode::FindElements(
         Element::List& CLI_ExactList,
         Element::List& CLI_NearList,
         const char* const STR_Keyword

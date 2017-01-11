@@ -43,7 +43,7 @@ ParamInt::~ParamInt(void)
 {
 }
 
-const bool ParamInt::SetstrValue(const char* const STR_Value) const
+bool ParamInt::SetstrValue(const char* const STR_Value) const
 {
     SetValue(STR_Value, atoi(STR_Value));
     return true;

@@ -86,7 +86,7 @@ CommandLine::~CommandLine(void)
     }
 }
 
-const bool CommandLine::Parse(
+bool CommandLine::Parse(
         const Menu& CLI_Menu,
         const tk::String& STR_Line,
         const bool B_Execution
@@ -243,7 +243,7 @@ const Element& CommandLine::GetLastElement(void) const
     }
 }
 
-const char* const CommandLine::GetLastWord(void) const
+const char* CommandLine::GetLastWord(void) const
 {
     if (m_bLastWordValid)
     {
@@ -255,7 +255,7 @@ const char* const CommandLine::GetLastWord(void) const
     }
 }
 
-const int CommandLine::GetNumBackspacesForCompletion(void) const
+int CommandLine::GetNumBackspacesForCompletion(void) const
 {
     return m_iNumBackspacesForCompletion;
 }
@@ -265,7 +265,7 @@ const ResourceString& CommandLine::GetLastError(void) const
     return m_cliError;
 }
 
-const bool CommandLine::Split(
+bool CommandLine::Split(
         const tk::String& STR_Line,
         tk::Queue<tk::String>& VSTR_Words,
         int& I_LastWordPosition
@@ -489,7 +489,7 @@ CommandLineIterator::~CommandLineIterator(void)
 {
 }
 
-const bool CommandLineIterator::StepIt(void)
+bool CommandLineIterator::StepIt(void)
 {
     if (m_cliCmdLine.m_cliElements.IsValid(m_cliIterator))
     {
@@ -503,7 +503,7 @@ const bool CommandLineIterator::StepIt(void)
     }
 }
 
-const bool CommandLineIterator::operator==(const Element& CLI_Element) const
+bool CommandLineIterator::operator==(const Element& CLI_Element) const
 {
     const cli::Param* const pcli_RefParam = dynamic_cast<const cli::Param*>(& CLI_Element);
     const cli::Param* const pcli_CmdLineParam = dynamic_cast<const cli::Param*>(m_pcliCurrentElement);
@@ -520,7 +520,7 @@ const bool CommandLineIterator::operator==(const Element& CLI_Element) const
     }
 }
 
-const Element* const CommandLineIterator::operator*(void) const
+const Element* CommandLineIterator::operator*(void) const
 {
     return m_pcliCurrentElement;
 }

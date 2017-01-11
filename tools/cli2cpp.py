@@ -760,7 +760,7 @@ class Cli2Cpp:
                 ctx.Utils.indent(ctx, xml_menu, 1).put("// ----- Menu execution -----").endl()
                 
                 # Execution method
-                ctx.Utils.indent(ctx, xml_menu, 1).put("public: virtual const bool Execute(const cli::CommandLine& CLI_CmdLine) const {").endl()
+                ctx.Utils.indent(ctx, xml_menu, 1).put("public: virtual const Execute(const cli::CommandLine& CLI_CmdLine) const {").endl()
                 
                 ctx.Utils.indent(ctx, xml_menu, 2).put("{").endl()
                 
@@ -926,7 +926,7 @@ class Cli2Cpp:
                     @param xml_menu (XML node) cli:cli or cli:menu node. """
                 # Error handler
                 if (ctx.xml.is_node(xml_menu, "cli:cli")):
-                    ctx.Utils.indent(ctx, xml_menu, 1).put("public: virtual const bool OnError(")
+                    ctx.Utils.indent(ctx, xml_menu, 1).put("public: virtual bool OnError(")
                     ctx.out                           .put(    "const cli::ResourceString& location, ")
                     ctx.out                           .put(    "const cli::ResourceString& message")
                     ctx.out                           .put(") const {").endl()
@@ -964,7 +964,7 @@ class Cli2Cpp:
                 """ Prompt handler code generation.
                     @param ctx (Cli2Cpp) Execution context.
                     @param xml_menu (XML node) cli:cli or cli:menu node. """
-                ctx.Utils.indent(ctx, xml_menu, 1).put("public: virtual const cli::tk::String OnPrompt(void) const {").endl()
+                ctx.Utils.indent(ctx, xml_menu, 1).put("public: virtual cli::tk::String OnPrompt(void) const {").endl()
                 _xml_extra_sources = ctx.xml.xpath_set(xml_menu, "cli:handler[@name='prompt']/cli:cpp")
                 if (len(_xml_extra_sources) > 0):
                     ctx.out.put(ctx.args.user_indent()).endl()

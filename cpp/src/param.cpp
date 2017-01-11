@@ -60,7 +60,7 @@ const tk::String Param::GetKeyword(void) const
     }
 }
 
-const bool Param::FindElements(
+bool Param::FindElements(
         Element::List& CLI_ExactList,
         Element::List& CLI_NearList,
         const char* const STR_Keyword

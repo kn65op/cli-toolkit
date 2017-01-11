@@ -139,7 +139,8 @@ CLI_NS_BEGIN(cli)
             String(
                     const String& TK_String //!< Source object.
                     )
-              : m_stlString((const char* const) TK_String)
+              : cli::Object{},
+	        m_stlString((const char* const) TK_String)
             {
             }
 
@@ -164,7 +165,7 @@ CLI_NS_BEGIN(cli)
             }
 
             //! @brief Conversion operator.
-            operator const char* const(void) const
+            operator const char* (void) const
             {
                 return m_stlString.c_str();
             }
@@ -346,14 +347,14 @@ CLI_NS_BEGIN(cli)
         public:
             //! @brief Determines whether the queue is empty.
             //! @return true when the queue is empty, false otherwise.
-            const bool IsEmpty(void) const
+            bool IsEmpty(void) const
             {
                 return m_stlQueue.empty();
             }
 
             //! @brief Item count.
             //! @return Number of items in the queue.
-            const unsigned int GetCount(void) const
+            unsigned int GetCount(void) const
             {
                 return (unsigned int) m_stlQueue.size();
             }
@@ -362,7 +363,7 @@ CLI_NS_BEGIN(cli)
             //! @brief Resets the queue.
             //! @return true when success, false otherwise.
             //! @author [contrib: Oleg Smolsky, 2010, based on CLI 2.5]
-            const bool Reset(void)
+            bool Reset(void)
             {
                 m_stlQueue.clear();
                 return true;
@@ -395,7 +396,7 @@ CLI_NS_BEGIN(cli)
 
             //! @brief Checks the element at the given position is valid.
             //! @return true if the iterator is at a valid place, false otherwise.
-            const bool IsValid(
+            bool IsValid(
                     const Iterator& it      //!< Iterator to check.
                     ) const
             {
@@ -404,7 +405,7 @@ CLI_NS_BEGIN(cli)
 
             //! @brief Iterates backward the iterator.
             //! @return true if the iterator has moved to a valid place, false otherwise.
-            const bool MovePrevious(
+            bool MovePrevious(
                     Iterator& it            //!< Iterator to move backward.
                     ) const
             {
@@ -421,7 +422,7 @@ CLI_NS_BEGIN(cli)
 
             //! @brief Iterates forward the iterator.
             //! @return true if the iterator has moved to a valid place, false otherwise.
-            const bool MoveNext(
+            bool MoveNext(
                     Iterator& it            //!< Iterator to move forward.
                     ) const
             {
@@ -431,7 +432,7 @@ CLI_NS_BEGIN(cli)
 
             //! @brief Read-only item retrieval.
             //! @return Read-only item retrieved.
-            const T& GetAt(
+            T& GetAt(
                     const Iterator& it      //!< Current iterator.
                     ) const
             {
@@ -450,7 +451,7 @@ CLI_NS_BEGIN(cli)
             //! @brief Item removal.
             //! @param it Position. Set to next item.
             //! @return The removed element.
-            const T Remove(
+            T Remove(
                     Iterator& it            //!< Current iterator.
                     )
             {
@@ -462,7 +463,7 @@ CLI_NS_BEGIN(cli)
         public:
             //! @brief Add a new element at the head of the queue.
             //! @return true if the element has been added, false otherwise.
-            const bool AddHead(
+            bool AddHead(
                     const T& T_Element          //!< New element.
                     )
             {
@@ -472,7 +473,7 @@ CLI_NS_BEGIN(cli)
 
             //! @brief Add a new element at the tail of the queue.
             //! @return true if the element has been added, false otherwise.
-            const bool AddTail(
+            bool AddTail(
                     const T& T_Element          //!< New element.
                     )
             {
@@ -519,7 +520,7 @@ CLI_NS_BEGIN(cli)
             //! @brief Add a new element at the head of the queue.
             //! @warning Do not call on an empty queue.
             //! @return Element removed.
-            const T RemoveHead(void)
+            T RemoveHead(void)
             {
                 const T t_Element = m_stlQueue.front();
                 m_stlQueue.pop_front();
@@ -529,7 +530,7 @@ CLI_NS_BEGIN(cli)
             //! @brief Add a new element at the tail of the queue.
             //! @warning Do not call on an empty queue.
             //! @return Element removed.
-            const T RemoveTail(void)
+            T RemoveTail(void)
             {
                 const T t_Element = m_stlQueue.back();
                 m_stlQueue.pop_back();
@@ -539,7 +540,7 @@ CLI_NS_BEGIN(cli)
         public:
             //! @brief Sort the list according to the given comparison function.
             //! @return true when success, false otherwise.
-            const bool Sort(
+            bool Sort(
                     const int (*cmp)(const T&, const T&)    //!< Comparison function.
                                                                 //!< Return positive value when then second argument should follow first one.
                     )
@@ -644,14 +645,14 @@ CLI_NS_BEGIN(cli)
         public:
             //! @brief Determines whether the map is empty.
             //! @return true when the map is empty, false otherwise.
-            const bool IsEmpty(void) const
+            bool IsEmpty(void) const
             {
                 return m_stlMap.empty();
             }
 
             //! @brief Item count.
             //! @return The number of items in the map.
-            const unsigned int GetCount(void) const
+            unsigned int GetCount(void) const
             {
                 return (unsigned int) m_stlMap.size(); // cast to avoid warnings
             }
@@ -660,7 +661,7 @@ CLI_NS_BEGIN(cli)
             //! @brief Resets the map.
             //! @return true when success, false otherwise.
             //! @author [contrib: Oleg Smolsky, 2010, based on CLI 2.5]
-            const bool Reset(void)
+            bool Reset(void)
             {
                 m_stlMap.clear();
                 return true;
@@ -669,7 +670,7 @@ CLI_NS_BEGIN(cli)
         public:
             //! @brief Set a new item.
             //! @return true if the element has been set, false otherwise.
-            const bool SetAt(
+            bool SetAt(
                     const K& K_Key,     //!< Key of the element set.
                     const T& T_Value    //!< Value of the element set.
                     )
@@ -684,7 +685,7 @@ CLI_NS_BEGIN(cli)
 
             //! @brief Unset an item.
             //! @return true if the element has been unset correctly, or if the element was not set, false otherwise.
-            const bool Unset(
+            bool Unset(
                     const K& K_Key      //!< Key of the element unset.
                     )
             {
@@ -694,7 +695,7 @@ CLI_NS_BEGIN(cli)
 
             //! @brief Checks whether an element is set for this key.
             //! @return true if the key is set, false otherwise.
-            const bool IsSet(
+            bool IsSet(
                     const K& K_Key      //!< Key to check.
                     ) const
             {
@@ -761,7 +762,7 @@ CLI_NS_BEGIN(cli)
 
             //! @brief Checks the element at the given position is valid.
             //! @return true when the iterator is at a valid place, false otherwise.
-            const bool IsValid(
+            bool IsValid(
                     const Iterator& it      //!< Iterator to check.
                     ) const
             {
@@ -770,7 +771,7 @@ CLI_NS_BEGIN(cli)
 
             //! @brief Iterates the iterator.
             //! @return true if the iterator has moved to a valid place, false otherwise.
-            const bool MoveNext(
+            bool MoveNext(
                     Iterator& it            //!< Iterator to move forward.
                     ) const
             {
@@ -808,7 +809,7 @@ CLI_NS_BEGIN(cli)
             //! @brief Item removal.
             //! @param it Position. Set to next item.
             //! @return The remove element.
-            const T Remove(
+            T Remove(
                     Iterator& it            //!< Current iterator.
                     )
             {

@@ -50,7 +50,7 @@ Menu::~Menu(void)
 {
 }
 
-const tk::String Menu::GetName(void) const
+tk::String Menu::GetName(void) const
 {
     return GetKeyword();
 }
@@ -100,7 +100,7 @@ void Menu::SetCli(Cli& CLI_Cli)
     }
 }
 
-const bool Menu::ExecuteReserved(const CommandLine& CLI_CommandLine) const
+bool Menu::ExecuteReserved(const CommandLine& CLI_CommandLine) const
 {
     CommandLineIterator it(CLI_CommandLine);
 
@@ -154,7 +154,7 @@ const bool Menu::ExecuteReserved(const CommandLine& CLI_CommandLine) const
     return false;
 }
 
-const bool Menu::Execute(const CommandLine& CLI_CommandLine) const
+bool Menu::Execute(const CommandLine& CLI_CommandLine) const
 {
     const ResourceString cli_Error = ResourceString()
         .SetString(ResourceString::LANG_EN, "No execution defined for the current command line")
@@ -167,7 +167,7 @@ void Menu::OnExit(void) const
 {
 }
 
-const tk::String Menu::OnPrompt(void) const
+tk::String Menu::OnPrompt(void) const
 {
     return tk::String(0);
 }

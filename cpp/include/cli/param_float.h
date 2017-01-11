@@ -65,7 +65,7 @@ CLI_NS_BEGIN(cli)
 
     public:
         // Inherit doxygen comments from cli::Param documentation.
-        virtual const bool SetstrValue(const char* const STR_Value) const;
+        virtual bool SetstrValue(const char* const STR_Value) const;
 
         // Inherit doxygen comments from cli::Param documentation.
         virtual const Param* const Clone(void) const;

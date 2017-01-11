@@ -191,20 +191,20 @@ CLI_NS_BEGIN(cli)
         //!     - or another call to this method with the null device is done on termination.
         //! Otherwise you could experience consistency troubles.
         //! The null device and standard devices are not subject to this remark.
-        const bool SetStream(
+        bool SetStream(
             const STREAM_TYPE E_StreamType,         //!< Output stream identifier.
             OutputDevice& CLI_Stream                //!< Stream reference.
             );
 
         //! @brief Enabled/disabled stream accessor.
         //! @return true: the stream is enabled, false: the stream is disabled.
-        const bool StreamEnabled(
+        bool StreamEnabled(
             const STREAM_TYPE E_StreamType          //!< Output stream identifier.
             ) const;
 
         //! @brief Enable/disable stream.
         //! @return true: success, false: failure.
-        const bool EnableStream(
+        bool EnableStream(
             const STREAM_TYPE E_StreamType,         //!< Output stream identifier.
             const bool B_Enable                     //!< Enable flag.
             );
@@ -217,7 +217,7 @@ CLI_NS_BEGIN(cli)
 
         //! @brief Language access.
         //! @return The language currently set.
-        const ResourceString::LANG GetLang(void) const;
+        ResourceString::LANG GetLang(void) const;
 
     public:
         //! @brief Beep configuration setting.
@@ -227,7 +227,7 @@ CLI_NS_BEGIN(cli)
 
         //! @brief Beep configuration access.
         //! @return The current beep configuration. true if enabled, false otherwise.
-        const bool GetBeep(void) const;
+        bool GetBeep(void) const;
 
         //! @brief Sends a beep signal.
         void Beep(void);
@@ -247,7 +247,7 @@ CLI_NS_BEGIN(cli)
 
         //! @brief Tells whether this execution context is running or not.
         //! @return The running status.
-        const bool IsRunning(void) const;
+        bool IsRunning(void) const;
 
     public:
         //! @brief Terminates this execution context's execution.
@@ -261,7 +261,7 @@ CLI_NS_BEGIN(cli)
     protected:
         //! @brief Beginning of execution handler.
         //! @return true for success, false otherwise.
-        virtual const bool OnStartExecution(void) = 0;
+        virtual bool OnStartExecution(void) = 0;
 
         // Note: use of @param doxygen tag in order to avoid doxygen warnings for reimplementations in sub-classes.
         //! @brief Handler called on character input.
@@ -270,12 +270,12 @@ CLI_NS_BEGIN(cli)
 
         //! @brief Execution termination handler.
         //! @return true for success, false otherwise.
-        virtual const bool OnStopExecution(void) = 0;
+        virtual bool OnStopExecution(void) = 0;
 
     private:
         //! @brief Beginning of execution.
         //! @return true for success, false otherwise.
-        const bool BeginExecution(
+        bool BeginExecution(
             IODevice& CLI_IODevice              //!< Input/output device to run onto.
             );
 
@@ -289,7 +289,7 @@ CLI_NS_BEGIN(cli)
 
         //! @brief End of execution.
         //! @return true for success, false otherwise.
-        const bool FinishExecution(void);
+        bool FinishExecution(void);
 
     private:
         //! Execution context manager.

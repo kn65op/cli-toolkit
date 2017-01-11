@@ -71,7 +71,7 @@ CLI_NS_BEGIN(cli)
         //! If this method succeeds,
         //! the result is stored in the object itself,
         //! and can be accessed through the following public methods.
-        const bool Parse(
+        bool Parse(
             const Menu& CLI_Menu,           //!< Current menu.
             const tk::String& STR_Line,    //!< Input command line in its string form.
             const bool B_Execution          //!< Flag set when parsing is done for execution.
@@ -88,13 +88,13 @@ CLI_NS_BEGIN(cli)
         //! 
         //! When used for completion, this object does not analyse the last word and just stores it.
         //! This method retrieves this last word.
-        const char* const GetLastWord(void) const;
+        const char* GetLastWord(void) const;
 
         //! @brief Number of backspaces for completion.
         //! @return Number of backspaces.
         //!
         //! Number of backspaces in order to erase the last word of the line.
-        const int GetNumBackspacesForCompletion(void) const;
+        int GetNumBackspacesForCompletion(void) const;
 
         //! @brief Last error.
         //! @return Last error resource string.
@@ -105,7 +105,7 @@ CLI_NS_BEGIN(cli)
     private:
         //! @brief Splits a command line in words.
         //! @return true for success, false otherwise.
-        const bool Split(
+        bool Split(
             const tk::String& STR_Line,            //!< Input command line in its string form.
             tk::Queue<tk::String>& Q_Words,         //!< Word list.
             int& I_LastWordPosition                 //!< Last word position in the list.
@@ -166,17 +166,17 @@ CLI_NS_BEGIN(cli)
         //! @brief Iteration.
         //! @return true: Iteration succeeded.
         //! @return false: Iteration failed.
-        const bool StepIt(void);
+        bool StepIt(void);
 
         //! @brief Checks whether the element corresponds to the current element.
         //! @return true if the element matches, false otherwise.
-        const bool operator==(
+        bool operator==(
             const Element& CLI_Element      //!< Element to check.
             ) const;
 
         //! @brief Current element accessor.
         //! @return Current element reference.
-        const Element* const operator*(void) const;
+        const Element* operator*(void) const;
 
     private:
         //! Command line object to iterate.

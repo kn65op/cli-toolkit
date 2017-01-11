@@ -55,7 +55,7 @@ CLI_NS_BEGIN(cli)
             return m_bExecResult;
         }
 
-        const bool UI::OnStartExecution(void)
+        bool UI::OnStartExecution(void)
         {
             m_bExecResult = false;
             Reset();
@@ -64,7 +64,7 @@ CLI_NS_BEGIN(cli)
             return true;
         }
 
-        const bool UI::OnStopExecution(void)
+        bool UI::OnStopExecution(void)
         {
             // If failure, reset the user interface object and manage output.
             if (! m_bExecResult)

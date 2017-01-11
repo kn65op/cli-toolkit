@@ -677,7 +677,7 @@
 
         <!-- Execution method -->
         <xsl:call-template name="T_Indent1"/>
-        <xsl:text>public: virtual const bool Execute(const cli::CommandLine&amp; CLI_CmdLine) const {</xsl:text>
+        <xsl:text>public: virtual bool Execute(const cli::CommandLine&amp; CLI_CmdLine) const {</xsl:text>
             <xsl:value-of select="$STR_Endl"/>
 
             <xsl:call-template name="T_Indent2"/>
@@ -968,7 +968,7 @@
         <!-- Error handler -->
         <xsl:if test="self::cli:cli">
             <xsl:call-template name="T_Indent1"/>
-                <xsl:text>public: virtual const bool OnError(const cli::ResourceString&amp; location, const cli::ResourceString&amp; message) const {</xsl:text>
+                <xsl:text>public: virtual bool OnError(const cli::ResourceString&amp; location, const cli::ResourceString&amp; message) const {</xsl:text>
                 <xsl:value-of select="$STR_Endl"/>
             <xsl:for-each select="cli:handler[@name='error']">
                 <xsl:if test="cli:cpp"><xsl:value-of select="$STR_UserIndent"/><xsl:value-of select="$STR_Endl"/></xsl:if>
@@ -1008,7 +1008,7 @@
 
         <!-- Prompt handler -->
         <xsl:call-template name="T_Indent1"/>
-            <xsl:text>public: virtual const cli::tk::String OnPrompt(void) const {</xsl:text>
+            <xsl:text>public: virtual cli::tk::String OnPrompt(void) const {</xsl:text>
             <xsl:value-of select="$STR_Endl"/>
         <xsl:for-each select="cli:handler[@name='prompt']">
             <xsl:if test="cli:cpp"><xsl:value-of select="$STR_UserIndent"/><xsl:value-of select="$STR_Endl"/></xsl:if>

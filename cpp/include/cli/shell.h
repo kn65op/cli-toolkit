@@ -106,11 +106,11 @@ CLI_NS_BEGIN(cli)
     public:
         //! @brief Help margin accessor.
         //! @return Number of spaces for the help margin.
-        const unsigned int GetHelpMargin(void) const;
+        unsigned int GetHelpMargin(void) const;
 
         //! @brief Help offset accessor.
         //! @return Number of spaces for the help offset.
-        const unsigned int GetHelpOffset(void) const;
+        unsigned int GetHelpOffset(void) const;
 
     private:
         //! @brief Prints the welcome message.
@@ -128,7 +128,7 @@ CLI_NS_BEGIN(cli)
     public:
         //! @brief Current menu retrieval.
         //! @return Reference of the current menu. NULL when I_MenuIndex is out of bounds.
-        const Menu* const GetCurrentMenu(
+        const Menu* GetCurrentMenu(
             const int I_MenuIndex       //!< Index of the menu in the stack.
                                         //!< 0: root menu (bottom of the stack).
                                         //!< 1: menu stacked over the root menu.
@@ -170,11 +170,11 @@ CLI_NS_BEGIN(cli)
 
     protected:
         // Inherit doxygen comments from cli::ExecutionContext interface documentation.
-        virtual const bool OnStartExecution(void);
+        virtual bool OnStartExecution(void);
         // Inherit doxygen comments from cli::ExecutionContext interface documentation.
         virtual void OnKey(const KEY E_KeyCode);
         // Inherit doxygen comments from cli::ExecutionContext interface documentation.
-        virtual const bool OnStopExecution(void);
+        virtual bool OnStopExecution(void);
 
     private:
         //! @brief Called when a printable character comes up from the input device.

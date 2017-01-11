@@ -139,7 +139,7 @@ void ConfigMenu::SetCli(Cli& CLI_Cli)
     #endif
 }
 
-const bool ConfigMenu::ExecuteReserved(const CommandLine& CLI_CmdLine) const
+bool ConfigMenu::ExecuteReserved(const CommandLine& CLI_CmdLine) const
 {
     CommandLineIterator it(CLI_CmdLine);
 
@@ -269,7 +269,7 @@ const bool ConfigMenu::ExecuteReserved(const CommandLine& CLI_CmdLine) const
     return Menu::ExecuteReserved(CLI_CmdLine);
 }
 
-const bool ConfigMenu::Execute(const CommandLine& CLI_CmdLine) const
+bool ConfigMenu::Execute(const CommandLine& CLI_CmdLine) const
 {
     return false;
 }

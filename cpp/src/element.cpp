@@ -59,7 +59,7 @@ const Help& Element::GetHelp(void) const
     return m_cliHelp;
 }
 
-const bool Element::FindElements(
+bool Element::FindElements(
         Element::List& CLI_ExactList,
         Element::List& CLI_NearList,
         const char* const STR_Keyword

@@ -85,9 +85,9 @@ CLI_NS_BEGIN(cli)
 
         protected:
             // Inherit doxygen comments from cli::ExecutionContext interface documentation.
-            virtual const bool OnStartExecution(void);
+            virtual bool OnStartExecution(void);
             // Inherit doxygen comments from cli::ExecutionContext interface documentation.
-            virtual const bool OnStopExecution(void);
+            virtual bool OnStopExecution(void);
             // Note: cli::ExecutionContext::OnKey will be overriden by sub-classes...
         protected:
             //! @brief Method to call by child classes in order to end the control execution.
