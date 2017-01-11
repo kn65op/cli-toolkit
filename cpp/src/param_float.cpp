@@ -50,7 +50,7 @@ bool ParamFloat::SetstrValue(const char* const STR_Value) const
     return true;
 }
 
-const Param* const ParamFloat::Clone(void) const
+const Param* ParamFloat::Clone(void) const
 {
     return InitClone(* new ParamFloat(GetHelp()));
 }

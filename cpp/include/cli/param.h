@@ -72,7 +72,7 @@ CLI_NS_BEGIN(cli)
 
     public:
         // Inherit doxygen comments from cli::Element documentation.
-        virtual const tk::String GetKeyword(void) const;
+        virtual tk::String GetKeyword(void) const;
 
         // Inherit doxygen comments from cli::Element documentation.
         virtual bool FindElements(Element::List& CLI_ExactList, Element::List& CLI_NearList, const char* const STR_Keyword) const;
@@ -87,17 +87,17 @@ CLI_NS_BEGIN(cli)
 
         //! @brief Value access in its string form.
         //! @return Parameter value in its string form.
-        const tk::String GetstrValue(void) const;
+        tk::String GetstrValue(void) const;
 
         //! @brief Parameter cloning handler.
         //! @return A newly created parameter object of the correct type.
         //!
         //! To be overloaded by derived classes.
-        virtual const Param* const Clone(void) const = 0;
+        virtual const Param* Clone(void) const = 0;
 
         //! @brief Cloned parameter access.
         //! @return Cloned parameter instance if any. NULL otherwise.
-        const Param* const GetCloned(void) const;
+        const Param* GetCloned(void) const;
 
         // Note: use of @param doxygen tag in order to avoid doxygen warnings for reimplementations in sub-classes.
         //! @brief Value copy handler.
@@ -108,19 +108,19 @@ CLI_NS_BEGIN(cli)
     protected:
         //! @brief Value setting from derived class.
         //! @return true for success, false otherwise.
-        const bool SetValue(
+        bool SetValue(
             const char* const STR_Value     //!< New value.
             ) const;
 
         //! @brief Clone initialization.
         //! @return CLI_Param reference.
-        const Param* const InitClone(
+        const Param* InitClone(
             Param& CLI_Param                //!< Clone parameter to initialize.
             ) const;
 
         //! @brief Cloned parameter reference setting.
         //! @return true for success, false otherwise.
-        const bool SetCloned(
+        bool SetCloned(
             const Param& CLI_Cloned         //!< Clone parameter reference.
             );
 

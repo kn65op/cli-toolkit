@@ -51,7 +51,7 @@ ParamString::~ParamString(void)
 {
 }
 
-ParamString::operator const char* const(void) const
+ParamString::operator const char* (void) const
 {
     return m_strValue;
 }
@@ -79,7 +79,7 @@ const Param& ParamString::CopyValue(const Param& CLI_Param) const
     return *this;
 }
 
-const Param* const ParamString::Clone(void) const
+const Param* ParamString::Clone(void) const
 {
     return InitClone(* new ParamString(GetHelp()));
 }

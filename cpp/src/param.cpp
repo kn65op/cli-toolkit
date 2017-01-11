@@ -48,7 +48,7 @@ Param::~Param(void)
 {
 }
 
-const tk::String Param::GetKeyword(void) const
+tk::String Param::GetKeyword(void) const
 {
     if (! m_strValue.IsEmpty())
     {
@@ -76,17 +76,17 @@ bool Param::FindElements(
     }
 }
 
-const tk::String Param::GetstrValue(void) const
+tk::String Param::GetstrValue(void) const
 {
     return m_strValue;
 }
 
-const Param* const Param::GetCloned(void) const
+const Param* Param::GetCloned(void) const
 {
     return m_pcliCloned;
 }
 
-const bool Param::SetValue(const char* const STR_Value) const
+bool Param::SetValue(const char* const STR_Value) const
 {
     if (m_strValue.Set(STR_Value))
     {
@@ -99,7 +99,7 @@ const bool Param::SetValue(const char* const STR_Value) const
     }
 }
 
-const Param* const Param::InitClone(Param& CLI_Param) const
+const Param* Param::InitClone(Param& CLI_Param) const
 {
     CLI_Param.SetCli(const_cast<Cli&>(GetCli()));
     CLI_Param.SetstrValue(GetstrValue());
@@ -107,7 +107,7 @@ const Param* const Param::InitClone(Param& CLI_Param) const
     return & CLI_Param;
 }
 
-const bool Param::SetCloned(const Param& CLI_Cloned)
+bool Param::SetCloned(const Param& CLI_Cloned)
 {
     m_pcliCloned = & CLI_Cloned;
     return true;

@@ -86,7 +86,7 @@ CLI_NS_BEGIN(cli)
     public:
         //! @brief String identifier accessor.
         //! @return String identifier.
-        virtual const tk::String GetKeyword(void) const;
+        const tk::String GetKeyword(void) const;
 
         //! @brief Element help accessor.
         //! @return Element help member reference.

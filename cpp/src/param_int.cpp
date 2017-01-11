@@ -49,7 +49,7 @@ bool ParamInt::SetstrValue(const char* const STR_Value) const
     return true;
 }
 
-const Param* const ParamInt::Clone(void) const
+const Param* ParamInt::Clone(void) const
 {
     return InitClone(* new ParamInt(GetHelp()));
 }

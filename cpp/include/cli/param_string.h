@@ -73,7 +73,7 @@ CLI_NS_BEGIN(cli)
 
     public:
         //! @brief Implicit cast operator.
-        operator const char* const(void) const;
+        operator const char* (void) const;
 
     public:
         // Inherit doxygen comments from cli::Param documentation.
@@ -83,7 +83,7 @@ CLI_NS_BEGIN(cli)
         virtual const Param& CopyValue(const Param& CLI_Param) const;
 
         // Inherit doxygen comments from cli::Param documentation.
-        virtual const Param* const Clone(void) const;
+        virtual const Param* Clone(void) const;
 
     private:
         //! Controled value.

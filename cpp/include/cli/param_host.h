@@ -64,7 +64,7 @@ CLI_NS_BEGIN(cli)
 
     public:
         // Inherit doxygen comments from cli::Param documentation.
-        virtual const Param* const Clone(void) const;
+        virtual const Param* Clone(void) const;
     };
 
 CLI_NS_END(cli)

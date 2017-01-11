@@ -42,7 +42,7 @@ ParamHost::~ParamHost(void)
 {
 }
 
-const Param* const ParamHost::Clone(void) const
+const Param* ParamHost::Clone(void) const
 {
     return InitClone(* new ParamHost(GetHelp()));
 }
