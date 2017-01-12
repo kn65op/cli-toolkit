@@ -64,7 +64,7 @@ const tk::String SyntaxTag::GetKeyword(void) const
     return str_Keyword;
 }
 
-const bool SyntaxTag::GetbHollow(void) const
+bool SyntaxTag::GetbHollow(void) const
 {
     return m_bHollow;
 }

@@ -85,7 +85,7 @@ CLI_NS_BEGIN(cli)
 
         //! @brief Optional menu reference accessor.
         //! @return Menu reference if set, NULL otherwise.
-        const MenuRef* const GetMenuRef(void) const;
+        const MenuRef* GetMenuRef(void) const;
 
     private:
         //! Optional menu reference.

@@ -65,7 +65,7 @@ CLI_NS_BEGIN(cli)
 
         //! @brief Retrieves the hollow attribute.
         //! @return true for hollow tag, false otherwise.
-        const bool GetbHollow(void) const;
+        bool GetbHollow(void) const;
 
     private:
         //! Hollow attribute.

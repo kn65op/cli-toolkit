@@ -78,7 +78,7 @@ MenuRef& Endl::SetMenuRef(MenuRef* const PCLI_MenuRef)
     return *PCLI_MenuRef;
 }
 
-const MenuRef* const Endl::GetMenuRef(void) const
+const MenuRef* Endl::GetMenuRef(void) const
 {
     return m_pcliMenuRef;
 }

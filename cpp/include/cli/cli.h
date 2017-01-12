@@ -125,9 +125,9 @@ CLI_NS_BEGIN(cli)
 
         //! @brief Retrieve CLI references from their names.
         //! @return The number of Cli instances found.
-        static const int FindFromName(
+        static int FindFromName(
             Cli::List& CLI_CliList,         //!< Output list.
-            const char* const STR_RegExp    //!< Regular expression matching the searched CLI names.
+            const char* STR_RegExp    //!< Regular expression matching the searched CLI names.
             );
 
     public:
@@ -140,7 +140,7 @@ CLI_NS_BEGIN(cli)
         //! @brief Menu retrieval.
         //! @return The menu identified by the given name, NULL if not found.
         const Menu* const GetMenu(
-            const char* const STR_MenuName  //!< Menu name.
+            const char* STR_MenuName  //!< Menu name.
             ) const;
 
     public:
@@ -175,11 +175,11 @@ CLI_NS_BEGIN(cli)
     public:
         //! @brief Determines whether the configuration menu is currently enabled.
         //! @return true when the configuration menu is curently enabled, false otherwise.
-        const bool IsConfigMenuEnabled(void) const;
+        bool IsConfigMenuEnabled(void) const;
 
         //! @brief Configuration menu enabling.
         //! @return false if the operation failed.
-        const bool EnableConfigMenu(
+        bool EnableConfigMenu(
             const bool B_Enable     //!< true for enabling, false otherwise.
             );
 

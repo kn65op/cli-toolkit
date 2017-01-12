@@ -132,7 +132,7 @@ Cli::~Cli(void)
     }
 }
 
-const int Cli::FindFromName(Cli::List& CLI_CliList, const char* const STR_RegExp)
+int Cli::FindFromName(Cli::List& CLI_CliList, const char* const STR_RegExp)
 {
 #ifndef CLI_NO_REGEX
     // Compile the regular expression.
@@ -249,7 +249,7 @@ const Keyword& Cli::GetConfigMenuNode(void) const
     return *m_pcliConfigMenuNode;
 }
 
-const bool Cli::IsConfigMenuEnabled(void) const
+bool Cli::IsConfigMenuEnabled(void) const
 {
     CLI_ASSERT(m_pcliConfigMenuNode != NULL);
 
@@ -268,7 +268,7 @@ const bool Cli::IsConfigMenuEnabled(void) const
     return false;
 }
 
-const bool Cli::EnableConfigMenu(const bool B_Enable)
+bool Cli::EnableConfigMenu(const bool B_Enable)
 {
     bool b_Res;
     CLI_ASSERT(m_pcliConfigMenuNode != NULL);
