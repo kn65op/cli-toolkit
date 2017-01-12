@@ -1,3 +1,9 @@
+This is edited version of below library.
+
+Changes:
+- use c++1z flag for compilation
+- remove warnings with -Wall
+
 -------------------------------------------------------------------------------
     Copyright (c) 2006-2013, Alexis Royer, http://alexis.royer.free.fr/CLI
 
