@@ -51,7 +51,7 @@ public:
         if (m_pcliIn != NULL) { m_pcliIn->FreeInstance(__CALL_INFO__); m_pcliIn = NULL; }
     }
 public:
-    const bool ParseArgs(int I_Args, const char* ARSTR_Args[]) {
+    bool ParseArgs(int I_Args, const char* ARSTR_Args[]) {
         // Parse arguments.
         if ((ARSTR_Args == NULL) || (ARSTR_Args[0] == NULL)) { return false; }
         const char *str_OutputFileName = NULL, *str_InputFileName = NULL;
@@ -95,8 +95,8 @@ public:
     bool IsNoExec(void) const { return m_bNoExec; }
     bool IsConsole(void) const { return ((m_iTelnetPort < 0) && (m_pcliIn != NULL)); }
     bool IsTelnet(void) const { return (m_iTelnetPort > 0); }
-    cli::IODevice* const GetInput(void) { return m_pcliIn; }
-    cli::OutputDevice* const GetOutput(void) { return m_pcliOut; }
+    cli::IODevice* GetInput(void) { return m_pcliIn; }
+    cli::OutputDevice* GetOutput(void) { return m_pcliOut; }
 
     void Execute(cli::Shell& CLI_Shell) const {
         if (m_bNoExec) {}
