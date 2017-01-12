@@ -188,7 +188,7 @@ Menu& Cli::AddMenu(Menu* const PCLI_Menu)
     return *PCLI_Menu;
 }
 
-const Menu* const Cli::GetMenu(const char* const STR_MenuName) const
+const Menu* Cli::GetMenu(const char* const STR_MenuName) const
 {
     // First of all, look in the menu list
     for (   tk::Queue<const Menu*>::Iterator it = m_qMenus.GetIterator();

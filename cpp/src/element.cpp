@@ -60,9 +60,9 @@ const Help& Element::GetHelp(void) const
 }
 
 bool Element::FindElements(
-        Element::List& CLI_ExactList,
-        Element::List& CLI_NearList,
-        const char* const STR_Keyword
+        Element::List& ,
+        Element::List& ,
+        const char* const 
         ) const
 {
     // Should be overridden.

@@ -139,7 +139,7 @@ CLI_NS_BEGIN(cli)
 
         //! @brief Menu retrieval.
         //! @return The menu identified by the given name, NULL if not found.
-        const Menu* const GetMenu(
+        const Menu* GetMenu(
             const char* STR_MenuName  //!< Menu name.
             ) const;
 
