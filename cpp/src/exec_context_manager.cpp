@@ -129,7 +129,7 @@ void ExecutionContextManager::StopAllExecutions(void)
     }
 }
 
-const bool ExecutionContextManager::OpenUp(ExecutionContext& CLI_Context, IODevice& CLI_IODevice)
+bool ExecutionContextManager::OpenUp(ExecutionContext& CLI_Context, IODevice& CLI_IODevice)
 {
     GetTraces().Trace(TRACE_EXEC_CTX) << "Execution context manager " << this << ": Starting execution context " << & CLI_Context << "." << endl;
 
@@ -221,7 +221,7 @@ const bool ExecutionContextManager::OpenUp(ExecutionContext& CLI_Context, IODevi
     return b_Res;
 }
 
-const bool ExecutionContextManager::CloseDown(ExecutionContext& CLI_Context)
+bool ExecutionContextManager::CloseDown(ExecutionContext& CLI_Context)
 {
     GetTraces().Trace(TRACE_EXEC_CTX) << "Execution context manager " << this << ": Ending execution context " << & CLI_Context << "." << endl;
 
@@ -340,7 +340,7 @@ void ExecutionContextManager::ReleaseInput(void)
     }
 }
 
-const bool ExecutionContextManager::IsRunning(void) const
+bool ExecutionContextManager::IsRunning(void) const
 {
     return (
         (m_pcliInput != NULL)                   // First check the input device reference is still set.
@@ -348,7 +348,7 @@ const bool ExecutionContextManager::IsRunning(void) const
     );
 }
 
-const bool ExecutionContextManager::IsRunning(const ExecutionContext& CLI_Context) const
+bool ExecutionContextManager::IsRunning(const ExecutionContext& CLI_Context) const
 {
     // First check the execution context manager is running itself.
     if (IsRunning())
@@ -369,7 +369,7 @@ const bool ExecutionContextManager::IsRunning(const ExecutionContext& CLI_Contex
     return false;
 }
 
-ExecutionContext* const ExecutionContextManager::GetCurrentContext(void)
+ExecutionContext* ExecutionContextManager::GetCurrentContext(void)
 {
     if (! m_tkRunningContexts.IsEmpty())
     {
@@ -410,7 +410,7 @@ const OutputDevice& ExecutionContextManager::GetStream(const STREAM_TYPE E_Strea
     return OutputDevice::GetNullDevice();
 }
 
-const bool ExecutionContextManager::SetStream(const STREAM_TYPE E_StreamType, OutputDevice& CLI_Stream)
+bool ExecutionContextManager::SetStream(const STREAM_TYPE E_StreamType, OutputDevice& CLI_Stream)
 {
     // ALL_STREAMS management.
     if (E_StreamType == ALL_STREAMS)
@@ -476,7 +476,7 @@ const bool ExecutionContextManager::SetStream(const STREAM_TYPE E_StreamType, Ou
     return false;
 }
 
-const bool ExecutionContextManager::StreamEnabled(const STREAM_TYPE E_StreamType) const
+bool ExecutionContextManager::StreamEnabled(const STREAM_TYPE E_StreamType) const
 {
     if ((E_StreamType >= 0) && (E_StreamType < STREAM_TYPES_COUNT))
     {
@@ -487,7 +487,7 @@ const bool ExecutionContextManager::StreamEnabled(const STREAM_TYPE E_StreamType
     return false;
 }
 
-const bool ExecutionContextManager::EnableStream(const STREAM_TYPE E_StreamType, const bool B_Enable)
+bool ExecutionContextManager::EnableStream(const STREAM_TYPE E_StreamType, const bool B_Enable)
 {
     // ALL_STREAMS management.
     if (E_StreamType == ALL_STREAMS)
@@ -518,7 +518,7 @@ void ExecutionContextManager::SetLang(const ResourceString::LANG E_Lang)
     m_eLang = E_Lang;
 }
 
-const ResourceString::LANG ExecutionContextManager::GetLang(void) const
+ResourceString::LANG ExecutionContextManager::GetLang(void) const
 {
     return m_eLang;
 }
@@ -528,7 +528,7 @@ void ExecutionContextManager::SetBeep(const bool B_Enable)
     m_bBeep = B_Enable;
 }
 
-const bool ExecutionContextManager::GetBeep(void) const
+bool ExecutionContextManager::GetBeep(void) const
 {
     return m_bBeep;
 }

@@ -68,7 +68,7 @@ CLI_NS_BEGIN(cli)
         public:
             //! @brief Yes/No answer retrieval.
             //! @return true for 'yes', false for 'no'.
-            const bool GetYesNo(void) const;
+            bool GetYesNo(void) const;
 
         public:
             // Inherit doxygen comments from cli::ExecutionContext interface documentation.

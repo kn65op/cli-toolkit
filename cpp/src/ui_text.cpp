@@ -110,7 +110,7 @@ CLI_NS_BEGIN(cli)
             it.m_bBottomIsUpToDate = false; // Bottom position is out of date until PrintPage() is called.
         }
 
-        const bool Text::PageUp(TextIterator& it) const
+        bool Text::PageUp(TextIterator& it) const
         {
             // Try to skeep as many lines as the screen is high.
             for (unsigned int ui = 0; ui < it.m_uiPageHeight; ui ++)
@@ -125,7 +125,7 @@ CLI_NS_BEGIN(cli)
             return true;
         }
 
-        const bool Text::LineUp(TextIterator& it) const
+        bool Text::LineUp(TextIterator& it) const
         {
             if (m_tkLines.IsValid(it.m_tkTopLine))
             {
@@ -174,7 +174,7 @@ CLI_NS_BEGIN(cli)
             return false;
         }
 
-        const bool Text::LineDown(TextIterator& it, const OutputDevice* const PCLI_Out) const
+        bool Text::LineDown(TextIterator& it, const OutputDevice* const PCLI_Out) const
         {
             // First check bottom position is up to date according to top position.
             if (! it.m_bBottomIsUpToDate)
@@ -217,7 +217,7 @@ CLI_NS_BEGIN(cli)
             return false;
         }
 
-        const bool Text::PageDown(TextIterator& it, const OutputDevice* const PCLI_Out) const
+        bool Text::PageDown(TextIterator& it, const OutputDevice* const PCLI_Out) const
         {
             // Try to skeep as many lines as the screen is high -1 for the status line.
             for (unsigned int ui = 0; ui < it.m_uiPageHeight; ui ++)

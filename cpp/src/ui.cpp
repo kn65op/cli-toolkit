@@ -50,7 +50,7 @@ CLI_NS_BEGIN(cli)
         {
         }
 
-        const bool UI::GetbExecResult(void) const
+        bool UI::GetbExecResult(void) const
         {
             return m_bExecResult;
         }

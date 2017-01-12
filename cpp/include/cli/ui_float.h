@@ -72,7 +72,7 @@ CLI_NS_BEGIN(cli)
         public:
             //! @brief Float retrieval.
             //! @return Float value entered by the user.
-            const double GetFloat(void) const;
+            double GetFloat(void) const;
 
         protected:
             // cli::ui::UI interface implementation.

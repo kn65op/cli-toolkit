@@ -65,12 +65,12 @@ static const TraceClass& GetTracesTraceClass(void)
 
 
 TraceClass::TraceClass(const TraceClass& CLI_Class)
-  : m_strName(CLI_Class.GetName()), m_cliHelp(CLI_Class.GetHelp())
+  : cli::Object{}, m_strName(CLI_Class.GetName()), m_cliHelp(CLI_Class.GetHelp())
 {
 }
 
 TraceClass::TraceClass(const char* const STR_ClassName, const Help& CLI_Help)
-  : m_strName(MAX_TRACE_CLASS_NAME_LENGTH, STR_ClassName), m_cliHelp(CLI_Help)
+  : cli::Object{}, m_strName(MAX_TRACE_CLASS_NAME_LENGTH, STR_ClassName), m_cliHelp(CLI_Help)
 {
 }
 

@@ -37,7 +37,7 @@ CLI_NS_USE(cli)
 
 
 CmdLineEdition::CmdLineEdition(const CmdLineEdition& CLI_CmdLine)
-  : m_tkLeft(CLI_CmdLine.m_tkRight),
+  : cli::Object{}, m_tkLeft(CLI_CmdLine.m_tkRight),
     m_tkRight(CLI_CmdLine.m_tkLeft),
     m_bInsertMode(CLI_CmdLine.m_bInsertMode)
 {
@@ -80,7 +80,7 @@ void CmdLineEdition::SetInsertMode(const bool B_InsertMode)
     m_bInsertMode = B_InsertMode;
 }
 
-const bool CmdLineEdition::GetInsertMode(void) const
+bool CmdLineEdition::GetInsertMode(void) const
 {
     return m_bInsertMode;
 }

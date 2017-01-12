@@ -328,12 +328,12 @@ bool IOMux::ResetDeviceList(void)
     return b_Res;
 }
 
-IODevice* const IOMux::CreateDevice(void)
+IODevice* IOMux::CreateDevice(void)
 {
     return NULL;
 }
 
-IODevice* const IOMux::CheckCurrentDevice(void) const
+IODevice* IOMux::CheckCurrentDevice(void) const
 {
     // m_qDevices is not empty => return the first valid device.
     while (! m_qDevices.IsEmpty())

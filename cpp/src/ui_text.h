@@ -86,26 +86,26 @@ CLI_NS_BEGIN(cli)
 
             //! @brief Moves iterator one page up.
             //! @return true if the iterator has changed, false otherwise.
-            const bool PageUp(
+            bool PageUp(
                 TextIterator& it                                //!< Current iterator.
                 ) const;
 
             //! @brief Moves iterator one line up.
             //! @return true if the iterator has changed, false otherwise.
-            const bool LineUp(
+            bool LineUp(
                 TextIterator& it                                //!< Current iterator.
                 ) const;
 
             //! @brief Moves iterator one line down.
             //! @return true if the iterator has changed, false otherwise.
-            const bool LineDown(
+            bool LineDown(
                 TextIterator& it,                               //!< Current iterator.
                 const OutputDevice* const PCLI_Out              //!< Output device, if the bottom line should be output by the way.
                 ) const;
 
             //! @brief Moves iterator one page down.
             //! @return true if the iterator has changed, false otherwise.
-            const bool PageDown(
+            bool PageDown(
                 TextIterator& it,                               //!< Current iterator.
                 const OutputDevice* const PCLI_Out              //!< Output device, if the page should be output by the way.
                 ) const;

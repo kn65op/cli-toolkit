@@ -274,8 +274,8 @@ bool CommandLine::Split(
     I_LastWordPosition = -1;
 
     class Do { public:
-        static const bool PushWord(
-            const Element& CLI_Element, tk::Queue<tk::String>& VSTR_Words,
+        static bool PushWord(
+            const Element& , tk::Queue<tk::String>& VSTR_Words,
             const int I_Position, tk::String& STR_Word,
             ResourceString& CLI_Error)
         {

@@ -81,7 +81,7 @@ CLI_NS_BEGIN(cli)
 
         //! @brief Insert mode retrieval.
         //! @return Current insert mode.
-        const bool GetInsertMode(void) const;
+        bool GetInsertMode(void) const;
 
     public:
         //! @brief Character addition.

@@ -71,12 +71,12 @@ CLI_NS_BEGIN(cli)
             //! @brief Choice retrieval.
             //! @return Index in the input queue corresponding to the answer entered by the user.
             //!         -1 if no matching choice found.
-            const int GetChoice(void) const;
+            int GetChoice(void) const;
 
             //! @brief Choice retrieval in its string form.
             //! @return String of the choice.
             //!         Empty string if no matching choice found.
-            const ResourceString GetstrChoice(void) const;
+            ResourceString GetstrChoice(void) const;
 
         protected:
             // cli::ui::UI interface implementation.

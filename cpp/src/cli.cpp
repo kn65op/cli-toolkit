@@ -361,7 +361,7 @@ bool Cli::ExecuteReserved(const CommandLine& CLI_CommandLine) const
     return Menu::ExecuteReserved(CLI_CommandLine);
 }
 
-bool Cli::OnError(const ResourceString& CLI_Location, const ResourceString& CLI_ErrorMessage) const
+bool Cli::OnError(const ResourceString& , const ResourceString& ) const
 {
     // Default return is true, in order to have the shell display the error.
     return true;

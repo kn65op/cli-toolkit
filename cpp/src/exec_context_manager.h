@@ -87,30 +87,30 @@ CLI_NS_BEGIN(cli)
     public:
         //! @brief Assumes input and output devices to be ready for execution.
         //! @return true for success, false otherwise.
-        const bool OpenUp(
+        bool OpenUp(
             ExecutionContext& CLI_Context,  //!< Execution context starting its execution.
             IODevice& CLI_IODevice          //!< Input/output device to run onto.
         );
 
         //! @brief Release input and output devices after execution.
         //! @return true for success, false otherwise.
-        const bool CloseDown(
+        bool CloseDown(
             ExecutionContext& CLI_Context   //!< Execution context terminating its execution.
             );
 
         //! @brief Determines whether the execution context manager is currently running.
         //! @return true if the execution context manager is currently running, false otherwise.
-        const bool IsRunning(void) const;
+        bool IsRunning(void) const;
 
         //! @brief Determines whether the given execution context is currently running.
         //! @return true if the given execution context is currently running, false otherwise.
-        const bool IsRunning(
+        bool IsRunning(
             const ExecutionContext& CLI_Context //!< Execution context to look for execution.
             ) const;
 
         //! @brief Returns the current execution context.
         //! @return Current execution context if any, NULL otherwise.
-        ExecutionContext* const GetCurrentContext(void);
+        ExecutionContext* GetCurrentContext(void);
 
     public:
         //! @brief Input stream accessor.
@@ -131,20 +131,20 @@ CLI_NS_BEGIN(cli)
         //!     - or another call to this method with the null device is done on termination.
         //! Otherwise you could experience consistency troubles.
         //! The null device and standard devices are not subject to this remark.
-        const bool SetStream(
+        bool SetStream(
             const STREAM_TYPE E_StreamType,         //!< Output stream identifier.
             OutputDevice& CLI_Stream                //!< Stream reference.
             );
 
         //! @brief Enabled/disabled stream accessor.
         //! @return true if the stream is enabled, false otherwise.
-        const bool StreamEnabled(
+        bool StreamEnabled(
             const STREAM_TYPE E_StreamType          //!< Output stream identifier.
             ) const;
 
         //! @brief Enable/disable stream.
         //! @return true for success, false otherwise.
-        const bool EnableStream(
+        bool EnableStream(
             const STREAM_TYPE E_StreamType,         //!< Output stream identifier.
             const bool B_Enable                     //!< Enable flag.
             );
@@ -157,7 +157,7 @@ CLI_NS_BEGIN(cli)
 
         //! @brief Language access.
         //! @return The language currently set.
-        const ResourceString::LANG GetLang(void) const;
+        ResourceString::LANG GetLang(void) const;
 
     public:
         //! @brief Beep configuration setting.
@@ -167,7 +167,7 @@ CLI_NS_BEGIN(cli)
 
         //! @brief Beep configuration access.
         //! @return The current beep configuration. true if enabled, false otherwise.
-        const bool GetBeep(void) const;
+        bool GetBeep(void) const;
 
         //! @brief Sends a beep signal.
         void Beep(void);

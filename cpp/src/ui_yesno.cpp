@@ -69,7 +69,7 @@ CLI_NS_BEGIN(cli)
         {
         }
 
-        const bool YesNo::GetYesNo(void) const
+        bool YesNo::GetYesNo(void) const
         {
             if (Choice::GetChoice() == 0)
             {

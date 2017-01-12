@@ -221,7 +221,7 @@ void Shell::PromptMenu(void) const
                 const Shell& m_cliShell;
             public:
                 explicit WaitForPrompt(const Shell& CLI_Shell) : m_cliShell(CLI_Shell) {}
-                public: virtual void OnResult(const ExecutionContext& CLI_Context) { m_cliShell.PromptMenu(); delete this; }
+                public: virtual void OnResult(const ExecutionContext& ) { m_cliShell.PromptMenu(); delete this; }
             };
             if (WaitForPrompt* const pcli_WaitForPrompt = new WaitForPrompt(*this))
             {

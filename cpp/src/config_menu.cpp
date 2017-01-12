@@ -269,7 +269,7 @@ bool ConfigMenu::ExecuteReserved(const CommandLine& CLI_CmdLine) const
     return Menu::ExecuteReserved(CLI_CmdLine);
 }
 
-bool ConfigMenu::Execute(const CommandLine& CLI_CmdLine) const
+bool ConfigMenu::Execute(const CommandLine& ) const
 {
     return false;
 }

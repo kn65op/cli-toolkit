@@ -66,13 +66,13 @@ CLI_NS_BEGIN(cli)
     public:
         //! @brief Pushes a command line in the history stack.
         //! @return true for success, false for failure.
-        const bool Push(
+        bool Push(
             const CmdLineEdition& CLI_Line  //!< Command line to push.
             );
 
         //! @brief Cleares all history from the stack.
         //! @return true for success, false for failure.
-        const bool Clear(void);
+        bool Clear(void);
 
     public:
         //! @brief History line retrieval.
@@ -84,19 +84,19 @@ CLI_NS_BEGIN(cli)
 
         //! @brief History line count retrieval.
         //! @return The number of history lines stacked + 1 for the current one.
-        const unsigned int GetCount(void) const;
+        unsigned int GetCount(void) const;
 
     public:
         //! @brief Saves the current line.
         //! @return true for success, false otherwise.
-        const bool SaveCurrentLine(
+        bool SaveCurrentLine(
             const CmdLineEdition& CLI_CurrentLine   //!< Current line.
             );
 
         //! @brief History line navigation.
         //! @return true if all the navigation expected has been executed,
         //!         false otherwise.
-        const bool Navigate(
+        bool Navigate(
             CmdLineEdition& CLI_CmdLine,    //!< Current command line edition object.
             const OutputDevice& CLI_Stream, //!< Output stream that should be used to display command lines.
             const int I_Navigation          //!< Number of steps in history navigation.
@@ -106,7 +106,7 @@ CLI_NS_BEGIN(cli)
 
         //! @brief History index retrieval.
         //! @return The index of the current navigation position.
-        const unsigned int GetNavigationIndex(void) const;
+        unsigned int GetNavigationIndex(void) const;
 
         //! @brief Navigation memory enabling.
         //!

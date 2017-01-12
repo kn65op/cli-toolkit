@@ -49,7 +49,7 @@ CmdLineHistory::~CmdLineHistory(void)
 {
 }
 
-const bool CmdLineHistory::Push(const CmdLineEdition& CLI_Line)
+bool CmdLineHistory::Push(const CmdLineEdition& CLI_Line)
 {
     if (// Check the line is not empty.
         (! CLI_Line.GetLine().IsEmpty())
@@ -84,7 +84,7 @@ const bool CmdLineHistory::Push(const CmdLineEdition& CLI_Line)
     return true;
 }
 
-const bool CmdLineHistory::Clear(void)
+bool CmdLineHistory::Clear(void)
 {
     while (! m_qHistory.IsEmpty())
     {
@@ -119,18 +119,18 @@ const CmdLineEdition& CmdLineHistory::GetLine(const unsigned int UI_BackwardInde
     }
 }
 
-const unsigned int CmdLineHistory::GetCount(void) const
+unsigned int CmdLineHistory::GetCount(void) const
 {
     return m_qHistory.GetCount();
 }
 
-const bool CmdLineHistory::SaveCurrentLine(const CmdLineEdition& CLI_CurrentLine)
+bool CmdLineHistory::SaveCurrentLine(const CmdLineEdition& CLI_CurrentLine)
 {
     m_qHistory.GetHead() = CLI_CurrentLine;
     return true;
 }
 
-const bool CmdLineHistory::Navigate(
+bool CmdLineHistory::Navigate(
         CmdLineEdition& CLI_CmdLine, const OutputDevice& CLI_Stream,
         const int I_Navigation)
 {

@@ -67,7 +67,7 @@ CLI_NS_BEGIN(cli)
         {
         }
 
-        const int Int::GetInt(void) const
+        int Int::GetInt(void) const
         {
             Help cli_Help; ParamInt cli_Int(cli_Help);
             if (cli_Int.SetstrValue(Line::GetLine()))

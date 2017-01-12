@@ -41,7 +41,7 @@ ResourceString::ResourceString(void)
 }
 
 ResourceString::ResourceString(const ResourceString& CLI_String)
-  : m_mapStrings(CLI_String.m_mapStrings)
+  : cli::Object{}, m_mapStrings(CLI_String.m_mapStrings)
 {
 }
 

@@ -48,7 +48,7 @@ ExecutionContext::ExecutionContext(void)
 }
 
 ExecutionContext::ExecutionContext(ExecutionContext& CLI_ParentContext)
-  : m_cliManager(CLI_ParentContext.m_cliManager),
+  : cli::Object{}, m_cliManager(CLI_ParentContext.m_cliManager),
     m_tkResults(MAX_EXECUTION_CONTEXTS)
 {
     GetTraces().Trace(TRACE_EXEC_CTX) << "Execution context " << this << ": New child execution context." << endl;

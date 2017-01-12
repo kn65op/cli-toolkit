@@ -170,7 +170,7 @@ trace_label:
     return Menu::ExecuteReserved(CLI_CmdLine);
 }
 
-bool TracesMenu::Execute(const CommandLine& CLI_CmdLine) const
+bool TracesMenu::Execute(const CommandLine& ) const
 {
     return false;
 }

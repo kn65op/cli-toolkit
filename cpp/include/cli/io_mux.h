@@ -114,14 +114,14 @@ CLI_NS_BEGIN(cli)
         //! @return New input device.
         //! @return NULL means no more input
         //!         unless new input devices have been pushed through AddInput().
-        virtual IODevice* const CreateDevice(void);
+        virtual IODevice* CreateDevice(void);
 
     private:
         //! @brief Check a current device is ready to be used.
         //! @return Current input device.
         //!
         //! Calls CreateDevice() when the list is empty.
-        IODevice* const CheckCurrentDevice(void) const;
+        IODevice* CheckCurrentDevice(void) const;
 
         //! @brief Releases first device.
         //! @return true for success, false otherwise.

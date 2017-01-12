@@ -331,7 +331,7 @@ CLI_NS_BEGIN(cli)
             Queue(
                     const Queue<T>& TK_Queue    //!< Source queue object.
                     )
-              : m_stlQueue(TK_Queue.m_stlQueue)
+              : cli::Object{}, m_stlQueue(TK_Queue.m_stlQueue)
             {
             }
 
@@ -620,7 +620,7 @@ CLI_NS_BEGIN(cli)
         public:
             //! @brief Main constructor.
             explicit Map(
-                    const unsigned int UI_MaxCount  //!< Maximum item count.
+                    const unsigned int //!< Maximum item count.
                     )
             {
             }
@@ -629,7 +629,7 @@ CLI_NS_BEGIN(cli)
             Map(
                     const Map<K,T>& TK_Map      //!< Source map object.
                     )
-              : m_stlMap(TK_Map.m_stlMap)
+              : cli::Object{}, m_stlMap(TK_Map.m_stlMap)
             {
             }
 

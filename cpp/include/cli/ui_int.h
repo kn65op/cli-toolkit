@@ -72,7 +72,7 @@ CLI_NS_BEGIN(cli)
         public:
             //! @brief Integer retrieval.
             //! @return Integer value entered by the user.
-            const int GetInt(void) const;
+            int GetInt(void) const;
 
         protected:
             // cli::ui::UI interface implementation.

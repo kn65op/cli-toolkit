@@ -81,7 +81,7 @@ CLI_NS_BEGIN(cli)
         public:
             //! @brief Execution result accessor.
             //! @return Execution result: true for a regular output, false for an error or a cancellation.
-            const bool GetbExecResult(void) const;
+            bool GetbExecResult(void) const;
 
         protected:
             // Inherit doxygen comments from cli::ExecutionContext interface documentation.

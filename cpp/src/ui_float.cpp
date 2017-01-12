@@ -67,7 +67,7 @@ CLI_NS_BEGIN(cli)
         {
         }
 
-        const double Float::GetFloat(void) const
+        double Float::GetFloat(void) const
         {
             Help cli_Help; ParamFloat cli_Float(cli_Help);
             if (cli_Float.SetstrValue(Line::GetLine()))

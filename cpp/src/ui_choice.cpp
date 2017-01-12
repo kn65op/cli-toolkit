@@ -82,7 +82,7 @@ CLI_NS_BEGIN(cli)
         {
         }
 
-        const int Choice::GetChoice(void) const
+        int Choice::GetChoice(void) const
         {
             const tk::String str_Line = Line::GetLine();
             int i_Choice = 0;
@@ -116,7 +116,7 @@ CLI_NS_BEGIN(cli)
             return -1;
         }
 
-        const ResourceString Choice::GetstrChoice(void) const
+        ResourceString Choice::GetstrChoice(void) const
         {
             // First retrieve the choice enterd in its index form.
             int i_Choice = GetChoice();

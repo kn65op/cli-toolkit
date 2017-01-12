@@ -154,7 +154,7 @@ bool Menu::ExecuteReserved(const CommandLine& CLI_CommandLine) const
     return false;
 }
 
-bool Menu::Execute(const CommandLine& CLI_CommandLine) const
+bool Menu::Execute(const CommandLine& ) const
 {
     const ResourceString cli_Error = ResourceString()
         .SetString(ResourceString::LANG_EN, "No execution defined for the current command line")
