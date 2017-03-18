@@ -4,6 +4,8 @@ Changes:
 - use c++1z flag for compilation
 - remove warnings with -Wall
 
+Below is original README:
+
 -------------------------------------------------------------------------------
     Copyright (c) 2006-2013, Alexis Royer, http://alexis.royer.free.fr/CLI
 
